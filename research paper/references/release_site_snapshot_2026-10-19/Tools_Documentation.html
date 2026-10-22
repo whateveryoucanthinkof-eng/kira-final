@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error Prevalence in NIDS datasets | Tools and Documentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" media="screen"/>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css" media="screen"/>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+  $(function(){
+    $("#nav-placeholder").load("nav.html");
+  });
+</script>
+<!--end of Navigation bar-->
+
+<div class="content">
+  <h1>Tools & Documentation</h1>
+
+  <p>
+    On this page we gather all the tools and code that we wrote / adapted during the course of our work on this paper.
+    We also include on this page high-level documentation for the datasets that generalises across different attack
+    classes.
+  </p>
+
+  <h2>Paper Code repository</h2>
+
+  <p>
+    All code that we used for our paper can be found in <a href="https://github.com/GintsEngelen/CNS2022_Code">this repository</a>.
+    This includes labelling code for the datasets as well as code used for our experiments.
+  </p>
+
+  <h2>Improved CICFlowMeter Tool</h2>
+
+  <p>Our fixed version of the CICFlowMeter tool can be found at
+    <a href="https://github.com/GintsEngelen/CICFlowMeter">https://github.com/GintsEngelen/CICFlowMeter</a>.</p>
+
+  <h4>Changes made in previous work</h4>
+
+  <p>
+  <ul>
+    <li>A TCP flow is no longer terminated after a single FIN packet. It now terminates after mutual exchange of FIN
+      packets, which is more in line with the TCP specification.
+    </li>
+    <li>An RST packet is no longer ignored. Instead, the RST packet also terminates a TCP flow</li>
+    <li>CICFlowMeter fixed as per
+      <a href="https://github.com/GintsEngelen/CICFlowMeter/pull/1#issue-1033661417">this GitHub pull request</a>
+      (Fwd and Bwd Bulk features affected)</i></li>
+  </ul>
+  </p>
+
+  <h4>Changes made during this work</h4>
+  <p>
+  <ul>
+    <li>Changed the timestamp to output in UTC and with microsecond precision</li>
+    <li>Added ICMP protocol support as well as a bunch of ICMP-related features</li>
+    <li>Added Total TCP Duration feature</li>
+    <li>Added Forward RST and Backward RST features</li>
+    <li>Fixed TCP Segmentation Offset issue (more details in our paper under section IV-B.</li>
+  </ul>
+  </p>
+</div>
+
+</body>

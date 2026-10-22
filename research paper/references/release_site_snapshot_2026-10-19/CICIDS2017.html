@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Prevalence in NIDS datasets | CIC-IDS 2017</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css" media="screen"/>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+    $(function () {
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
+<div class="content">
+
+    <h1>Improved CIC-IDS 2017 <br> Documentation</h1>
+
+    <p>The fixed dataset can be downloaded on <a href="Dataset_Download.html">this page</a>. Labelling code
+        can be found in <a href="https://github.com/GintsEngelen/CNS2022_Code">our GitHub repository</a></p>
+
+
+    <table id="table_of_contents">
+        <tr>
+            <th>Table of Contents</th>
+        </tr>
+        <tr>
+            <td><a href="#2017_FTP_Patator">1. FTP - Patator</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_SSH_Patator">2. SSH - Patator</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_DoS_Hulk">3. DoS Hulk</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_Dos_GoldenEye">4. Dos GoldenEye</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_DoS_Slowloris">5. DoS Slowloris</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_DoS_Slowhttptest">6. DoS Slowhttptest</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_Heartbleed">7. Heartbleed</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_Web_SQL">8. Web Attack - SQL Injection</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_Web_XSS">9. Web Attack - XSS</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_Web_Brute_Force">10. Web Attack - Brute Force</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_Infiltration">11. Infiltration</a></td>
+        </tr>
+        <tr>
+            <td class="indent"><a href="#2017_Infiltration_Communication">11.2 Communication Victim - Attacker</a></td>
+        </tr>
+        <tr>
+            <td class="indent"><a href="#2017_Infiltration_Cooldisk">11.1 Cool disk - MAC</a></td>
+        </tr>
+
+        <tr>
+            <td class="indent"><a href="#2017_Infiltration_NMAP_Portscan">11.3 NMAP Portscan</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_Botnet">12. Botnet Ares</a></td>
+        </tr>
+        <tr>
+            <td><a href="#2017_DDoS_LOIC_HTTP">13. DDoS LOIC HTTP</a></td>
+        </tr>
+    </table>
+
+
+    <section id="2017_FTP_Patator">
+        <h3>1. FTP Patator</h3>
+
+        <h5>04-07-2017</h5>
+
+        <p>
+            The very first flow (with source port 52108) of the attacker connecting to the victim is actually a
+            successful login (not brute force flow), likely executed by the dataset authors as a pre-test. No brute
+            force occurs in this flow, so it shouldn't be labeled as such. Instead, we label it as an FTP Patator -
+            Attempted flow.
+        </p>
+
+        <p>
+            The are also some flows that don't characterize the usual "Brute Force Behavior" (e.g. single failed login
+            attempt,
+            with timeout, after 5 minutes of inactivity). However, since a login attempt still occurs in these flows,
+            we have opted to label them as malicious regardless.
+        </p>
+
+        <p>
+            Another interesting observation when we investigated this attack, was that for a handful of flows it looked
+            like the flow is initiated by the victim. This appeared to be a simulation environment issue where somehow
+            the SYN/ACK packet of the TCP connection had an earlier timestamp than the SYN packet. This issue was
+            however
+            rectified at the PCAP stage by running the 'pcapfix' and 'reordercap' tools as mentioned in the README of
+            <a href="https://github.com/GintsEngelen/CNS2022_Code">our GitHub repository</a>.
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as FTP-Patator
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 21 &&<br>
+                Time Start UTC (First Packet): 2017-07-04 12:17:52.838272 (unix: 1499170672.838272000) &&<br>
+                Time End UTC (Last Packet): 2017-07-04 13:20:16.931403 (unix: 1499174416.931403000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as FTP-Patator - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 21 &&<br>
+                Total length of Fwd Packets == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-04 12:17:52.838272 (unix: 1499170672.838272000) &&<br>
+                Time End UTC (Last Packet): 2017-07-04 13:20:16.931403 (unix: 1499174416.931403000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as FTP-Patator - Attempted (Category 2 - Attack Startup/Teardown Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Src Port == 52108 &&<br>
+                Dst Port == 21 &&<br>
+                Time Start UTC (First Packet): 2017-07-04 12:17:52.838272 (unix: 1499170672.838272000) &&<br>
+                Time End UTC (Last Packet): 2017-07-04 13:20:16.931403 (unix: 1499174416.931403000)
+            </code>
+
+        </div>
+
+        </p>
+
+    </section>
+
+    <section id="2017_SSH_Patator">
+        <h3>2. SSH Patator</h3>
+
+        <h5>04-07-2017</h5>
+
+        <p>There is one interesting flow (src port 52056) where the flow starts at 18:07:48 and finishes at 19:04.19.
+            That is over an hour in duration. We are unsure whether this flow is legitimate or not due to encrypted
+            contents. Unlike other flows, this one does send a packet of unusual size from port 22 to attack that is
+            1006 bytes in size). Wirehsark recognizes this flow as a single stream, as does our current implementation
+            of the CICFlowMeter - the Total TCP Flow Time is massive.
+
+        </p>
+
+        <p>
+            There are also a number of flows that do have some small payload in the forward direction (likely part of
+            the
+            TLS handshake) but that do not include login attempts. These will be categorised as "Attempted - No
+            malicious
+            payload".
+        </p>
+
+        <p>
+            Then there are some flows which actually represent the last 2 packets of previous flows, which are just
+            split
+            apart by the CICFlowMeter tool because the total flow time is larger than 120 seconds.
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as SSH-Patator
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 22 &&<br>
+                Time Start UTC (First Packet): 2017-07-04 17:09:01.049616 (unix: 1499188141.049616000) &&<br>
+                Time End UTC (Last Packet): 2017-07-04 19:04:19.018486 (unix: 1499195059.018486000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as SSH-Patator - Attempted (Category 3 - No malicious payload)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 22 &&<br>
+                Total length of Bwd packets == 0
+                0 < Total length of Fwd Packets <= 32 && <br>
+                Time Start UTC (First Packet): 2017-07-04 17:09:01.049616 (unix: 1499188141.049616000) &&<br>
+                Time End UTC (Last Packet): 2017-07-04 19:04:19.018486 (unix: 1499195059.018486000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as SSH-Patator - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 22 &&<br>
+                Total length of Fwd Packets == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-04 17:09:01.049616 (unix: 1499188141.049616000) &&<br>
+                Time End UTC (Last Packet): 2017-07-04 19:04:19.018486 (unix: 1499195059.018486000)
+            </code>
+        </div>
+        </p>
+
+    </section>
+
+    <section id="2017_DoS_Hulk">
+        <h3>3. DoS Hulk</h3>
+
+        <h5>05-07-2017</h5>
+
+        <p>
+            It looks like nearly the whole attack can be filtered/detected using just four conditions on Total Length
+            of Bwd Packets (namely 11595, 23190, 11606 and 23201). Only 8 from 545,438 flows do not fall under this
+            filtering. After inspecting these flows
+            individually, those with Src ports 48678 and 43664 do not look to contain traffic that is part of the
+            attack,
+            and instead look like web-page browsing traffic. We assume the authors were surfing to the web-server
+            manually mid-attack.
+        </p>
+
+        <p>As mentioned in our <a href="https://ieeexplore.ieee.org/abstract/document/9474286">previous paper on CICIDS
+            2017</a>, this attack is mis-implemented. In short, this attack relies on a combination of HTTP header
+            fields:
+            <br>
+            - Connection: Keep-Alive<br>
+            - Cache-Control: no-cache<br>
+            - Keep-Alive: X (with X representing a value in seconds, usually set higher than 110)<br>
+            However, in all DoS Hulk traffic the "Connection" header field is set to "close", meaning that the victim
+            will terminate the connection after sending the HTTP response (without waiting X seconds). Based on this,
+            the entirety of this attack should strictly speaking be labelled as Attempted with category 5 - Attack
+            Implemented Incorrectly. However, since this large volume of traffic still looks anomalous, we opted to keep
+            the default label of DoS Hulk (no "Attempted")
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Hulk
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src port not in [48678 , 43664] &&<br>
+                Time Start UTC (First Packet): 2017-07-05 13:43:23.194704 (unix: 1499262203.194704000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 13:44:59.999999 (unix: 499262299.999999999)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Hulk - Attempted (Category 4 - Attack Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port in [48678 , 43664] &&<br>
+                Time Start UTC (First Packet): 2017-07-05 13:43:23.194704 (unix: 1499262203.194704000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 13:44:59.999999 (unix: 499262299.999999999)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Hulk
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Time Start UTC (First Packet): 2017-07-05 13:45:00.000000 (unix: 1499262300.000000000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:07:21.326171 (unix: 1499263641.326171000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Hulk - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total length of Fwd Packets == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-05 13:43:23.194704 (unix: 1499262203.194704000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:07:21.326171 (unix: 1499263641.326171000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Hulk - Attempted (Category 3 - No malicious payload)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port not in [48678, 43664] && <br>
+                0 < Total Length of Fwd Packets < 282 && <br>
+                Time Start UTC (First Packet): 2017-07-05 13:43:23.194704 (unix: 1499262203.194704000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:07:21.326171 (unix: 1499263641.326171000)
+            </code>
+        </div>
+        </p>
+
+    </section>
+
+    <section id="2017_Dos_GoldenEye">
+        <h3>4. Dos GoldenEye</h3>
+
+        <h5>05-07-2017</h5>
+
+        <p>
+            It can be observed that the attack is not very effective, though there are some points where it does seem
+            like the webserver struggles to respond (these flows can be found by filtering on Total Length of Bwd
+            Packet = 0). Otherwise, there is nothing much to note for this attack.
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS GoldenEye
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Time Start UTC (First Packet): 2017-07-05 14:10:03.231753 (unix: 1499263803.231753000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:20:08.91578 (unix: 1499264408.915718000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS GoldenEye - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total length of Fwd Packets == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-05 14:10:03.231753 (unix: 1499263803.231753000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:20:08.91578 (unix: 1499264408.915718000)
+            </code>
+        </div>
+
+    </section>
+
+    <section id="2017_DoS_Slowloris">
+        <h3>5. DoS Slowloris</h3>
+
+        <h5>05-07-2017</h5>
+
+        <p>
+            The connection pool of the victim seems to get exhausted at around 12:49:12, and the first flow to stop
+            responding is on port 54470. Ports 33358, 33360, 33362 look to be web page navigation on the app, not
+            traffic related to the actual attack, possibly caused by the tool being shut down.
+        </p>
+
+        <p>There was also a flow with Src Port 54114 that seemed like normal web navigation to the victim webserver.</p>
+
+        <p>
+            The authors additionally performed an (accidental?) early launch of the tool between [2017-07-05
+            12:48:46.211817] and
+            [2017-07-05 12:48:46.264300]. These flows have the attacker send the initial partial GET request, but then
+            close the connection with a FIN packet after the server sends an ACK. Thus the attacker never starts sending
+            the
+            partial "X-a: b" HTTP headers that are characteristic of the attack in this dataset. These flows are thus
+            labelled as "Attempted"
+        </p>
+
+        <p>Other than that, this attack does manage to bring the websever down, so we see a lot of connection attempts
+            that the webserver is simply unable to respond to. These will be labelled separately as "Attempted -
+            Category 6,
+            Target System Unresponsive".</p>
+
+        <p>
+            Labelling logic:
+
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowloris - Attempted (Category 5 - Attack Implemented Incorrectly)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Time Start UTC (First Packet): 2017-07-05 12:48:46.211817 (unix: 1499258926.211817000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 12:48:47 (unix: 1499258927)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowloris
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Time Start UTC (First Packet): 2017-07-05 12:48:54.539220 (unix: 1499258934.539220000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:20:08.91578 (unix: 1499260278.500956000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowloris - Attempted (Category 2 - Attack Startup/Teardown Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port in [33358, 33360, 33362] && <br>
+                Time Start UTC (First Packet): 2017-07-05 12:48:54.539220 (unix: 1499258934.539220000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:20:08.91578 (unix: 1499260278.500956000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowloris - Attempted (Category 6 - Target System Unresponsive)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total Length of Fwd Packet == 0 && <br>
+                Flow Duration >= 199800 && <br>
+                Time Start UTC (First Packet): 2017-07-05 12:48:54.539220 (unix: 1499258934.539220000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:20:08.91578 (unix: 1499260278.500956000)
+            </code>
+        </div>
+
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowloris - Attempted (Category 4 - Attack Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port == 54114 && <br>
+                Time Start UTC (First Packet): 2017-07-05 12:48:54.539220 (unix: 1499258934.539220000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:20:08.91578 (unix: 1499260278.500956000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowloris - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total length of Fwd Packets == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-05 12:48:54.539220 (unix: 1499258934.539220000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 14:20:08.91578 (unix: 1499260278.500956000)
+            </code>
+        </div>
+
+    </section>
+
+    <section id="2017_DoS_Slowhttptest">
+        <h3>6. DoS Slowhttptest</h3>
+
+        <h5>05-07-2017</h5>
+
+        <p>
+            Generally we see very long Total TCP Flow Times, indicating that the attack does what it's supposed to do.
+            Other than this first flow, there are some other minor remarks, similar to the Slowloris attack: <br>
+            - Initial flow with Src Port 33372 that seems to navigate to the webpage in preparation of the attack <br>
+            - Flow with Src Port 37670 is also likely the dataset authors navigating to the webpage mid-attack.
+        </p>
+
+        <p>
+
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowhttptest
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Time Start UTC (First Packet): 2017-07-05 13:15:37.936810 (unix: 1499260537.936810000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 13:37:49.331517 (unix: 1499261869.331517000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowhttptest - Attempted (Category 6 - Target System Unresponsive)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total Length of Fwd Packet == 0 && <br>
+                Flow Duration >= 199984 && <br>
+                Total Backwards Packets == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-05 13:15:37.936810 (unix: 1499260537.936810000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 13:37:49.331517 (unix: 1499261869.331517000)
+            </code>
+        </div>
+
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowhttptest - (Category 2 - Attack Startup/Teardown Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port == 33372 && <br>
+                Time Start UTC (First Packet): 2017-07-05 13:15:37.936810 (unix: 1499260537.936810000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 13:37:49.331517 (unix: 1499261869.331517000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowhttptest - (Category 4 - Attack Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port == 37670 && <br>
+                Time Start UTC (First Packet): 2017-07-05 13:15:37.936810 (unix: 1499260537.936810000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 13:37:49.331517 (unix: 1499261869.331517000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DoS Slowhttptest - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total Length of Fwd Packet == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-05 13:15:37.936810 (unix: 1499260537.936810000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 13:37:49.331517 (unix: 1499261869.331517000)
+            </code>
+        </div>
+
+    </section>
+
+    <section id="2017_Heartbleed">
+        <h3>7. Heartbleed</h3>
+
+        <h5>05-07-2017</h5>
+
+        <p>
+            The original labelling logic for this attack is fine. The tell-tale sign for this attack is the very long
+            TCP duration. The attack involves a single src/dst port.
+        </p>
+
+        <p>
+
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as Heartbleed
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.51 &&<br>
+                Src Port == 45022 &&<br>
+                Dst Port == 444 &&<br>
+                Time Start UTC (First Packet): 2017-07-05 18:12:15.650811 (unix: 1499278335.650811000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 18:32:43.294455 (unix: 1499279563.294455000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Heartbleed - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.51 &&<br>
+                Src Port == 45022 &&<br>
+                Dst Port == 444 &&<br>
+                Total Length of Fwd Packet == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-05 18:12:15.650811 (unix: 1499278335.650811000) &&<br>
+                Time End UTC (Last Packet): 2017-07-05 18:32:43.294455 (unix: 1499279563.294455000)
+            </code>
+        </div>
+        </p>
+
+    </section>
+
+    <section id="2017_Web_SQL">
+        <h3>8. Web Attack - SQL Injection</h3>
+
+        <h5>06-07-2017</h5>
+
+        <p>
+            The time frames listed on the author's website aren't quite correct - the first malicious packet with sql
+            injection in the header occurs 5 minutes earlier.
+        </p>
+        <p>
+            There is also an attack setup happening (navigating to the proper webpage) before the actual attack takes
+            place. These flows are isolated by timestamps and Src ports. There is also almost (only a second difference
+            or so) some overlap with the XSS traffic,
+            the Src port filtering also takes care of any possible labelling conflicts.
+        </p>
+
+        <p>
+
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - SQL Injection - Attempted (Category 2 - Attack Startup/Teardown Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port in [36180, 36182, 36184 36186, 36188] &&<br>
+                Time Start UTC (First Packet): 2017-07-06 13:35:27.852814 (unix: 1499348127.852814000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:35:45.720612 (unix: 1499348145.720612000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - SQL Injection
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port not in [36180, 36182, 36184 36186, 36188] &&<br>
+                Time Start UTC (First Packet): 2017-07-06 13:35:45.732950 (unix: 1499348145.732950000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:42:55.320284 (unix: 1499348575.320284000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - SQL Injection - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port not in [36180, 36182, 36184 36186, 36188] &&<br>
+                Total Length of Fwd Packet == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-06 13:35:45.732950 (unix: 1499348145.732950000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:42:55.320284 (unix: 1499348575.320284000)
+            </code>
+        </div>
+    </section>
+
+    <section id="2017_Web_XSS">
+        <h3>9. Web Attack - XSS</h3>
+
+        <h5>06-07-2017</h5>
+
+        <p>
+            In the current labeling, there is some startup and teardown traffic (without malicious traffic) that has
+            been included. The Total Fwd packet filter which has been added to the labeling logic will filter these
+            flows out. Note that we add the Src Port filter here as well as a precaution to make sure there is no
+            overlap with the SQL Injection traffic.
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - XSS
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port not in [36180, 36182, 36184 36186, 36188, 36190] &&<br>
+                Total Fwd Packets >= 150 && <br>
+                Time Start UTC (First Packet): 2017-07-06 13:15:35.283859 (unix: 1499346935.283859000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:35:21.341704 (unix: 1499348121.341704000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - XSS - Attempted (Category 2 - Attack Startup/Teardown Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port not in [36180, 36182, 36184 36186, 36188, 36190] &&<br>
+                Total Fwd Packets < 150 &&<br>
+                Total Length of Fwd Packet > 0 && <br>
+                Time Start UTC (First Packet): 2017-07-06 13:15:35.283859 (unix: 1499346935.283859000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:35:21.341704 (unix: 1499348121.341704000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - XSS - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Src Port not in [36180, 36182, 36184 36186, 36188, 36190] &&<br>
+                Total Length of Fwd Packet == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-06 13:15:35.283859 (unix: 1499346935.283859000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:35:21.341704 (unix: 1499348121.341704000)
+            </code>
+        </div>
+
+    </section>
+
+    <section id="2017_Web_Brute_Force">
+        <h3>10. Web Attack - Brute Force</h3>
+
+        <h5>06-07-2017</h5>
+
+        <p>
+            Under the labelling logic of the dataset authors, there are 151 total flows. There looks to be two clusters
+            for flow types:
+            - Total Fwd + Total Bwd Packets = 5 [72 flows] <br>
+            - Total Fwd Packet = 204, Total Bwd Packets = 105 [69 flows]. These flows comprise of multiple login
+            attempts. <br>
+
+        </p>
+
+        <p>
+            Here too, in the beginning a couple of flows are simply the set up of the environment.
+            For all of the web attacks, the authors use the Damn Vulnerable Web App (DVWA). For this attack, they did
+            not
+            use the dedicated Password Brute Force page as their target, but instead attacked the initial DVWA login
+            screen.
+        </p>
+        <p>
+            What happens within one attack cycle is the following: <br>
+            1. Initial POST request with a brute force login attempt <br>
+            2. 302 redirect as HTTP response, which redirects to login.php, the normal login page, so we see another
+            GET request which asks for dv/login.php, which prompts a normal HTTP response with the login webpage (the
+            only difference being a message saying "login failed"). <br>
+            3. The user tries to go to /dv/vulnerabilities/xss_r/, but because he is not logged in he gets redirected
+            back to dv/login.php again, which prompts another GET request to dv/login.php (we confirmed this behaviour
+            using our own DVWA instance). We are not sure why this step was executed, as it seems obsolete.
+            4. The user launches another POST request with a brute force login attempt, restarting the cycle.
+        </p>
+
+        <p>
+            We also noticed a recurring pattern in the Brute Force flows. One seemingly normal GET request would be
+            interlaced with a flow containing brute force attempts. Since these GET request flows do not contain any
+            malicious traffic on their own, we have labelled these as "Attempted".
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - Brute Force - Attempted (Category 2 - Attack Startup/Teardown Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Time Start UTC (First Packet): 2017-07-06 12:15:54.880049 (unix: 1499343354.880049000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 12:18:51.179279 (unix: 1499343531.179279000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - Brute Force
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                (Total Fwd packet > 20 || Src port == 44464)
+                Time Start UTC (First Packet): 2017-07-06 12:19:27.660566 (unix: 1499343567.660566000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:00:11.622209 (unix: 1499346011.622209000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - Brute Force - Attempted (Category 4 - Attack Artefact)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total Fwd packets == 5 && <br>
+                Total Bwd packets == 5 && <br>
+                Time Start UTC (First Packet): 2017-07-06 12:19:27.660566 (unix: 1499343567.660566000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:00:11.622209 (unix: 1499346011.622209000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Web Attack - Brute Force - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Dst Port == 80 &&<br>
+                Total Length of Fwd Packet == 0 && <br>
+                Time Start UTC (First Packet): 2017-07-06 12:19:27.660566 (unix: 1499343567.660566000) &&<br>
+                Time End UTC (Last Packet): 2017-07-06 13:00:11.622209 (unix: 1499346011.622209000)
+            </code>
+        </div>
+
+    </section>
+
+    <section id="2017_Infiltration">
+        <h3>11. Infiltration</h3>
+
+        <h5>06-07-2017 and 07-07-2017</h5>
+
+        <p>
+            All communication between the attacker (205.174.165.73) and victim (192.168.10.8) seems to be a single TCP
+            connection for infiltration traffic. The connection is initiated by the victim, after which the attacker
+            issues
+            commands which seem to be executed on the command line of the victim. The results of the executions are sent
+            back to the attacker.
+        </p>
+
+        <p>
+            The first connection attempt initiated by the victim occurs at 17:19:02.547210, so it is assumed that the
+            Dropbox exploit download occurred before this time. Interestingly, a few connection attempts from
+            192.168.10.9 are also made several minutes beforehand.
+            192.168.10.9 also visits Dropbox IPs beforehand, so it is possible that the authors performed a dry run.
+            According to our findings, we think the Dropbox download exploit is a Meterpreter payload.
+        </p>
+
+        <p>
+            Just before and during the Infiltration attack, the victim does seem to be talking to several Dropbox ip's
+            (162.125.4.6, 162.125.4.5, 162.125.3.1, 162.125.248.1)
+            But the traffic is encrypted, so it's impossible to know which of these connections contain a malicious
+            payload downloaded from Dropbox.
+            (Wireshark filter we used: ip.addr eq 192.168.10.8 && frame contains "dropbox").
+        </p>
+        <p>
+            Since we cannot establish which Dropbox flow contains the malicious payload, we opted to keep the label for
+            this traffic as Benign.
+        </p>
+
+        <subsection id="2017_Infiltration_Communication">
+            <h4>11.2 Communication Victim - Attacker</h4>
+
+            <h5>06-07-2017</h5>
+
+            <p>
+                Labelling logic:
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration
+                    <br>
+                    <br>
+                    Src IP == 192.168.10.8 &&<br>
+                    Dst IP == 205.174.165.73 &&<br>
+                    Time Start UTC (First Packet): 2017-07-06 17:19:02.547210 (unix: 1499361542.547210000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 18:46:09.364731 (unix: 1499366769.364731000)
+                </code>
+            </div>
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Attempted (Category 0 - No payload sent by attacker)
+                    <br>
+                    <br>
+                    Src IP == 192.168.10.8 &&<br>
+                    Dst IP == 205.174.165.73 &&<br>
+                    Total Length of Fwd Packet == 0 &&<br>
+                    Time Start UTC (First Packet): 2017-07-06 17:19:02.547210 (unix: 1499361542.547210000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 18:46:09.364731 (unix: 1499366769.364731000)
+                </code>
+            </div>
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Attempted (Category 2 - Attack Startup/Teardown Artefact)
+                    <br>
+                    <br>
+                    Src IP == 192.168.10.9 &&<br>
+                    Dst IP == 205.174.165.73 &&<br>
+                    Time Start UTC (First Packet): 2017-07-06 17:13:48.830533 (unix: 1499361228.830533000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 17:15:01.251276 (unix: 1499361301.251276000)
+                </code>
+            </div>
+
+            </p>
+        </subsection>
+
+        <subsection id="2017_Infiltration_Cooldisk">
+            <h4>11.1 Cool disk - MAC</h4>
+
+            <h5>06-07-2017</h5>
+
+            <p>
+                This attack is completely missed in the original dataset's labelling. The main action happens between
+                attacker (205.174.165.74 port 444) and victim (102.168.10.25 port 51325). After that, a number of SYN
+                packets go from the victim to the attacker on port 444, to which the attacker responds with a RST. After
+                this, 192.168.10.25 goes in to check all the metasploit sessions have been closed.
+            </p>
+            <p>
+                The actual attack involves pushing the Python Meterpreter source code from the attacker (205.174.165.73)
+                to the victim. After the Python Meterpreter has started, the rest of the traffic is undecipherable.
+            </p>
+
+            <p>
+                Note that it is not clear for us what exactly a "Cool Disk - MAC" attack entails, so our malicious
+                labelling logic here primarily resides on the fact that a Meterpreter was used.
+            </p>
+
+            <p>
+                Labelling logic:
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration
+                    <br>
+                    <br>
+                    Src IP == 192.168.10.25 &&<br>
+                    Dst IP == 205.174.165.73 &&<br>
+                    Time Start UTC (First Packet): 2017-07-06 17:53:36.453990 (unix: 1499363616.453990000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 20:02:19.347892 (unix: 1499371339.347892000)
+                </code>
+            </div>
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Attempted (Category 0 - No payload sent by attacker)
+                    <br>
+                    <br>
+                    Src IP == 192.168.10.25 &&<br>
+                    Dst IP == 205.174.165.73 &&<br>
+                    Total Length of Fwd Packet == 0 &&<br>
+                    Time Start UTC (First Packet): 2017-07-06 17:53:36.453990 (unix: 1499363616.453990000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 20:02:19.347892 (unix: 1499371339.347892000)
+                </code>
+            </div>
+
+
+            </p>
+        </subsection>
+
+
+        <subsection id="2017_Infiltration_NMAP_Portscan">
+            <h4>11.3 NMAP Portscan</h4>
+
+            <h5>06-07-2017</h5>
+
+            <p>
+
+                The official listed time window for the portscan attack is listed between 18:04 - 18:45pm (UTC) on the
+                dataset author's website. However, when analysing the meterpreter payload flows which are controlling
+                the victim server, it looks like a portscan attack happens before the official listed time, at 17:33,
+                which is labelled as benign in original dataset.
+            </p>
+
+            <p>
+                For the first round, we've based the final packet (used for the final timestamp) based on the group of
+                port numbers used to make the scan,
+                which aligns with the time on the meterpreter logs which says the port scan had been completed.
+            </p>
+            <p>
+                The portscanning attacks occurs using a sequence of hosts. One round involves a complete sequence of
+                port
+                scanning on all hosts. There seems to be 6 full rounds of port scanning, which then stops on host
+                192.168.10.9 on the 6th round. This seems to match the meterpreter logs, where there is some sort of
+                "looping" function. We suspect the whole attack is scripted into the aa.bat file that is located on the
+                victim machine (they seem to attempt to run this script multiple times, with the last being successful).
+            </p>
+            <p> Aside from this, we've identified another port scan taking place. This attack is
+                not labelled as malicious in the original dataset, and is also not listed in the documentation on the
+                website. We suspect this was a
+                contaminated (or accidental) artefact. Nevertheless, since it is a port scan we have labelled it as
+                such.
+            </p>
+
+            <p>
+                There is some background traffic happening between hosts 192.168.10.8 (src) and 192.168.10.50 (dst)
+                which
+                is benign (i.e. not part of the port scan attack). We have used specific packet attributes to filter
+                these flows out and label them as benign.
+            </p>
+            <p>
+                For the labelling logic, note that there are 3 portscanning rounds in total, and that there are some
+                differences in Src and Dst IPs for the different portscan rounds.
+            </p>
+
+            <p>
+                Labelling logic:
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Portscan
+                    <br>
+                    <br>
+                    Src IP == 172.16.0.1 &&<br>
+                    Dst IP == 192.168.10.51 &&<br>
+                    Src Port in [50122, 50133] && <br>
+                    Time Start UTC (First Packet): 2017-07-06 17:00:31.706755 (unix: 1499360431.706755000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 17:00.45.728887 (unix: 1499360445.728887000)
+                </code>
+            </div>
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Portscan
+                    <br>
+                    <br>
+                    Src IP == 172.16.0.1 &&<br>
+                    Dst IP == 192.168.10.51 &&<br>
+                    Src Port in [50122, 50133] && <br>
+                    Time Start UTC (First Packet): 2017-07-06 17:00:31.706755 (unix: 1499360431.706755000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 17:00.45.728887 (unix: 1499360445.728887000)
+                </code>
+            </div>
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Portscan
+                    <br>
+                    <br>
+                    Src IP == 192.168.10.8 &&<br>
+                    Dst IP == 192.168.10.5 &&<br>
+                    Time Start UTC (First Packet): 2017-07-06 17:33:30.884008 (unix: 1499362410.884008000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 17:34:04.285175 (unix: 1499362444.285175000)
+                </code>
+            </div>
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Portscan
+                    <br>
+                    <br>
+                    Src IP == 192.168.10.8 &&<br>
+                    Dst IP in [192.168.10.5, 192.168.10.9, 192.168.10.12, 192.168.10.14, 192.168.10.15, 192.168.10.16,
+                    192.168.10.17, 192.168.10.19, 192.168.10.25, 192.168.10.50, 192.168.10.51] &&<br>
+                    Not (Fwd packet length max == 408 && dst.ip == 192.168.10.50) && <br>
+                    Not (Total length of fwd packet in (176, 20514) && dst.ip == 192.168.10.50) && <br>
+                    Time Start UTC (First Packet): 2017-07-06 18:05:14.425162 (unix: 1499364314.425162000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-06 18:46.04.331875 (unix: 1499366764.331875000)
+                </code>
+            </div>
+
+            </p>
+
+            <h5>07-07-2017</h5>
+
+            <p>
+                We noticed that the attacker does communicate with some other IP addresses that are not listed as a
+                victim on the official dataset documentation. However, there is only one "attacker" and one "victim".
+                Two rounds of port scans occur. The first round occurs when the firewall is on - so only traffic on
+                ports 21, 22, 80, 443 and 444 make it through. There is some start up traffic before port scan occurs,
+                which we filter by using timestamps.
+            </p>
+
+            <p>
+                Labelling logic:
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Portscan
+                    <br>
+                    <br>
+                    Src IP == 172.16.0.1 &&<br>
+                    Dst IP == 192.168.10.50 &&<br>
+                    Time Start UTC (First Packet): 2017-07-07 16:55:32.117090 (unix: 1499446532.117090000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-07 17:19:08.582083 (unix: 1499447948.582083000)
+                </code>
+            </div>
+
+            <div class="codeblock">
+                <code>
+                    Labelled as Infiltration - Portscan
+                    <br>
+                    <br>
+                    Src IP == 172.16.0.1 &&<br>
+                    Dst IP == 192.168.10.50 &&<br>
+                    Time Start UTC (First Packet): 2017-07-07 17:51:45.450532 (unix: 1499449905.450532000) &&<br>
+                    Time End UTC (Last Packet): 2017-07-07 18:24:01.699238 (unix: 1499451841.699238000)
+                </code>
+            </div>
+
+            </p>
+
+        </subsection>
+    </section>
+
+    <section id="2017_Botnet">
+        <h3>12. Botnet Ares</h3>
+
+        <h5>07-07-2017</h5>
+
+        <p>
+            There are continued CnC connection attempts from the infected victim to the Botnet master after it has been
+            shut down. We have put these "attempted connection" flows in the "attempted" category. No other background
+            traffic occurs between the attacker and any IP address other than the victim's.
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as Botnet
+                <br>
+                <br>
+                Src IP in [192.168.10.15, 192.168.10.9, 192.168.10.14, 192.168.10.5, 192.168.10.8] &&<br>
+                Dst IP == 205.174.165.73 &&<br>
+                Time Start UTC (First Packet): 2017-07-07 13:04:13.990571 (unix: 1499432653.990571000) &&<br>
+                Time End UTC (Last Packet): 2017-07-07 14:02:02.903736 (unix: 1499436122.903736000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Botnet - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP in [192.168.10.15, 192.168.10.9, 192.168.10.14, 192.168.10.5, 192.168.10.8] &&<br>
+                Dst IP == 205.174.165.73 &&<br>
+                Total Length of Fwd Packet == 0 &&<br>
+                Time Start UTC (First Packet): 2017-07-07 13:04:13.990571 (unix: 1499432653.990571000) &&<br>
+                Time End UTC (Last Packet): 2017-07-07 14:02:02.903736 (unix: 1499436122.903736000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as Botnet - Attempted (Category 1 - Port/System closed)
+                <br>
+                <br>
+                Src IP in [192.168.10.15, 192.168.10.9, 192.168.10.14, 192.168.10.5, 192.168.10.8] &&<br>
+                Dst IP == 205.174.165.73 &&<br>
+                Time Start UTC (First Packet): 2017-07-07 14:03:14.356593 (unix: 1499436194.356593000) &&<br>
+                Time End UTC (Last Packet): 2017-07-07 20:01:24.606663 (unix: 1499457684.606663000)
+            </code>
+        </div>
+
+        </p>
+    </section>
+
+    <section id="2017_DDoS_LOIC_HTTP">
+        <h3>13. DDoS LOIC HTTP</h3>
+
+        <h5>07-07-2017</h5>
+
+        <p>
+            This DDoS attack consists mostly of a series of empty "Get" requests hitting the victim server. What's
+            interesting about this attack is that identical packets (and therefore identical flows) occur outside the
+            attacking time period (i.e. empty get requests). The background traffic which
+            shares similarities with this attack traffic looks programatically generated (eg. 2 or 3 flows every roughly
+            5-12 seconds, over several short periods).
+        </p>
+
+        <p>
+            We also notice that this DDoS attack does not succeed in bringing the target victim down. It is able to
+            keep responding to all incoming GET requests for the whole duration of the attack.
+        </p>
+
+        <p>
+            Labelling logic:
+
+        <div class="codeblock">
+            <code>
+                Labelled as DDoS
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Time Start UTC (First Packet): 2017-07-07 18:56:31.796937 (unix: 1499453791.796937000) &&<br>
+                Time End UTC (Last Packet): 2017-07-07 19:16:12.216560 (unix: 1499454972.216560000)
+            </code>
+        </div>
+
+        <div class="codeblock">
+            <code>
+                Labelled as DDoS - Attempted (Category 0 - No payload sent by attacker)
+                <br>
+                <br>
+                Src IP == 172.16.0.1 &&<br>
+                Dst IP == 192.168.10.50 &&<br>
+                Total Length of Fwd Packet == 0 &&<br>
+                Time Start UTC (First Packet): 2017-07-07 18:56:31.796937 (unix: 1499453791.796937000) &&<br>
+                Time End UTC (Last Packet): 2017-07-07 19:16:12.216560 (unix: 1499454972.216560000)
+            </code>
+        </div>
+        </p>
+
+    </section>
+
+</div>
+
+</body>

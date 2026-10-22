@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Prevalence in NIDS datasets | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css" media="screen"/>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
+<div class="content">
+    <h1>Error Prevalence in NIDS datasets: A Case Study on CIC-IDS-2017 and CSE-CIC-IDS-2018</h1>
+    <center>
+        <p>Lisa Liu, Gints Engelen, Timothy Lynar, Daryl Essam and Wouter Joosen</p>
+    </center>
+    <p>
+        This page serves as a complementary material to <a href="https://ieeexplore.ieee.org/abstract/document/9947235">our paper</a> published at <a href="https://cns2022.ieee-cns.org/">
+        IEEE CNS 2022</a><!--, which can be found <a href="Resources/wtmc2021_Engelen_Troubleshooting.pdf">here</a>.!-->
+    </p>
+
+    <p>
+    <ul>
+        <li>For ML and security practitioners who want to use the fixed CICFlowMeter tool for feature extraction from
+            network traffic, head over to the <a href="Tools_Documentation.html">Tools and Documentation</a> page.
+    <li>The improved datasets can be downloaded <a href="Dataset_Download.html">here</a>, with our labelling logic and in-depth
+    documentation of our findings located at the <a href="CICIDS2017.html">CIC-IDS 2017</a> and
+    <a href="CSECICIDS2018.html">CSE-CIC-IDS 2018</a> pages. Higher-level documentation on things such as the "Attempted"
+    label and other topics affecting the dataset as a whole can be found on the <a href="Tools_Documentation.html">
+        Tools and Documentation</a> page.
+        <li>For questions and suggestions, feel free to <a href="contact.html">contact us</a> by email.
+    </ul>
+    </p>
+
+    <h2>Paper abstract</h2>
+    <p>Benchmark datasets are heavily depended upon by the research community to validate theoretical findings and track
+        progression in the state-of-the-art. NIDS dataset creation presents numerous challenges on account of the
+        volume, heterogeneity, and complexity of network traffic, making the process labor intensive, and thus, prone to
+        error. This paper provides a critical review of CIC-IDS-2017 and CIC-CSE-IDS-2018, datasets which have seen
+        extensive usage in the NIDS literature, and are currently considered primary benchmarking datasets for NIDS. We
+        report a large number of previously undocumented errors throughout the dataset creation lifecycle, including in
+        attack orchestration, feature generation, documentation, and labeling.<br>
+        The errors destabilize the results and challenge the findings of numerous publications that have relied on it as
+        a benchmark. We demonstrate the implications of these errors through several experiments. We provide
+        comprehensive documentation to summarize the discovery of these issues, as well as a fully-recreated dataset,
+        with labeling logic that has been reverse-engineered, corrected, and made publicly available for the first time.
+        We demonstrate the implications of dataset errors through a series of experiments. The findings serve to remind
+        the research community of common pitfalls with dataset creation processes, and of the need to be vigilant when
+        adopting new datasets. Lastly, we strongly recommend the release of labeling logic for any dataset released, to
+        ensure full transparency.</p>
+
+    <h3>
+        BibTeX Citation
+    </h3>
+
+    <div class="citation">
+        <bibtex>
+            @inproceedings{liu2022error,<br>
+            title={Error Prevalence in NIDS datasets: A Case Study on CIC-IDS-2017 and CSE-CIC-IDS-2018},<br>
+            author={Liu, Lisa and Engelen, Gints and Lynar, Timothy and Essam, Daryl and Joosen, Wouter},<br>
+            booktitle={2022 IEEE Conference on Communications and Network Security (CNS)},<br>
+            pages={254--262},<br>
+            year={2022},<br>
+            organization={IEEE}<br>
+            }
+
+        </bibtex>
+    </div>
+
+    <h2>Acknowledgements</h2>
+
+    <p>Lisa Liu wishes to acknowledge the Commonwealth’s contribution, for the provision of support provided through
+        an Australian Government Research Training Program (RTP) Scholarship. Gints Engelen wishes to thank the
+        Research Fund KU Leuven and the Flemish Research Programme Cybersecurity for helping to fund this
+        research.</p>
+</div>
+
+</body>
