@@ -1,0 +1,94 @@
+# Experiment matrix (Phase 7). PLAN ONLY: no experiment is authorised until the user reviews the audit.
+# Each experiment tests one falsifiable hypothesis from reports/research_questions.md.
+# Protocol definitions: configs/evaluation_protocol.yaml. Every result gets per-day / per-family
+# breakdowns and bootstrap 95% CIs over days or attack episodes; 5 seeds where training is stochastic.
+
+common:
+  data_release: improved            # unless the experiment says otherwise
+  window_s: 2
+  horizons: [0, 1, 2, 3, 4, 5]       # 0 = current-window detection
+  feature_sets:
+    F_full: "all 'feature' columns from configs/data_audit.yaml (77)"
+    F_no_context: "F_full without Dst Port, Protocol"
+    F_no_shortcuts: "F_no_context without FWD/Bwd Init Win Bytes and the label-defining features (leakage_findings.csv)"
+  window_aggregates: [flow_count, sum/mean/max of byte & packet counts, distinct dst ports, distinct src/dst hosts,
+                      SYN/RST/FIN counts, share of zero-payload flows, mean duration]
+  models_in_order: [majority, persistence, logistic_regression, hist_gradient_boosting, random_forest,
+                    temporal_lag_gbdt, (only then) lstm_or_tcn]
+  installed_libs_note: "scikit-learn 1.9.1 and torch 2.11 are installed; xgboost/lightgbm are NOT (do not install without asking)"
+
+experiments:
+  E1_split_sensitivity:
+    hypothesis: H2
+    data: [CIC-IDS-2017, CSE-CIC-IDS-2018]
+    protocols: [P0_random_rows, P1b_within_day_flow_quantile, P2_day_chronological, P3 forward-chaining folds,
+                leave_one_day_out]   # P1 dropped: its 2018 test partition holds 0 attack flows
+    target: current_window_detection and next_window h=1
+    measure: macro-F1, PR-AUC, recall at 1 and 10 false alerts/hour; gap P0 - P1/P2 with CI
+    falsified_if: "gap CI includes 0 for both datasets"
+
+  E2_horizon_difficulty:
+    hypothesis: H4
+    protocol: >
+      P3 forward-chaining folds, refit on train + val, reported separately for families present / absent before
+      the test day (split_family_leakage.csv); P2 secondary. P1/P1b are diagnostic only: P1's 2018 test partition
+      holds 0 attack flows; P1b (flow quantiles) leaks across days and embargoes 716,549 attack flows in 2018
+      (split_design_coverage.csv).
+    targets: [h0, h1, h2, h3, h4, h5]
+    measure: PR-AUC per horizon; onset recall restricted to episode onsets with >= h benign windows before them
+    falsified_if: >
+      (a) skill over detector persistence at h>=1 is within the CI of the skill at h=0 (no decline with h), OR
+      (b) onset recall is within the CI of overall next-window recall. Same wording as H4 in
+      reports/research_questions.md.
+    preregister_before_phase8: >
+      the numeric threshold for "small" skill (PROPOSAL, not yet agreed: PR-AUC gain over detector persistence
+      below 0.05) and the onset definition (300 s gap, >= h benign windows before the onset).
+    note: "report BOTH detector persistence (fair) and oracle persistence (upper bound); much of next-window 'skill' on contiguous scripted attacks is persistence"
+
+  E3_correction_effect:
+    hypothesis: H1
+    data: CIC-IDS-2017 only (both releases have full days); 7 of 10 2018 original files are capped at 1,048,575 rows
+    window_s: 60                     # original 2017 timestamps are minute-resolution (Monday: seconds) (VERIFIED)
+    alignment: >
+      originals use a 12-hour clock without AM/PM (hours 1-12 only; VERIFIED, both datasets). Map hours 1-7 to
+      13-19 and keep 8-12 (capture runs about 08:00-18:00 local; consistent with the improved day spans), then
+      add 3 h to reach UTC. The UTC-3 offset is VERIFIED by 5-tuple matching modulo 12 h.
+    protocols: [P2_day_chronological, leave_one_day_out]
+    label_mapping: configs/label_family_map.yaml (family level)
+    measure: difference in macro-F1 / PR-AUC between releases under identical pipelines
+    falsified_if: "difference CI includes 0"
+    caveat: "differences combine relabelling, flow re-segmentation and dropped rows; attribute only with ablations"
+
+  E4_attempted_policy:
+    hypothesis: H5
+    data: improved, both datasets
+    variants: [attempted_as_separate_class, attempted_as_benign, attempted_excluded]
+    measure: false alerts/hour and onset recall
+    falsified_if: "no metric changes beyond CI"
+
+  E5_shortcut_ablation:
+    hypothesis: H6
+    feature_sets: [F_full, F_no_context, F_no_shortcuts]
+    protocols: [P2_day_chronological, leave_one_day_out]
+    falsified_if: "performance drop CI includes 0"
+
+  E6_cross_dataset:
+    hypothesis: H3
+    train: CSE-CIC-IDS-2018 improved
+    test: CIC-IDS-2017 improved
+    features: "shared improved feature set (identical 91-column schema)"
+    labels: "coarse families shared by both (configs/label_family_map.yaml)"
+    measure: binary and family-level macro-F1; compare with within-dataset P2
+    falsified_if: "transfer within CI of within-dataset performance"
+
+  E7_feature_attribution:
+    hypothesis: H7
+    data: improved, both datasets
+    protocol: P2_day_chronological and P3 forward-chaining folds
+    variants:
+      ended_flows_only: "flow counted in window t only if start + Flow Duration <= end of t (default)"
+      start_attributed: "flow totals attributed to the window in which the flow starts (look-ahead)"
+      start_counts_only: "flow-start counts and header-level features only"
+    targets: [h0, h1, h3, h5]
+    measure: PR-AUC and recall at 1 and 10 false alerts/hour, each relative to persistence
+    falsified_if: "start_attributed minus ended_flows_only difference CI includes 0 at every horizon"

@@ -1,0 +1,68 @@
+# Registry of raw inputs for the audit stage.
+# Paths are relative to the project root. Raw files are IMMUTABLE inputs:
+# no script may modify, rename, move, or extract over them.
+#
+# Evidence levels: VERIFIED | DOCUMENTED | HYPOTHESIS | UNRESOLVED
+# (see reports/dataset_provenance.md for the evidence behind each field)
+
+sources:
+  - path: CICIDS2017_improved.zip
+    dataset_family: CIC-IDS-2017
+    variant: improved
+    release: "CNS2022 improved release, server Last-Modified 2023-04-27 14:41:35 GMT"
+    release_status: VERIFIED          # byte size matches server Content-Length (checked 2026-10-19)
+    source_url: https://intrusion-detection.distrinet-research.be/CNS2022/Datasets/CICIDS2017_improved.zip
+    role: raw_improved
+
+  - path: CSECICIDS2018_improved.zip
+    dataset_family: CSE-CIC-IDS-2018
+    variant: improved
+    release: "CNS2022 improved release, server Last-Modified 2023-04-03 14:53:27 GMT"
+    release_status: VERIFIED          # byte size matches server Content-Length (checked 2026-10-19)
+    source_url: https://intrusion-detection.distrinet-research.be/CNS2022/Datasets/CSECICIDS2018_improved.zip
+    role: raw_improved
+
+  - path: Error_Prevalence_in_NIDS_datasets_A_Case_Study_on_CIC-IDS-2017_and_CSE-CIC-IDS-2018.pdf
+    dataset_family: both
+    variant: documentation
+    release: "Liu, Engelen, Lynar, Essam, Joosen. IEEE CNS 2022, pp. 254-263, DOI 10.1109/CNS56114.2022.9947235"
+    release_status: VERIFIED          # read from the local PDF
+    source_url: https://ieeexplore.ieee.org/abstract/document/9947235
+    role: reference_paper
+
+  # ---- directories (acquired 2026-10-19 with src/audit/acquire.py; files are read-only) ----
+  - path: data/raw_improved/CIC-IDS-2017/
+    dataset_family: CIC-IDS-2017
+    variant: improved
+    release: "extracted from CICIDS2017_improved.zip; every file matches its archive-member SHA-256"
+    release_status: VERIFIED
+    source_url: https://intrusion-detection.distrinet-research.be/CNS2022/Datasets/CICIDS2017_improved.zip
+    role: raw_improved
+  - path: data/raw_improved/CSE-CIC-IDS-2018/
+    dataset_family: CSE-CIC-IDS-2018
+    variant: improved
+    release: "extracted from CSECICIDS2018_improved.zip; every file matches its archive-member SHA-256"
+    release_status: VERIFIED
+    source_url: https://intrusion-detection.distrinet-research.be/CNS2022/Datasets/CSECICIDS2018_improved.zip
+    role: raw_improved
+  - path: data/raw_original/CIC-IDS-2017/
+    dataset_family: CIC-IDS-2017
+    variant: original
+    release: "copied from ../gnn/cic2017csv/ (user's earlier download). 85-column *.pcap_ISCX.csv files with Flow ID/IPs/Timestamp = the CIC 'GeneratedLabelledFlows' (TrafficLabelling) variant by schema; non-empty row count 2,830,743 equals CNS2022 Table I 'published flows'"
+    release_status: "UNRESOLVED (content not compared with an official checksum); copy integrity VERIFIED"
+    source_url: ""
+    role: raw_original
+  - path: data/raw_original/CSE-CIC-IDS-2018/
+    dataset_family: CSE-CIC-IDS-2018
+    variant: original
+    release: "copied from ../research_P1/data/01_raw/; identical to the AWS Open Data objects 'Processed Traffic Data for ML Algorithms' (S3 Last-Modified 2018-10-11)"
+    release_status: "VERIFIED (size + S3 multipart ETag, data/manifests/original_2018_s3_etag_check.csv)"
+    source_url: https://cse-cic-ids2018.s3.ca-central-1.amazonaws.com/Processed%20Traffic%20Data%20for%20ML%20Algorithms/
+    role: raw_original
+
+# Outside the project (read only to copy, with the user's permission on 2026-10-19):
+#   ../gnn/cic2017csv/          -> data/raw_original/CIC-IDS-2017/      (8 files)
+#   ../research_P1/data/01_raw/ -> data/raw_original/CSE-CIC-IDS-2018/  (10 files; .gitkeep excluded)
+# The user's prior EDA was NOT consulted (user decision).
+# Storage: data/raw_improved and data/raw_original are directory junctions to C:\nids_data\raw_improved and
+# C:\nids_data\raw_original (moved out of OneDrive on 2026-10-19 at the user's request; 33/33 re-hashed unchanged).

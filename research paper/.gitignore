@@ -1,0 +1,43 @@
+# This folder is not (yet) a Git repository. These rules protect it if one is initialised.
+
+# Raw and derived data — never commit
+*.zip
+*.csv
+*.parquet
+*.pcap
+*.pcapng
+data/raw_original/
+data/raw_improved/
+data/processed/
+# Small manifests ARE meant to be versioned
+!data/manifests/*.csv
+!results/audit/*.csv
+
+# Large generated artifacts
+results/experiments/**/checkpoints/
+*.pt
+*.ckpt
+*.joblib
+
+# Copyrighted paper PDF
+*.pdf
+
+# Python / tooling
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+*.tmp
+
+# Secrets
+.env
+*.key
+*credentials*
+
+# Third-party repository cloned for reference (has its own .git; never executed)
+references/CNS2022_Code/
+
+# Small literature and study tables ARE meant to be versioned
+!results/literature/*.csv
+!references/literature_search_2026-10-19/*.csv
+!study/download_log.csv

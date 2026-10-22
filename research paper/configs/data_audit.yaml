@@ -1,0 +1,127 @@
+# Configuration shared by all audit phases (Phases 2–6).
+# Paths are relative to the project root. Nothing here modifies raw data.
+
+duckdb:
+  threads: 10
+  memory_limit: 3GB              # machine has 15.7 GB RAM with little free; spills go to temp_directory
+  temp_subdir: nids_audit_duckdb # created under the OS temp dir (outside OneDrive)
+
+# Data directories scanned by the audit. Every *.csv inside is audited.
+data_dirs:
+  - path: data/raw_improved/CIC-IDS-2017/
+    dataset_family: CIC-IDS-2017
+    variant: improved
+  - path: data/raw_improved/CSE-CIC-IDS-2018/
+    dataset_family: CSE-CIC-IDS-2018
+    variant: improved
+  - path: data/raw_original/CIC-IDS-2017/
+    dataset_family: CIC-IDS-2017
+    variant: original
+  - path: data/raw_original/CSE-CIC-IDS-2018/
+    dataset_family: CSE-CIC-IDS-2018
+    variant: original
+
+# Encodings tried in order. A file is re-read with the next encoding only if DuckDB
+# reports invalid-unicode rejects; the encoding actually used is recorded per file.
+# latin-1 is lossless (1 byte -> 1 code point), so original bytes stay recoverable.
+encodings: [utf-8, latin-1]
+
+# Preliminary column roles, matched on normalised names (lowercase, alphanumerics only).
+# identifier/timestamp/target columns must NEVER be model inputs.
+column_roles:
+  identifier: [id, flowid, srcip, sourceip, srcport, sourceport, dstip, destinationip]
+  timestamp: [timestamp]
+  target: [label, attemptedcategory]
+  context_review: [dstport, destinationport, protocol]   # usable only after leakage review (Phase 6)
+
+# Candidate timestamp formats tested with TRY_STRPTIME over the full column.
+timestamp_formats:
+  - "%Y-%m-%d %H:%M:%S.%f"
+  - "%Y-%m-%d %H:%M:%S"
+  - "%d/%m/%Y %H:%M:%S"
+  - "%d/%m/%Y %H:%M"
+  - "%d/%m/%Y %I:%M:%S %p"
+
+# Tokens counted as special (non-finite) numeric text.
+special_numeric_tokens: [inf, "-inf", "+inf", infinity, "-infinity", "+infinity", nan]
+
+# ---------------------------------------------------------------- Phase 3 (integrity)
+# Column semantics on canonical (improved-release) names, matched as regular expressions.
+# nonnegative: a negative value is physically invalid (counts, byte totals, durations, IATs, rates).
+# sentinel_minus_one: -1 is a documented "not observed" value (CICFlowMeter init window; ICMP fields
+#   for non-ICMP flows) and is reported separately rather than as invalid.
+semantics:
+  nonnegative:
+    - "^(Flow Duration|Total TCP Flow Time)$"
+    - "^Total (Fwd|Bwd) [Pp]ackets?$"
+    - "^Total Length of (Fwd|Bwd) Packet$"
+    - "^(Fwd|Bwd) Packet Length (Max|Min|Mean|Std)$"
+    - "^Packet Length (Min|Max|Mean|Std|Variance)$"
+    - "^(Flow|Fwd|Bwd) IAT (Mean|Std|Max|Min|Total)$"
+    - "^(Flow Bytes/s|Flow Packets/s|Fwd Packets/s|Bwd Packets/s)$"
+    - "^(Fwd|Bwd) Header Length$"
+    - "^(Fwd|Bwd) (PSH|URG|RST) Flags$"
+    - "^(FIN|SYN|RST|PSH|ACK|URG|CWR|ECE) Flag Count$"
+    - "^(Down/Up Ratio|Average Packet Size)$"
+    - "^(Fwd|Bwd) Segment Size Avg$"
+    - "^(Fwd|Bwd) (Bytes/Bulk|Packet/Bulk|Bulk Rate) Avg$"
+    - "^Subflow (Fwd|Bwd) (Packets|Bytes)$"
+    - "^Fwd Act Data Pkts$"
+    - "^(Active|Idle) (Mean|Std|Max|Min)$"
+  sentinel_minus_one:
+    - "^(FWD|Bwd) Init Win Bytes$"
+    - "^ICMP (Code|Type)$"
+
+flow_timeout_us: 120000000      # DOCUMENTED: CNS2022_Code README ("Flow TimeOut" 120000000)
+activity_timeout_us: 5000000    # DOCUMENTED: CNS2022_Code README ("Activity Timeout" 5000000)
+
+# Cross-column plausibility rules on canonical names. Values are cast to DOUBLE and only
+# finite values are evaluated. A rule whose columns are missing from a file is "not_applicable".
+plausibility_rules:
+  - id: zero_forward_packets
+    expr: '"Total Fwd Packet" < 1'
+    severity: medium
+    rationale: >-
+      Unexpected if the first packet defines the forward direction. All observed cases are TCP flows with
+      backward packets only (improved 2018: 54,777, all BENIGN; 2017: 33). HYPOTHESIS: they are continuation
+      segments after a flow-timeout split that keep the original direction.
+  - id: fwd_len_max_lt_min
+    expr: '"Fwd Packet Length Max" < "Fwd Packet Length Min"'
+    severity: high
+    rationale: A maximum cannot be below the minimum of the same set.
+  - id: bwd_len_max_lt_min
+    expr: '"Bwd Packet Length Max" < "Bwd Packet Length Min"'
+    severity: high
+    rationale: A maximum cannot be below the minimum of the same set.
+  - id: pkt_len_max_lt_min
+    expr: '"Packet Length Max" < "Packet Length Min"'
+    severity: high
+    rationale: A maximum cannot be below the minimum of the same set.
+  - id: flow_iat_max_lt_min
+    expr: '"Flow IAT Max" < "Flow IAT Min"'
+    severity: high
+    rationale: A maximum cannot be below the minimum of the same set.
+  - id: fwd_bytes_without_fwd_packets
+    expr: '"Total Length of Fwd Packet" > 0 AND "Total Fwd Packet" = 0'
+    severity: high
+    rationale: Payload bytes require at least one packet.
+  - id: bwd_bytes_without_bwd_packets
+    expr: '"Total Length of Bwd Packet" > 0 AND "Total Bwd packets" = 0'
+    severity: high
+    rationale: Payload bytes require at least one packet.
+  - id: duration_exceeds_flow_timeout
+    expr: '"Flow Duration" > 120000000'
+    severity: low
+    rationale: Informational. The documented flow timeout is 120 s, so longer durations need explanation.
+  - id: port_out_of_range
+    expr: '"Src Port" < 0 OR "Src Port" > 65535 OR "Dst Port" < 0 OR "Dst Port" > 65535'
+    severity: high
+    rationale: TCP/UDP ports are 16-bit.
+  - id: unexpected_protocol
+    expr: '"Protocol" NOT IN (0, 1, 6, 17)'
+    severity: low
+    rationale: Informational. Only ICMP(1), TCP(6), UDP(17) and 0 (CICFlowMeter unknown) are expected.
+  - id: fwd_header_shorter_than_min_tcp
+    expr: '"Protocol" = 6 AND "Fwd Header Length" > 0 AND "Fwd Header Length" < 20 * "Total Fwd Packet"'
+    severity: medium
+    rationale: Each TCP segment carries at least a 20-byte TCP header. Only rows with a positive header length are tested.

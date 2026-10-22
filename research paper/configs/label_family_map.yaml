@@ -1,0 +1,77 @@
+# Exact label strings (as observed in full scans, results/audit/label_distribution_by_dataset.csv)
+# -> attack family shared across releases and datasets. A trailing " - Attempted" is removed first
+# and kept as a separate flag (`attempted`). Used for file/distribution-level comparison (Phase 4)
+# and for the documented cross-dataset mapping (Phase 6). It is NOT a row-level correspondence.
+#
+# basis: name   = same attack by name in the CIC documentation and the CNS2022 documentation
+#        doc    = mapping stated by the CNS2022 paper / release pages (see note)
+#        artefact = not an attack label
+
+CIC-IDS-2017:
+  BENIGN: {family: benign, basis: name}
+  "": {family: unlabelled_empty_row, basis: artefact, note: "288,602 all-empty rows in the original Thursday-Morning-WebAttacks file"}
+  DoS Hulk: {family: dos_hulk, basis: name}
+  PortScan: {family: portscan, basis: name}
+  Portscan: {family: portscan, basis: name}
+  DDoS: {family: ddos_loic, basis: name, note: "CIC 2017 DDoS is LOIC (CIC documentation)"}
+  DoS GoldenEye: {family: dos_goldeneye, basis: name}
+  FTP-Patator: {family: ftp_bruteforce, basis: name}
+  SSH-Patator: {family: ssh_bruteforce, basis: name}
+  DoS slowloris: {family: dos_slowloris, basis: name}
+  DoS Slowloris: {family: dos_slowloris, basis: name}
+  DoS Slowhttptest: {family: dos_slowhttptest, basis: name}
+  Bot: {family: botnet, basis: name}
+  Botnet: {family: botnet, basis: name}
+  "Web Attack – Brute Force": {family: web_bruteforce, basis: name, note: "original bytes 0x96 (cp1252 en dash)"}
+  "Web Attack - Brute Force": {family: web_bruteforce, basis: name}
+  "Web Attack – XSS": {family: web_xss, basis: name}
+  "Web Attack - XSS": {family: web_xss, basis: name}
+  "Web Attack – Sql Injection": {family: web_sqli, basis: name}
+  "Web Attack - SQL Injection": {family: web_sqli, basis: name}
+  Infiltration: {family: infiltration, basis: name}
+  Infiltration - Portscan: {family: infiltration, basis: doc, note: "CNS2022 labels the NMAP/portscan stage of the infiltration scenario separately"}
+  Heartbleed: {family: heartbleed, basis: name}
+
+CSE-CIC-IDS-2018:
+  Benign: {family: benign, basis: name}
+  BENIGN: {family: benign, basis: name}
+  Label: {family: embedded_header_row, basis: artefact, note: "59 repeated header lines inside original data files"}
+  DDOS attack-HOIC: {family: ddos_hoic, basis: name}
+  DDoS-HOIC: {family: ddos_hoic, basis: name}
+  DDoS attacks-LOIC-HTTP: {family: ddos_loic_http, basis: name}
+  DDoS-LOIC-HTTP: {family: ddos_loic_http, basis: name}
+  DDOS attack-LOIC-UDP: {family: ddos_loic_udp, basis: name}
+  DDoS-LOIC-UDP: {family: ddos_loic_udp, basis: name}
+  DoS attacks-Hulk: {family: dos_hulk, basis: name}
+  DoS Hulk: {family: dos_hulk, basis: name}
+  DoS attacks-GoldenEye: {family: dos_goldeneye, basis: name}
+  DoS GoldenEye: {family: dos_goldeneye, basis: name}
+  DoS attacks-Slowloris: {family: dos_slowloris, basis: name}
+  DoS Slowloris: {family: dos_slowloris, basis: name}
+  DoS attacks-SlowHTTPTest: {family: dos_slowhttptest, basis: name,
+    note: "CNS2022 Table III: 100% relabelled to FTP-Patator - Attempted (FTP attempts to a closed port); no SlowHTTPTest class exists in the improved release"}
+  FTP-BruteForce: {family: ftp_bruteforce, basis: name}
+  SSH-Bruteforce: {family: ssh_bruteforce, basis: name}
+  SSH-BruteForce: {family: ssh_bruteforce, basis: name}
+  Bot: {family: botnet, basis: name}
+  Botnet Ares: {family: botnet, basis: name}
+  Infilteration: {family: infiltration, basis: name, note: "misspelling in the original release"}
+  Infiltration - NMAP Portscan: {family: infiltration, basis: doc}
+  Infiltration - Communication Victim Attacker: {family: infiltration, basis: doc}
+  Infiltration - Dropbox Download: {family: infiltration, basis: doc}
+  Brute Force -Web: {family: web_bruteforce, basis: name}
+  Web Attack - Brute Force: {family: web_bruteforce, basis: name}
+  Brute Force -XSS: {family: web_xss, basis: name}
+  Web Attack - XSS: {family: web_xss, basis: name}
+  SQL Injection: {family: web_sqli, basis: name}
+  Web Attack - SQL: {family: web_sqli, basis: name}
+
+# Families present in BOTH datasets' improved releases (candidate shared label space for transfer):
+# dos_hulk, dos_goldeneye, dos_slowloris, ssh_bruteforce, ftp_bruteforce (2018: Attempted only),
+# web_bruteforce, web_xss, web_sqli, infiltration, botnet, DDoS (2017 ddos_loic vs 2018 ddos_loic_http /
+# ddos_hoic / ddos_loic_udp: same tool family, different tools/settings: map only at the coarse level "ddos").
+cross_dataset_coarse:
+  ddos_loic: ddos
+  ddos_loic_http: ddos
+  ddos_hoic: ddos
+  ddos_loic_udp: ddos

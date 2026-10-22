@@ -1,0 +1,191 @@
+# Evaluation protocol (Phase 6). Read by src/audit/leakage.py `splits`.
+# Status: PROPOSED. It is not used for any model yet; model training stays unauthorised until review.
+# Rationale and evidence are in reports/evaluation_protocol.md.
+
+data:
+  variant: improved                    # primary data: the CNS2022 improved release
+  timestamp: "Timestamp (UTC, microseconds; DOCUMENTED, consistency VERIFIED in Phase 3)"
+  never_model_inputs:                  # see results/audit/leakage_findings.csv
+    - id                               # row index written at export = file-order artefact
+    - Flow ID
+    - Src IP
+    - Dst IP
+    - Src Port
+    - Timestamp                        # only used to order/aggregate, never as a feature value
+    - Label
+    - Attempted Category
+    - file name / day / scenario identity
+  review_before_use: [Dst Port, Protocol, FWD Init Win Bytes, Bwd Init Win Bytes]
+
+targets:
+  window_s: 2
+  horizons_windows: [1, 2, 3, 4, 5]    # 2..10 s ahead
+  attack_definition: "flow label not BENIGN and not '* - Attempted' (Attempted handled as its own class or as benign in ablations)"
+  primary_target: next_window_attack_state   # y(t+h) = 1 if any attack flow STARTS in window t+h
+  secondary_targets:
+    - current_window_detection
+    - attack_onset_forecasting         # only on episode onsets; very few onsets, so report counts and CIs
+  windows_never_cross: [file, day]
+
+preprocessing_fit_policy: >
+  All statistics (scalers, imputers, quantile bins, feature selection, thresholds, class weights)
+  are fit on the TRAIN partition only and then applied unchanged to val/test. Decision thresholds
+  are chosen on VAL, never on TEST.
+refit_on_train_plus_val:
+  allowed: true
+  condition: "hyperparameters and decision threshold frozen on VAL first; refit statistics on train + val"
+  report: "both the train-only and the train+val model on TEST, because in P3 folds the recurring
+           2018 families occur only in the VAL day (split_family_leakage.csv)"
+
+window_feature_policy:                 # look-ahead leakage of flow-level features (reports/evaluation_protocol.md §3)
+  default: ended_flows_only            # a flow contributes to window t only if start + duration <= end of t
+  alternatives: [flow_start_counts_and_header_features, lag_all_features_by_flow_timeout]
+  forbidden: "flow-level totals (duration, bytes, packets, IATs) attributed to the window in which the flow STARTS"
+
+attempted_policy:
+  primary: "own class 'attempted' for analysis; mapped to benign for the binary target"
+  ablations: [attempted_as_attack, attempted_excluded_with_logged_count]
+
+row_exclusions:                        # applied by leakage.py splits; counted as partition 'excluded'
+  - dataset: CSE-CIC-IDS-2018
+    file: Friday-23-02-2018.csv
+    ts_before: "2018-02-23 00:00:00"   # 2,609 flows dated 21-22 Feb, outside the capture day (TIMESTAMP-003)
+    reason: "stray flows ~24 h before the capture; would distort time-fraction cuts and create empty windows"
+handled_at_modelling_time:             # never silently dropped; counted when applied
+  - "rows with non-finite Flow Bytes/s or Flow Packets/s (5 in 2017, 57 in 2018 improved): imputed or excluded, counted"
+
+embargo:
+  seconds: 130                         # 120 s flow timeout (DOCUMENTED) + 5 x 2 s maximum horizon
+  rule: rows whose flow START is within +-embargo of a partition cut are excluded from every partition
+
+recommended:                           # evidence: reports/evaluation_protocol.md §4
+  primary:
+    CSE-CIC-IDS-2018: [P3_forward_chain_2018_test_21Feb, P3_forward_chain_2018_test_23Feb,
+                       P3_forward_chain_2018_test_01Mar, P3_forward_chain_2018_test_02Mar]
+    CIC-IDS-2017: [P3_forward_chain_2017_test_Fri]   # identical to P2 for 2017
+  robustness: [leave_one_day_out, cross_dataset]
+  diagnostic_only: [P0_random_rows, P1_within_day_chronological, P1b_within_day_flow_quantile]
+
+split_candidates:
+  P0_random_rows:
+    role: "diagnostic only: never primary evidence for temporal claims"
+    kind: random_rows
+  P1_within_day_chronological:
+    role: "evaluated, NOT recommended as primary: 2018 test holds 0 attack flows; 2017 train/test families differ"
+    kind: within_file_time
+    fractions: [0.6, 0.2, 0.2]
+    embargo_s: 130
+  P1b_within_day_flow_quantile:
+    role: "diagnostic: like P1, but cut where 60% / 80% of each file's flows have started (traffic thins late in the UTC day)"
+    kind: within_file_flow_quantile
+    fractions: [0.6, 0.2, 0.2]
+    embargo_s: 130
+  P2_day_chronological:
+    role: "secondary: later days; every test family is absent from train (unseen-scenario generalisation)"
+    per_dataset:
+      CIC-IDS-2017:
+        kind: by_file
+        train: [monday.csv, tuesday.csv, wednesday.csv]
+        val: [thursday.csv]
+        test: [friday.csv]
+      CSE-CIC-IDS-2018:
+        kind: by_file
+        train: [Wednesday-14-02-2018.csv, Thursday-15-02-2018.csv, Friday-16-02-2018.csv,
+                Tuesday-20-02-2018.csv, Wednesday-21-02-2018.csv]
+        val: [Thursday-22-02-2018.csv, Friday-23-02-2018.csv]
+        test: [Wednesday-28-02-2018.csv, Thursday-01-03-2018.csv, Friday-02-03-2018.csv]
+
+  # Forward-chaining by day (rolling origin): train on all earlier days, validate on the last earlier
+  # day, test on one later day. In 2018 some families recur on a later day (DDoS-LOIC-UDP 20->21 Feb,
+  # web attacks 22->23 Feb, infiltration 28 Feb->1 Mar). In each such fold the recurring family is in
+  # the VAL day only, so the test family is "seen" only if the final model is refit on train + val
+  # (refit_on_train_plus_val below). Report seen and unseen families separately
+  # (results/audit/split_family_leakage.csv). 2017 families do not recur across days.
+  P3_forward_chain_2018_test_21Feb:
+    role: "rolling-origin fold: LOIC-UDP in val day (20 Feb), HOIC unseen"
+    datasets: [CSE-CIC-IDS-2018]
+    per_dataset:
+      CSE-CIC-IDS-2018:
+        kind: by_file
+        train: [Wednesday-14-02-2018.csv, Thursday-15-02-2018.csv, Friday-16-02-2018.csv]
+        val: [Tuesday-20-02-2018.csv]
+        test: [Wednesday-21-02-2018.csv]
+  P3_forward_chain_2018_test_23Feb:
+    role: "rolling-origin fold: web attacks in val day (22 Feb)"
+    datasets: [CSE-CIC-IDS-2018]
+    per_dataset:
+      CSE-CIC-IDS-2018:
+        kind: by_file
+        train: [Wednesday-14-02-2018.csv, Thursday-15-02-2018.csv, Friday-16-02-2018.csv, Tuesday-20-02-2018.csv,
+                Wednesday-21-02-2018.csv]
+        val: [Thursday-22-02-2018.csv]
+        test: [Friday-23-02-2018.csv]
+  P3_forward_chain_2018_test_01Mar:
+    role: "rolling-origin fold: infiltration in val day (28 Feb)"
+    datasets: [CSE-CIC-IDS-2018]
+    per_dataset:
+      CSE-CIC-IDS-2018:
+        kind: by_file
+        train: [Wednesday-14-02-2018.csv, Thursday-15-02-2018.csv, Friday-16-02-2018.csv, Tuesday-20-02-2018.csv,
+                Wednesday-21-02-2018.csv, Thursday-22-02-2018.csv, Friday-23-02-2018.csv]
+        val: [Wednesday-28-02-2018.csv]
+        test: [Thursday-01-03-2018.csv]
+  P3_forward_chain_2018_test_02Mar:
+    role: "rolling-origin fold: botnet unseen"
+    datasets: [CSE-CIC-IDS-2018]
+    per_dataset:
+      CSE-CIC-IDS-2018:
+        kind: by_file
+        train: [Wednesday-14-02-2018.csv, Thursday-15-02-2018.csv, Friday-16-02-2018.csv, Tuesday-20-02-2018.csv,
+                Wednesday-21-02-2018.csv, Thursday-22-02-2018.csv, Friday-23-02-2018.csv, Wednesday-28-02-2018.csv]
+        val: [Thursday-01-03-2018.csv]
+        test: [Friday-02-03-2018.csv]
+  P3_forward_chain_2017_test_Fri:
+    role: "rolling-origin fold (2017 has no recurring families: test families unseen)"
+    datasets: [CIC-IDS-2017]
+    per_dataset:
+      CIC-IDS-2017:
+        kind: by_file
+        train: [monday.csv, tuesday.csv, wednesday.csv]
+        val: [thursday.csv]
+        test: [friday.csv]
+
+# Defined but not scored by the split audit (coverage follows from per-file label counts):
+leave_one_day_out:
+  role: "scenario-held-out robustness; one fold per attack day"
+  CIC-IDS-2017: [tuesday.csv, wednesday.csv, thursday.csv, friday.csv]
+  CSE-CIC-IDS-2018: [Wednesday-14-02-2018.csv, Thursday-15-02-2018.csv, Friday-16-02-2018.csv,
+                     Tuesday-20-02-2018.csv, Wednesday-21-02-2018.csv, Thursday-22-02-2018.csv,
+                     Friday-23-02-2018.csv, Wednesday-28-02-2018.csv, Thursday-01-03-2018.csv,
+                     Friday-02-03-2018.csv]
+cross_dataset:
+  role: "external transfer; only on the shared feature set and a documented label-family mapping"
+  train: CSE-CIC-IDS-2018
+  test: CIC-IDS-2017
+  label_mapping: configs/label_family_map.yaml
+
+metrics:
+  per_class: [precision, recall, f1]
+  aggregate: [macro_f1, weighted_f1]
+  ranking: [pr_auc_per_class, roc_auc_secondary]
+  operational:
+    - false_positive_rate_at_val_threshold
+    - false_alerts_per_hour
+    - recall_at_fixed_false_alerts_per_hour: [1, 10]
+  early_warning:
+    - detection_lead_time_s            # only on onsets with >= h benign windows before them
+    - onset_recall_by_horizon
+  reporting:
+    - per_day_and_per_attack_family
+    - bootstrap_95ci_over_days_or_episodes
+    - repeated_seeds: 5
+  forbidden: ["accuracy as the sole metric", "threshold tuning on test", "random-row split as primary result"]
+
+baselines_before_any_deep_model:
+  - majority_class
+  - detector_persistence (y_hat(t+h) = h0 detector output at t)   # the fair, deployable baseline
+  - oracle_persistence (y_hat(t+h) = TRUE y(t))   # upper bound only: true labels are not known online
+  - stratified_random
+  - logistic_regression_on_window_aggregates
+  - gradient_boosted_or_random_forest_on_window_aggregates
+  - simple_temporal_baseline (lagged window aggregates)
