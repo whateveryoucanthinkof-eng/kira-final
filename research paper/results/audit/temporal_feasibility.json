@@ -1,0 +1,2128 @@
+{
+ "generated_at_utc": "2026-10-18T20:49:45+00:00",
+ "tool": "src/audit/temporal.py",
+ "window_s": 2,
+ "segment_gap_thresholds_s": [
+  60,
+  300
+ ],
+ "horizons_windows": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "per_file": {
+  "data/raw_improved/CIC-IDS-2017/friday.csv": {
+   "n_flows": 547557,
+   "file_order_backward_steps_by_start": 248931,
+   "file_order_backward_steps_by_end": 263477,
+   "file_order_backward_steps_by_start_gt60s": 223676,
+   "file_order_backward_steps_by_end_gt60s": 223771,
+   "n_with_subsecond": 547556,
+   "n_distinct_ts": 539251,
+   "min_ts": "2017-07-07 11:59:50.315195",
+   "max_ts": "2017-07-07 20:02:40.977798",
+   "n_duration_gt_window": 168088,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 85104,
+   "n_non_benign": 259013,
+   "n_attempted": 4067,
+   "bins_in_span": 14486,
+   "bins_nonempty": 11909,
+   "share_bins_empty": 0.177896,
+   "longest_empty_run_bins": 19,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 7.0,
+   "flows_per_nonempty_bin_p95": 181.0,
+   "flows_per_bin_max": 2146,
+   "bins_with_attack_excl_attempted": 1366,
+   "bins_with_attack_incl_attempted": 2596,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 14485,
+     "n_positive_target": 1366,
+     "n_onset_like (benign now, attack at t+h)": 354,
+     "n_persistent (attack now and at t+h)": 1012,
+     "positive_rate": 0.094304
+    },
+    "2": {
+     "n_windows_with_target": 14484,
+     "n_positive_target": 1366,
+     "n_onset_like (benign now, attack at t+h)": 442,
+     "n_persistent (attack now and at t+h)": 924,
+     "positive_rate": 0.094311
+    },
+    "3": {
+     "n_windows_with_target": 14483,
+     "n_positive_target": 1366,
+     "n_onset_like (benign now, attack at t+h)": 454,
+     "n_persistent (attack now and at t+h)": 912,
+     "positive_rate": 0.094317
+    },
+    "4": {
+     "n_windows_with_target": 14482,
+     "n_positive_target": 1366,
+     "n_onset_like (benign now, attack at t+h)": 409,
+     "n_persistent (attack now and at t+h)": 957,
+     "positive_rate": 0.094324
+    },
+    "5": {
+     "n_windows_with_target": 14481,
+     "n_positive_target": 1366,
+     "n_onset_like (benign now, attack at t+h)": 217,
+     "n_persistent (attack now and at t+h)": 1149,
+     "positive_rate": 0.094331
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "improved"
+  },
+  "data/raw_improved/CIC-IDS-2017/monday.csv": {
+   "n_flows": 371624,
+   "file_order_backward_steps_by_start": 174479,
+   "file_order_backward_steps_by_end": 174067,
+   "file_order_backward_steps_by_start_gt60s": 166250,
+   "file_order_backward_steps_by_end_gt60s": 167120,
+   "n_with_subsecond": 371623,
+   "n_distinct_ts": 371277,
+   "min_ts": "2017-07-03 11:55:58.598308",
+   "max_ts": "2017-07-03 20:01:34.352593",
+   "n_duration_gt_window": 108524,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 0,
+   "n_non_benign": 0,
+   "n_attempted": 0,
+   "bins_in_span": 14569,
+   "bins_nonempty": 12891,
+   "share_bins_empty": 0.115176,
+   "longest_empty_run_bins": 11,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 10.0,
+   "flows_per_nonempty_bin_p95": 127.0,
+   "flows_per_bin_max": 525,
+   "bins_with_attack_excl_attempted": 0,
+   "bins_with_attack_incl_attempted": 0,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 14568,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "2": {
+     "n_windows_with_target": 14567,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "3": {
+     "n_windows_with_target": 14566,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "4": {
+     "n_windows_with_target": 14565,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "5": {
+     "n_windows_with_target": 14564,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "improved"
+  },
+  "data/raw_improved/CIC-IDS-2017/thursday.csv": {
+   "n_flows": 362076,
+   "file_order_backward_steps_by_start": 165271,
+   "file_order_backward_steps_by_end": 165027,
+   "file_order_backward_steps_by_start_gt60s": 158136,
+   "file_order_backward_steps_by_end_gt60s": 158646,
+   "n_with_subsecond": 362076,
+   "n_distinct_ts": 361668,
+   "min_ts": "2017-07-06 11:59:00.490140",
+   "max_ts": "2017-07-06 20:04:36.513760",
+   "n_duration_gt_window": 89074,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 2801,
+   "n_non_benign": 73904,
+   "n_attempted": 1997,
+   "bins_in_span": 14569,
+   "bins_nonempty": 11664,
+   "share_bins_empty": 0.199396,
+   "longest_empty_run_bins": 20,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 6.0,
+   "flows_per_nonempty_bin_p95": 138.85000000000036,
+   "flows_per_bin_max": 1550,
+   "bins_with_attack_excl_attempted": 557,
+   "bins_with_attack_incl_attempted": 1885,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 14568,
+     "n_positive_target": 557,
+     "n_onset_like (benign now, attack at t+h)": 352,
+     "n_persistent (attack now and at t+h)": 205,
+     "positive_rate": 0.038234
+    },
+    "2": {
+     "n_windows_with_target": 14567,
+     "n_positive_target": 557,
+     "n_onset_like (benign now, attack at t+h)": 380,
+     "n_persistent (attack now and at t+h)": 177,
+     "positive_rate": 0.038237
+    },
+    "3": {
+     "n_windows_with_target": 14566,
+     "n_positive_target": 557,
+     "n_onset_like (benign now, attack at t+h)": 376,
+     "n_persistent (attack now and at t+h)": 181,
+     "positive_rate": 0.03824
+    },
+    "4": {
+     "n_windows_with_target": 14565,
+     "n_positive_target": 557,
+     "n_onset_like (benign now, attack at t+h)": 384,
+     "n_persistent (attack now and at t+h)": 173,
+     "positive_rate": 0.038242
+    },
+    "5": {
+     "n_windows_with_target": 14564,
+     "n_positive_target": 557,
+     "n_onset_like (benign now, attack at t+h)": 372,
+     "n_persistent (attack now and at t+h)": 185,
+     "positive_rate": 0.038245
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "improved"
+  },
+  "data/raw_improved/CIC-IDS-2017/tuesday.csv": {
+   "n_flows": 322078,
+   "file_order_backward_steps_by_start": 152339,
+   "file_order_backward_steps_by_end": 152137,
+   "file_order_backward_steps_by_start_gt60s": 144797,
+   "file_order_backward_steps_by_end_gt60s": 145578,
+   "n_with_subsecond": 322077,
+   "n_distinct_ts": 321867,
+   "min_ts": "2017-07-04 11:53:44.398274",
+   "max_ts": "2017-07-04 20:00:30.041663",
+   "n_duration_gt_window": 97598,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 6928,
+   "n_non_benign": 6972,
+   "n_attempted": 39,
+   "bins_in_span": 14604,
+   "bins_nonempty": 12361,
+   "share_bins_empty": 0.153588,
+   "longest_empty_run_bins": 17,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 7.0,
+   "flows_per_nonempty_bin_p95": 120.0,
+   "flows_per_bin_max": 441,
+   "bins_with_attack_excl_attempted": 2652,
+   "bins_with_attack_incl_attempted": 2656,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 14603,
+     "n_positive_target": 2652,
+     "n_onset_like (benign now, attack at t+h)": 696,
+     "n_persistent (attack now and at t+h)": 1956,
+     "positive_rate": 0.181607
+    },
+    "2": {
+     "n_windows_with_target": 14602,
+     "n_positive_target": 2652,
+     "n_onset_like (benign now, attack at t+h)": 769,
+     "n_persistent (attack now and at t+h)": 1883,
+     "positive_rate": 0.181619
+    },
+    "3": {
+     "n_windows_with_target": 14601,
+     "n_positive_target": 2652,
+     "n_onset_like (benign now, attack at t+h)": 690,
+     "n_persistent (attack now and at t+h)": 1962,
+     "positive_rate": 0.181631
+    },
+    "4": {
+     "n_windows_with_target": 14600,
+     "n_positive_target": 2652,
+     "n_onset_like (benign now, attack at t+h)": 724,
+     "n_persistent (attack now and at t+h)": 1928,
+     "positive_rate": 0.181644
+    },
+    "5": {
+     "n_windows_with_target": 14599,
+     "n_positive_target": 2652,
+     "n_onset_like (benign now, attack at t+h)": 619,
+     "n_persistent (attack now and at t+h)": 2033,
+     "positive_rate": 0.181656
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "improved"
+  },
+  "data/raw_improved/CIC-IDS-2017/wednesday.csv": {
+   "n_flows": 496641,
+   "file_order_backward_steps_by_start": 196756,
+   "file_order_backward_steps_by_end": 225855,
+   "file_order_backward_steps_by_start_gt60s": 150689,
+   "file_order_backward_steps_by_end_gt60s": 151969,
+   "n_with_subsecond": 496641,
+   "n_distinct_ts": 482948,
+   "min_ts": "2017-07-05 11:42:42.084372",
+   "max_ts": "2017-07-05 20:10:14.557249",
+   "n_duration_gt_window": 118730,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 22636,
+   "n_non_benign": 177521,
+   "n_attempted": 5876,
+   "bins_in_span": 15227,
+   "bins_nonempty": 12510,
+   "share_bins_empty": 0.178433,
+   "longest_empty_run_bins": 29,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 7.0,
+   "flows_per_nonempty_bin_p95": 147.0,
+   "flows_per_bin_max": 2307,
+   "bins_with_attack_excl_attempted": 1148,
+   "bins_with_attack_incl_attempted": 1195,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 15226,
+     "n_positive_target": 1148,
+     "n_onset_like (benign now, attack at t+h)": 241,
+     "n_persistent (attack now and at t+h)": 907,
+     "positive_rate": 0.075397
+    },
+    "2": {
+     "n_windows_with_target": 15225,
+     "n_positive_target": 1148,
+     "n_onset_like (benign now, attack at t+h)": 304,
+     "n_persistent (attack now and at t+h)": 844,
+     "positive_rate": 0.075402
+    },
+    "3": {
+     "n_windows_with_target": 15224,
+     "n_positive_target": 1148,
+     "n_onset_like (benign now, attack at t+h)": 250,
+     "n_persistent (attack now and at t+h)": 898,
+     "positive_rate": 0.075407
+    },
+    "4": {
+     "n_windows_with_target": 15223,
+     "n_positive_target": 1148,
+     "n_onset_like (benign now, attack at t+h)": 342,
+     "n_persistent (attack now and at t+h)": 806,
+     "positive_rate": 0.075412
+    },
+    "5": {
+     "n_windows_with_target": 15222,
+     "n_positive_target": 1148,
+     "n_onset_like (benign now, attack at t+h)": 340,
+     "n_persistent (attack now and at t+h)": 808,
+     "positive_rate": 0.075417
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Friday-02-03-2018.csv": {
+   "n_flows": 6311371,
+   "file_order_backward_steps_by_start": 2863328,
+   "file_order_backward_steps_by_end": 2865309,
+   "file_order_backward_steps_by_start_gt60s": 2754260,
+   "file_order_backward_steps_by_end_gt60s": 2758046,
+   "n_with_subsecond": 6311364,
+   "n_distinct_ts": 6310214,
+   "min_ts": "2018-03-02 12:46:22.317145",
+   "max_ts": "2018-03-03 00:39:53.894472",
+   "n_duration_gt_window": 2401568,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 9,
+   "n_non_benign": 143183,
+   "n_attempted": 262,
+   "bins_in_span": 21406,
+   "bins_nonempty": 20120,
+   "share_bins_empty": 0.060077,
+   "longest_empty_run_bins": 17,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 344.0,
+   "flows_per_nonempty_bin_p95": 598.0,
+   "flows_per_bin_max": 1575,
+   "bins_with_attack_excl_attempted": 10193,
+   "bins_with_attack_incl_attempted": 10209,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21405,
+     "n_positive_target": 10193,
+     "n_onset_like (benign now, attack at t+h)": 3,
+     "n_persistent (attack now and at t+h)": 10190,
+     "positive_rate": 0.476197
+    },
+    "2": {
+     "n_windows_with_target": 21404,
+     "n_positive_target": 10193,
+     "n_onset_like (benign now, attack at t+h)": 5,
+     "n_persistent (attack now and at t+h)": 10188,
+     "positive_rate": 0.476219
+    },
+    "3": {
+     "n_windows_with_target": 21403,
+     "n_positive_target": 10193,
+     "n_onset_like (benign now, attack at t+h)": 7,
+     "n_persistent (attack now and at t+h)": 10186,
+     "positive_rate": 0.476242
+    },
+    "4": {
+     "n_windows_with_target": 21402,
+     "n_positive_target": 10193,
+     "n_onset_like (benign now, attack at t+h)": 9,
+     "n_persistent (attack now and at t+h)": 10184,
+     "positive_rate": 0.476264
+    },
+    "5": {
+     "n_windows_with_target": 21401,
+     "n_positive_target": 10193,
+     "n_onset_like (benign now, attack at t+h)": 11,
+     "n_persistent (attack now and at t+h)": 10182,
+     "positive_rate": 0.476286
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Friday-16-02-2018.csv": {
+   "n_flows": 7390266,
+   "file_order_backward_steps_by_start": 2540804,
+   "file_order_backward_steps_by_end": 3353277,
+   "file_order_backward_steps_by_start_gt60s": 2394753,
+   "file_order_backward_steps_by_end_gt60s": 2401253,
+   "n_with_subsecond": 7390256,
+   "n_distinct_ts": 7389224,
+   "min_ts": "2018-02-16 12:26:55.181877",
+   "max_ts": "2018-02-16 22:15:24.854148",
+   "n_duration_gt_window": 1651550,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 5903,
+   "n_non_benign": 1908766,
+   "n_attempted": 105606,
+   "bins_in_span": 17656,
+   "bins_nonempty": 17194,
+   "share_bins_empty": 0.026167,
+   "longest_empty_run_bins": 64,
+   "n_empty_runs_ge_60s": 3,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 324.0,
+   "flows_per_nonempty_bin_p95": 619.0,
+   "flows_per_bin_max": 5882,
+   "bins_with_attack_excl_attempted": 389,
+   "bins_with_attack_incl_attempted": 1979,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 17655,
+     "n_positive_target": 389,
+     "n_onset_like (benign now, attack at t+h)": 1,
+     "n_persistent (attack now and at t+h)": 388,
+     "positive_rate": 0.022033
+    },
+    "2": {
+     "n_windows_with_target": 17654,
+     "n_positive_target": 389,
+     "n_onset_like (benign now, attack at t+h)": 2,
+     "n_persistent (attack now and at t+h)": 387,
+     "positive_rate": 0.022035
+    },
+    "3": {
+     "n_windows_with_target": 17653,
+     "n_positive_target": 389,
+     "n_onset_like (benign now, attack at t+h)": 3,
+     "n_persistent (attack now and at t+h)": 386,
+     "positive_rate": 0.022036
+    },
+    "4": {
+     "n_windows_with_target": 17652,
+     "n_positive_target": 389,
+     "n_onset_like (benign now, attack at t+h)": 4,
+     "n_persistent (attack now and at t+h)": 385,
+     "positive_rate": 0.022037
+    },
+    "5": {
+     "n_windows_with_target": 17651,
+     "n_positive_target": 389,
+     "n_onset_like (benign now, attack at t+h)": 5,
+     "n_persistent (attack now and at t+h)": 384,
+     "positive_rate": 0.022038
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Friday-23-02-2018.csv": {
+   "n_flows": 5976481,
+   "file_order_backward_steps_by_start": 2721984,
+   "file_order_backward_steps_by_end": 2726422,
+   "file_order_backward_steps_by_start_gt60s": 2598606,
+   "file_order_backward_steps_by_end_gt60s": 2605229,
+   "n_with_subsecond": 5976478,
+   "n_distinct_ts": 5975504,
+   "min_ts": "2018-02-21 12:33:55.396864",
+   "max_ts": "2018-02-23 23:46:49.183594",
+   "n_duration_gt_window": 2168107,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 230,
+   "n_non_benign": 230,
+   "n_attempted": 72,
+   "bins_in_span": 106588,
+   "bins_nonempty": 21137,
+   "share_bins_empty": 0.801694,
+   "longest_empty_run_bins": 42995,
+   "n_empty_runs_ge_60s": 467,
+   "n_empty_runs_ge_300s": 4,
+   "flows_per_nonempty_bin_p50": 301.0,
+   "flows_per_nonempty_bin_p95": 564.0,
+   "flows_per_bin_max": 1481,
+   "bins_with_attack_excl_attempted": 158,
+   "bins_with_attack_incl_attempted": 162,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 106587,
+     "n_positive_target": 158,
+     "n_onset_like (benign now, attack at t+h)": 158,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.001482
+    },
+    "2": {
+     "n_windows_with_target": 106586,
+     "n_positive_target": 158,
+     "n_onset_like (benign now, attack at t+h)": 158,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.001482
+    },
+    "3": {
+     "n_windows_with_target": 106585,
+     "n_positive_target": 158,
+     "n_onset_like (benign now, attack at t+h)": 154,
+     "n_persistent (attack now and at t+h)": 4,
+     "positive_rate": 0.001482
+    },
+    "4": {
+     "n_windows_with_target": 106584,
+     "n_positive_target": 158,
+     "n_onset_like (benign now, attack at t+h)": 156,
+     "n_persistent (attack now and at t+h)": 2,
+     "positive_rate": 0.001482
+    },
+    "5": {
+     "n_windows_with_target": 106583,
+     "n_positive_target": 158,
+     "n_onset_like (benign now, attack at t+h)": 156,
+     "n_persistent (attack now and at t+h)": 2,
+     "positive_rate": 0.001482
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Thursday-01-03-2018.csv": {
+   "n_flows": 6551401,
+   "file_order_backward_steps_by_start": 2981618,
+   "file_order_backward_steps_by_end": 2984080,
+   "file_order_backward_steps_by_start_gt60s": 2845692,
+   "file_order_backward_steps_by_end_gt60s": 2851755,
+   "n_with_subsecond": 6551394,
+   "n_distinct_ts": 6550061,
+   "min_ts": "2018-03-01 12:15:28.926174",
+   "max_ts": "2018-03-01 23:40:14.412141",
+   "n_duration_gt_window": 2468271,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 3124,
+   "n_non_benign": 39847,
+   "n_attempted": 13,
+   "bins_in_span": 20544,
+   "bins_nonempty": 19909,
+   "share_bins_empty": 0.030909,
+   "longest_empty_run_bins": 12,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 344.0,
+   "flows_per_nonempty_bin_p95": 600.0,
+   "flows_per_bin_max": 2654,
+   "bins_with_attack_excl_attempted": 1249,
+   "bins_with_attack_incl_attempted": 1253,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 20543,
+     "n_positive_target": 1249,
+     "n_onset_like (benign now, attack at t+h)": 600,
+     "n_persistent (attack now and at t+h)": 649,
+     "positive_rate": 0.060799
+    },
+    "2": {
+     "n_windows_with_target": 20542,
+     "n_positive_target": 1249,
+     "n_onset_like (benign now, attack at t+h)": 510,
+     "n_persistent (attack now and at t+h)": 739,
+     "positive_rate": 0.060802
+    },
+    "3": {
+     "n_windows_with_target": 20541,
+     "n_positive_target": 1249,
+     "n_onset_like (benign now, attack at t+h)": 560,
+     "n_persistent (attack now and at t+h)": 689,
+     "positive_rate": 0.060805
+    },
+    "4": {
+     "n_windows_with_target": 20540,
+     "n_positive_target": 1249,
+     "n_onset_like (benign now, attack at t+h)": 663,
+     "n_persistent (attack now and at t+h)": 586,
+     "positive_rate": 0.060808
+    },
+    "5": {
+     "n_windows_with_target": 20539,
+     "n_positive_target": 1249,
+     "n_onset_like (benign now, attack at t+h)": 567,
+     "n_persistent (attack now and at t+h)": 682,
+     "positive_rate": 0.060811
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Thursday-15-02-2018.csv": {
+   "n_flows": 5410102,
+   "file_order_backward_steps_by_start": 2439689,
+   "file_order_backward_steps_by_end": 2444788,
+   "file_order_backward_steps_by_start_gt60s": 2312945,
+   "file_order_backward_steps_by_end_gt60s": 2320535,
+   "n_with_subsecond": 5410099,
+   "n_distinct_ts": 5409435,
+   "min_ts": "2018-02-15 12:23:15.264383",
+   "max_ts": "2018-02-16 01:14:55.132078",
+   "n_duration_gt_window": 1674792,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 33092,
+   "n_non_benign": 37631,
+   "n_attempted": 6581,
+   "bins_in_span": 23151,
+   "bins_nonempty": 21373,
+   "share_bins_empty": 0.0768,
+   "longest_empty_run_bins": 11,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 267.0,
+   "flows_per_nonempty_bin_p95": 529.0,
+   "flows_per_bin_max": 1569,
+   "bins_with_attack_excl_attempted": 1543,
+   "bins_with_attack_incl_attempted": 1554,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 23150,
+     "n_positive_target": 1543,
+     "n_onset_like (benign now, attack at t+h)": 58,
+     "n_persistent (attack now and at t+h)": 1485,
+     "positive_rate": 0.066652
+    },
+    "2": {
+     "n_windows_with_target": 23149,
+     "n_positive_target": 1543,
+     "n_onset_like (benign now, attack at t+h)": 84,
+     "n_persistent (attack now and at t+h)": 1459,
+     "positive_rate": 0.066655
+    },
+    "3": {
+     "n_windows_with_target": 23148,
+     "n_positive_target": 1543,
+     "n_onset_like (benign now, attack at t+h)": 92,
+     "n_persistent (attack now and at t+h)": 1451,
+     "positive_rate": 0.066658
+    },
+    "4": {
+     "n_windows_with_target": 23147,
+     "n_positive_target": 1543,
+     "n_onset_like (benign now, attack at t+h)": 98,
+     "n_persistent (attack now and at t+h)": 1445,
+     "positive_rate": 0.066661
+    },
+    "5": {
+     "n_windows_with_target": 23146,
+     "n_positive_target": 1543,
+     "n_onset_like (benign now, attack at t+h)": 110,
+     "n_persistent (attack now and at t+h)": 1433,
+     "positive_rate": 0.066664
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Thursday-22-02-2018.csv": {
+   "n_flows": 6071153,
+   "file_order_backward_steps_by_start": 2765871,
+   "file_order_backward_steps_by_end": 2769058,
+   "file_order_backward_steps_by_start_gt60s": 2641884,
+   "file_order_backward_steps_by_end_gt60s": 2648815,
+   "n_with_subsecond": 6071149,
+   "n_distinct_ts": 6070149,
+   "min_ts": "2018-02-22 12:22:02.060675",
+   "max_ts": "2018-02-23 00:36:53.959518",
+   "n_duration_gt_window": 2252722,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 208,
+   "n_non_benign": 208,
+   "n_attempted": 83,
+   "bins_in_span": 22046,
+   "bins_nonempty": 18765,
+   "share_bins_empty": 0.148825,
+   "longest_empty_run_bins": 58,
+   "n_empty_runs_ge_60s": 6,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 328.0,
+   "flows_per_nonempty_bin_p95": 591.0,
+   "flows_per_bin_max": 1738,
+   "bins_with_attack_excl_attempted": 125,
+   "bins_with_attack_incl_attempted": 131,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 22045,
+     "n_positive_target": 125,
+     "n_onset_like (benign now, attack at t+h)": 125,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.00567
+    },
+    "2": {
+     "n_windows_with_target": 22044,
+     "n_positive_target": 125,
+     "n_onset_like (benign now, attack at t+h)": 125,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.00567
+    },
+    "3": {
+     "n_windows_with_target": 22043,
+     "n_positive_target": 125,
+     "n_onset_like (benign now, attack at t+h)": 122,
+     "n_persistent (attack now and at t+h)": 3,
+     "positive_rate": 0.005671
+    },
+    "4": {
+     "n_windows_with_target": 22042,
+     "n_positive_target": 125,
+     "n_onset_like (benign now, attack at t+h)": 125,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.005671
+    },
+    "5": {
+     "n_windows_with_target": 22041,
+     "n_positive_target": 125,
+     "n_onset_like (benign now, attack at t+h)": 125,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.005671
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Tuesday-20-02-2018.csv": {
+   "n_flows": 6054702,
+   "file_order_backward_steps_by_start": 2744668,
+   "file_order_backward_steps_by_end": 2772201,
+   "file_order_backward_steps_by_start_gt60s": 2576995,
+   "file_order_backward_steps_by_end_gt60s": 2584041,
+   "n_with_subsecond": 6054696,
+   "n_distinct_ts": 6053393,
+   "min_ts": "2018-02-20 12:28:03.804789",
+   "max_ts": "2018-02-21 00:37:22.354975",
+   "n_duration_gt_window": 2191473,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 282348,
+   "n_non_benign": 290205,
+   "n_attempted": 80,
+   "bins_in_span": 21881,
+   "bins_nonempty": 20160,
+   "share_bins_empty": 0.078653,
+   "longest_empty_run_bins": 15,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 311.0,
+   "flows_per_nonempty_bin_p95": 603.0,
+   "flows_per_bin_max": 1371,
+   "bins_with_attack_excl_attempted": 2137,
+   "bins_with_attack_incl_attempted": 2137,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21880,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 9,
+     "n_persistent (attack now and at t+h)": 2128,
+     "positive_rate": 0.097669
+    },
+    "2": {
+     "n_windows_with_target": 21879,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 18,
+     "n_persistent (attack now and at t+h)": 2119,
+     "positive_rate": 0.097674
+    },
+    "3": {
+     "n_windows_with_target": 21878,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 27,
+     "n_persistent (attack now and at t+h)": 2110,
+     "positive_rate": 0.097678
+    },
+    "4": {
+     "n_windows_with_target": 21877,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 36,
+     "n_persistent (attack now and at t+h)": 2101,
+     "positive_rate": 0.097682
+    },
+    "5": {
+     "n_windows_with_target": 21876,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 45,
+     "n_persistent (attack now and at t+h)": 2092,
+     "positive_rate": 0.097687
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Wednesday-14-02-2018.csv": {
+   "n_flows": 5898350,
+   "file_order_backward_steps_by_start": 2558012,
+   "file_order_backward_steps_by_end": 2587545,
+   "file_order_backward_steps_by_start_gt60s": 2429915,
+   "file_order_backward_steps_by_end_gt60s": 2437581,
+   "n_with_subsecond": 5898343,
+   "n_distinct_ts": 5897425,
+   "min_ts": "2018-02-14 12:28:07.743746",
+   "max_ts": "2018-02-15 00:47:34.715559",
+   "n_duration_gt_window": 1799334,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 0,
+   "n_non_benign": 287551,
+   "n_attempted": 193354,
+   "bins_in_span": 22185,
+   "bins_nonempty": 20467,
+   "share_bins_empty": 0.07744,
+   "longest_empty_run_bins": 26,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 306.0,
+   "flows_per_nonempty_bin_p95": 577.0,
+   "flows_per_bin_max": 1253,
+   "bins_with_attack_excl_attempted": 2720,
+   "bins_with_attack_incl_attempted": 5634,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 22184,
+     "n_positive_target": 2720,
+     "n_onset_like (benign now, attack at t+h)": 1,
+     "n_persistent (attack now and at t+h)": 2719,
+     "positive_rate": 0.122611
+    },
+    "2": {
+     "n_windows_with_target": 22183,
+     "n_positive_target": 2720,
+     "n_onset_like (benign now, attack at t+h)": 2,
+     "n_persistent (attack now and at t+h)": 2718,
+     "positive_rate": 0.122616
+    },
+    "3": {
+     "n_windows_with_target": 22182,
+     "n_positive_target": 2720,
+     "n_onset_like (benign now, attack at t+h)": 3,
+     "n_persistent (attack now and at t+h)": 2717,
+     "positive_rate": 0.122622
+    },
+    "4": {
+     "n_windows_with_target": 22181,
+     "n_positive_target": 2720,
+     "n_onset_like (benign now, attack at t+h)": 4,
+     "n_persistent (attack now and at t+h)": 2716,
+     "positive_rate": 0.122627
+    },
+    "5": {
+     "n_windows_with_target": 22180,
+     "n_positive_target": 2720,
+     "n_onset_like (benign now, attack at t+h)": 5,
+     "n_persistent (attack now and at t+h)": 2715,
+     "positive_rate": 0.122633
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Wednesday-21-02-2018.csv": {
+   "n_flows": 6962593,
+   "file_order_backward_steps_by_start": 3199969,
+   "file_order_backward_steps_by_end": 3211808,
+   "file_order_backward_steps_by_start_gt60s": 2632225,
+   "file_order_backward_steps_by_end_gt60s": 2639522,
+   "n_with_subsecond": 6962590,
+   "n_distinct_ts": 6961429,
+   "min_ts": "2018-02-21 12:28:18.495098",
+   "max_ts": "2018-02-22 00:36:49.117402",
+   "n_duration_gt_window": 2034824,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 4447,
+   "n_non_benign": 1084194,
+   "n_attempted": 171,
+   "bins_in_span": 21856,
+   "bins_nonempty": 19266,
+   "share_bins_empty": 0.118503,
+   "longest_empty_run_bins": 23,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 328.0,
+   "flows_per_nonempty_bin_p95": 987.75,
+   "flows_per_bin_max": 1600,
+   "bins_with_attack_excl_attempted": 2213,
+   "bins_with_attack_incl_attempted": 2213,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21855,
+     "n_positive_target": 2213,
+     "n_onset_like (benign now, attack at t+h)": 39,
+     "n_persistent (attack now and at t+h)": 2174,
+     "positive_rate": 0.101258
+    },
+    "2": {
+     "n_windows_with_target": 21854,
+     "n_positive_target": 2213,
+     "n_onset_like (benign now, attack at t+h)": 75,
+     "n_persistent (attack now and at t+h)": 2138,
+     "positive_rate": 0.101263
+    },
+    "3": {
+     "n_windows_with_target": 21853,
+     "n_positive_target": 2213,
+     "n_onset_like (benign now, attack at t+h)": 110,
+     "n_persistent (attack now and at t+h)": 2103,
+     "positive_rate": 0.101268
+    },
+    "4": {
+     "n_windows_with_target": 21852,
+     "n_positive_target": 2213,
+     "n_onset_like (benign now, attack at t+h)": 146,
+     "n_persistent (attack now and at t+h)": 2067,
+     "positive_rate": 0.101272
+    },
+    "5": {
+     "n_windows_with_target": 21851,
+     "n_positive_target": 2213,
+     "n_onset_like (benign now, attack at t+h)": 181,
+     "n_persistent (attack now and at t+h)": 2032,
+     "positive_rate": 0.101277
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_improved/CSE-CIC-IDS-2018/Wednesday-28-02-2018.csv": {
+   "n_flows": 6568726,
+   "file_order_backward_steps_by_start": 3004073,
+   "file_order_backward_steps_by_end": 3004903,
+   "file_order_backward_steps_by_start_gt60s": 2873920,
+   "file_order_backward_steps_by_end_gt60s": 2880128,
+   "n_with_subsecond": 6568722,
+   "n_distinct_ts": 6567549,
+   "min_ts": "2018-02-28 12:20:49.532235",
+   "max_ts": "2018-03-01 01:05:48.618359",
+   "n_duration_gt_window": 2311124,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 4203,
+   "n_non_benign": 49844,
+   "n_attempted": 15,
+   "bins_in_span": 22951,
+   "bins_nonempty": 21869,
+   "share_bins_empty": 0.047144,
+   "longest_empty_run_bins": 10,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 326.0,
+   "flows_per_nonempty_bin_p95": 606.0,
+   "flows_per_bin_max": 2739,
+   "bins_with_attack_excl_attempted": 1456,
+   "bins_with_attack_incl_attempted": 1459,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 22950,
+     "n_positive_target": 1456,
+     "n_onset_like (benign now, attack at t+h)": 627,
+     "n_persistent (attack now and at t+h)": 829,
+     "positive_rate": 0.063442
+    },
+    "2": {
+     "n_windows_with_target": 22949,
+     "n_positive_target": 1456,
+     "n_onset_like (benign now, attack at t+h)": 550,
+     "n_persistent (attack now and at t+h)": 906,
+     "positive_rate": 0.063445
+    },
+    "3": {
+     "n_windows_with_target": 22948,
+     "n_positive_target": 1456,
+     "n_onset_like (benign now, attack at t+h)": 555,
+     "n_persistent (attack now and at t+h)": 901,
+     "positive_rate": 0.063448
+    },
+    "4": {
+     "n_windows_with_target": 22947,
+     "n_positive_target": 1456,
+     "n_onset_like (benign now, attack at t+h)": 768,
+     "n_persistent (attack now and at t+h)": 688,
+     "positive_rate": 0.063451
+    },
+    "5": {
+     "n_windows_with_target": 22946,
+     "n_positive_target": 1456,
+     "n_onset_like (benign now, attack at t+h)": 542,
+     "n_persistent (attack now and at t+h)": 914,
+     "positive_rate": 0.063453
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "improved"
+  },
+  "data/raw_original/CIC-IDS-2017/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": {
+   "n_flows": 225745,
+   "file_order_backward_steps_by_start": 0,
+   "file_order_backward_steps_by_end": 116282,
+   "file_order_backward_steps_by_start_gt60s": 0,
+   "file_order_backward_steps_by_end_gt60s": 21454,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 93,
+   "min_ts": "2017-07-07 03:30:00",
+   "max_ts": "2017-07-07 05:02:00",
+   "n_duration_gt_window": 100117,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 62856,
+   "n_non_benign": 128027,
+   "n_attempted": 0,
+   "bins_in_span": 2761,
+   "bins_nonempty": 93,
+   "share_bins_empty": 0.966317,
+   "longest_empty_run_bins": 29,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 757.0,
+   "flows_per_nonempty_bin_p95": 9343.8,
+   "flows_per_bin_max": 11188,
+   "bins_with_attack_excl_attempted": 21,
+   "bins_with_attack_incl_attempted": 21,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 2760,
+     "n_positive_target": 21,
+     "n_onset_like (benign now, attack at t+h)": 21,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.007609
+    },
+    "2": {
+     "n_windows_with_target": 2759,
+     "n_positive_target": 21,
+     "n_onset_like (benign now, attack at t+h)": 21,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.007611
+    },
+    "3": {
+     "n_windows_with_target": 2758,
+     "n_positive_target": 21,
+     "n_onset_like (benign now, attack at t+h)": 21,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.007614
+    },
+    "4": {
+     "n_windows_with_target": 2757,
+     "n_positive_target": 21,
+     "n_onset_like (benign now, attack at t+h)": 21,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.007617
+    },
+    "5": {
+     "n_windows_with_target": 2756,
+     "n_positive_target": 21,
+     "n_onset_like (benign now, attack at t+h)": 21,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.00762
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CIC-IDS-2017/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": {
+   "n_flows": 286467,
+   "file_order_backward_steps_by_start": 0,
+   "file_order_backward_steps_by_end": 136138,
+   "file_order_backward_steps_by_start_gt60s": 0,
+   "file_order_backward_steps_by_end_gt60s": 4014,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 150,
+   "min_ts": "2017-07-07 01:00:00",
+   "max_ts": "2017-07-07 03:29:00",
+   "n_duration_gt_window": 28547,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 329,
+   "n_non_benign": 158930,
+   "n_attempted": 0,
+   "bins_in_span": 4471,
+   "bins_nonempty": 150,
+   "share_bins_empty": 0.96645,
+   "longest_empty_run_bins": 29,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 795.0,
+   "flows_per_nonempty_bin_p95": 4686.049999999999,
+   "flows_per_bin_max": 46216,
+   "bins_with_attack_excl_attempted": 27,
+   "bins_with_attack_incl_attempted": 27,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 4470,
+     "n_positive_target": 27,
+     "n_onset_like (benign now, attack at t+h)": 27,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.00604
+    },
+    "2": {
+     "n_windows_with_target": 4469,
+     "n_positive_target": 27,
+     "n_onset_like (benign now, attack at t+h)": 27,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.006042
+    },
+    "3": {
+     "n_windows_with_target": 4468,
+     "n_positive_target": 27,
+     "n_onset_like (benign now, attack at t+h)": 27,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.006043
+    },
+    "4": {
+     "n_windows_with_target": 4467,
+     "n_positive_target": 27,
+     "n_onset_like (benign now, attack at t+h)": 27,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.006044
+    },
+    "5": {
+     "n_windows_with_target": 4466,
+     "n_positive_target": 27,
+     "n_onset_like (benign now, attack at t+h)": 27,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.006046
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CIC-IDS-2017/Friday-WorkingHours-Morning.pcap_ISCX.csv": {
+   "n_flows": 191033,
+   "file_order_backward_steps_by_start": 0,
+   "file_order_backward_steps_by_end": 87189,
+   "file_order_backward_steps_by_start_gt60s": 0,
+   "file_order_backward_steps_by_end_gt60s": 6649,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 241,
+   "min_ts": "2017-07-07 08:59:00",
+   "max_ts": "2017-07-07 12:59:00",
+   "n_duration_gt_window": 41622,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 2,
+   "n_non_benign": 1966,
+   "n_attempted": 0,
+   "bins_in_span": 7201,
+   "bins_nonempty": 241,
+   "share_bins_empty": 0.966532,
+   "longest_empty_run_bins": 29,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 629.0,
+   "flows_per_nonempty_bin_p95": 2074.0,
+   "flows_per_bin_max": 4017,
+   "bins_with_attack_excl_attempted": 163,
+   "bins_with_attack_incl_attempted": 163,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 7200,
+     "n_positive_target": 163,
+     "n_onset_like (benign now, attack at t+h)": 163,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.022639
+    },
+    "2": {
+     "n_windows_with_target": 7199,
+     "n_positive_target": 163,
+     "n_onset_like (benign now, attack at t+h)": 163,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.022642
+    },
+    "3": {
+     "n_windows_with_target": 7198,
+     "n_positive_target": 163,
+     "n_onset_like (benign now, attack at t+h)": 163,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.022645
+    },
+    "4": {
+     "n_windows_with_target": 7197,
+     "n_positive_target": 163,
+     "n_onset_like (benign now, attack at t+h)": 163,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.022648
+    },
+    "5": {
+     "n_windows_with_target": 7196,
+     "n_positive_target": 163,
+     "n_onset_like (benign now, attack at t+h)": 163,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.022651
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CIC-IDS-2017/Monday-WorkingHours.pcap_ISCX.csv": {
+   "n_flows": 529918,
+   "file_order_backward_steps_by_start": 208847,
+   "file_order_backward_steps_by_end": 249073,
+   "file_order_backward_steps_by_start_gt60s": 170344,
+   "file_order_backward_steps_by_end_gt60s": 158491,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 25998,
+   "min_ts": "2017-07-03 01:00:01",
+   "max_ts": "2017-07-03 12:59:58",
+   "n_duration_gt_window": 111490,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 0,
+   "n_non_benign": 0,
+   "n_attempted": 0,
+   "bins_in_span": 21600,
+   "bins_nonempty": 14020,
+   "share_bins_empty": 0.350926,
+   "longest_empty_run_bins": 7031,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 18.0,
+   "flows_per_nonempty_bin_p95": 144.04999999999927,
+   "flows_per_bin_max": 547,
+   "bins_with_attack_excl_attempted": 0,
+   "bins_with_attack_incl_attempted": 0,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21599,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "2": {
+     "n_windows_with_target": 21598,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "3": {
+     "n_windows_with_target": 21597,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "4": {
+     "n_windows_with_target": 21596,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    },
+    "5": {
+     "n_windows_with_target": 21595,
+     "n_positive_target": 0,
+     "n_onset_like (benign now, attack at t+h)": 0,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.0
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CIC-IDS-2017/Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": {
+   "n_flows": 288602,
+   "file_order_backward_steps_by_start": 0,
+   "file_order_backward_steps_by_end": 131623,
+   "file_order_backward_steps_by_start_gt60s": 0,
+   "file_order_backward_steps_by_end_gt60s": 6381,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 245,
+   "min_ts": "2017-07-06 01:00:00",
+   "max_ts": "2017-07-06 05:04:00",
+   "n_duration_gt_window": 49875,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 34,
+   "n_non_benign": 36,
+   "n_attempted": 0,
+   "bins_in_span": 7321,
+   "bins_nonempty": 245,
+   "share_bins_empty": 0.966535,
+   "longest_empty_run_bins": 29,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 920.0,
+   "flows_per_nonempty_bin_p95": 3328.3999999999996,
+   "flows_per_bin_max": 5374,
+   "bins_with_attack_excl_attempted": 28,
+   "bins_with_attack_incl_attempted": 28,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 7320,
+     "n_positive_target": 28,
+     "n_onset_like (benign now, attack at t+h)": 28,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003825
+    },
+    "2": {
+     "n_windows_with_target": 7319,
+     "n_positive_target": 28,
+     "n_onset_like (benign now, attack at t+h)": 28,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003826
+    },
+    "3": {
+     "n_windows_with_target": 7318,
+     "n_positive_target": 28,
+     "n_onset_like (benign now, attack at t+h)": 28,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003826
+    },
+    "4": {
+     "n_windows_with_target": 7317,
+     "n_positive_target": 28,
+     "n_onset_like (benign now, attack at t+h)": 28,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003827
+    },
+    "5": {
+     "n_windows_with_target": 7316,
+     "n_positive_target": 28,
+     "n_onset_like (benign now, attack at t+h)": 28,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003827
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CIC-IDS-2017/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": {
+   "n_flows": 170366,
+   "file_order_backward_steps_by_start": 0,
+   "file_order_backward_steps_by_end": 77381,
+   "file_order_backward_steps_by_start_gt60s": 0,
+   "file_order_backward_steps_by_end_gt60s": 5615,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 241,
+   "min_ts": "2017-07-06 08:59:00",
+   "max_ts": "2017-07-06 12:59:00",
+   "n_duration_gt_window": 39766,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 2001,
+   "n_non_benign": 2180,
+   "n_attempted": 0,
+   "bins_in_span": 7201,
+   "bins_nonempty": 241,
+   "share_bins_empty": 0.966532,
+   "longest_empty_run_bins": 29,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 567.0,
+   "flows_per_nonempty_bin_p95": 1801.0,
+   "flows_per_bin_max": 3077,
+   "bins_with_attack_excl_attempted": 68,
+   "bins_with_attack_incl_attempted": 68,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 7200,
+     "n_positive_target": 68,
+     "n_onset_like (benign now, attack at t+h)": 68,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.009444
+    },
+    "2": {
+     "n_windows_with_target": 7199,
+     "n_positive_target": 68,
+     "n_onset_like (benign now, attack at t+h)": 68,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.009446
+    },
+    "3": {
+     "n_windows_with_target": 7198,
+     "n_positive_target": 68,
+     "n_onset_like (benign now, attack at t+h)": 68,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.009447
+    },
+    "4": {
+     "n_windows_with_target": 7197,
+     "n_positive_target": 68,
+     "n_onset_like (benign now, attack at t+h)": 68,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.009448
+    },
+    "5": {
+     "n_windows_with_target": 7196,
+     "n_positive_target": 68,
+     "n_onset_like (benign now, attack at t+h)": 68,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.00945
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CIC-IDS-2017/Tuesday-WorkingHours.pcap_ISCX.csv": {
+   "n_flows": 445909,
+   "file_order_backward_steps_by_start": 159424,
+   "file_order_backward_steps_by_end": 216721,
+   "file_order_backward_steps_by_start_gt60s": 149062,
+   "file_order_backward_steps_by_end_gt60s": 144645,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 488,
+   "min_ts": "2017-07-04 01:00:00",
+   "max_ts": "2017-07-04 12:59:00",
+   "n_duration_gt_window": 98231,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 6928,
+   "n_non_benign": 13835,
+   "n_attempted": 0,
+   "bins_in_span": 21571,
+   "bins_nonempty": 488,
+   "share_bins_empty": 0.977377,
+   "longest_empty_run_bins": 6989,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 763.5,
+   "flows_per_nonempty_bin_p95": 2370.85,
+   "flows_per_bin_max": 3685,
+   "bins_with_attack_excl_attempted": 127,
+   "bins_with_attack_incl_attempted": 127,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21570,
+     "n_positive_target": 127,
+     "n_onset_like (benign now, attack at t+h)": 127,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.005888
+    },
+    "2": {
+     "n_windows_with_target": 21569,
+     "n_positive_target": 127,
+     "n_onset_like (benign now, attack at t+h)": 127,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.005888
+    },
+    "3": {
+     "n_windows_with_target": 21568,
+     "n_positive_target": 127,
+     "n_onset_like (benign now, attack at t+h)": 127,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.005888
+    },
+    "4": {
+     "n_windows_with_target": 21567,
+     "n_positive_target": 127,
+     "n_onset_like (benign now, attack at t+h)": 127,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.005889
+    },
+    "5": {
+     "n_windows_with_target": 21566,
+     "n_positive_target": 127,
+     "n_onset_like (benign now, attack at t+h)": 127,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.005889
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CIC-IDS-2017/Wednesday-workingHours.pcap_ISCX.csv": {
+   "n_flows": 692703,
+   "file_order_backward_steps_by_start": 163908,
+   "file_order_backward_steps_by_end": 333344,
+   "file_order_backward_steps_by_start_gt60s": 149999,
+   "file_order_backward_steps_by_end_gt60s": 147821,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 509,
+   "min_ts": "2017-07-05 01:00:00",
+   "max_ts": "2017-07-05 12:59:00",
+   "n_duration_gt_window": 263095,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 162052,
+   "n_non_benign": 252672,
+   "n_attempted": 0,
+   "bins_in_span": 21571,
+   "bins_nonempty": 509,
+   "share_bins_empty": 0.976404,
+   "longest_empty_run_bins": 6359,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 759.0,
+   "flows_per_nonempty_bin_p95": 2878.399999999993,
+   "flows_per_bin_max": 18353,
+   "bins_with_attack_excl_attempted": 86,
+   "bins_with_attack_incl_attempted": 86,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21570,
+     "n_positive_target": 86,
+     "n_onset_like (benign now, attack at t+h)": 86,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003987
+    },
+    "2": {
+     "n_windows_with_target": 21569,
+     "n_positive_target": 86,
+     "n_onset_like (benign now, attack at t+h)": 86,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003987
+    },
+    "3": {
+     "n_windows_with_target": 21568,
+     "n_positive_target": 86,
+     "n_onset_like (benign now, attack at t+h)": 86,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003987
+    },
+    "4": {
+     "n_windows_with_target": 21567,
+     "n_positive_target": 86,
+     "n_onset_like (benign now, attack at t+h)": 86,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003988
+    },
+    "5": {
+     "n_windows_with_target": 21566,
+     "n_positive_target": 86,
+     "n_onset_like (benign now, attack at t+h)": 86,
+     "n_persistent (attack now and at t+h)": 0,
+     "positive_rate": 0.003988
+    }
+   },
+   "dataset_family": "CIC-IDS-2017",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Friday-02-03-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 1048575,
+   "file_order_backward_steps_by_start": 292106,
+   "file_order_backward_steps_by_end": 458601,
+   "file_order_backward_steps_by_start_gt60s": 249462,
+   "file_order_backward_steps_by_end_gt60s": 224602,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 31425,
+   "min_ts": "2018-03-02 01:00:00",
+   "max_ts": "2018-03-02 12:59:59",
+   "n_duration_gt_window": 277087,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 231,
+   "n_non_benign": 286191,
+   "n_attempted": 0,
+   "bins_in_span": 21600,
+   "bins_nonempty": 15714,
+   "share_bins_empty": 0.2725,
+   "longest_empty_run_bins": 5886,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 49.0,
+   "flows_per_nonempty_bin_p95": 162.34999999999854,
+   "flows_per_bin_max": 669,
+   "bins_with_attack_excl_attempted": 10211,
+   "bins_with_attack_incl_attempted": 10211,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21599,
+     "n_positive_target": 10210,
+     "n_onset_like (benign now, attack at t+h)": 3,
+     "n_persistent (attack now and at t+h)": 10207,
+     "positive_rate": 0.472707
+    },
+    "2": {
+     "n_windows_with_target": 21598,
+     "n_positive_target": 10209,
+     "n_onset_like (benign now, attack at t+h)": 5,
+     "n_persistent (attack now and at t+h)": 10204,
+     "positive_rate": 0.472683
+    },
+    "3": {
+     "n_windows_with_target": 21597,
+     "n_positive_target": 10208,
+     "n_onset_like (benign now, attack at t+h)": 7,
+     "n_persistent (attack now and at t+h)": 10201,
+     "positive_rate": 0.472658
+    },
+    "4": {
+     "n_windows_with_target": 21596,
+     "n_positive_target": 10207,
+     "n_onset_like (benign now, attack at t+h)": 9,
+     "n_persistent (attack now and at t+h)": 10198,
+     "positive_rate": 0.472634
+    },
+    "5": {
+     "n_windows_with_target": 21595,
+     "n_positive_target": 10206,
+     "n_onset_like (benign now, attack at t+h)": 11,
+     "n_persistent (attack now and at t+h)": 10195,
+     "positive_rate": 0.472609
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Friday-16-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 1048574,
+   "file_order_backward_steps_by_start": 268941,
+   "file_order_backward_steps_by_end": 481929,
+   "file_order_backward_steps_by_start_gt60s": 5300,
+   "file_order_backward_steps_by_end_gt60s": 92,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 3177,
+   "min_ts": "2018-02-16 01:00:32",
+   "max_ts": "2018-02-16 12:58:24",
+   "n_duration_gt_window": 452840,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 11410,
+   "n_non_benign": 601802,
+   "n_attempted": 0,
+   "bins_in_span": 21537,
+   "bins_nonempty": 1699,
+   "share_bins_empty": 0.921113,
+   "longest_empty_run_bins": 11944,
+   "n_empty_runs_ge_60s": 109,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 80.0,
+   "flows_per_nonempty_bin_p95": 8728.0,
+   "flows_per_bin_max": 16608,
+   "bins_with_attack_excl_attempted": 1478,
+   "bins_with_attack_incl_attempted": 1478,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21536,
+     "n_positive_target": 1478,
+     "n_onset_like (benign now, attack at t+h)": 2,
+     "n_persistent (attack now and at t+h)": 1476,
+     "positive_rate": 0.068629
+    },
+    "2": {
+     "n_windows_with_target": 21535,
+     "n_positive_target": 1478,
+     "n_onset_like (benign now, attack at t+h)": 4,
+     "n_persistent (attack now and at t+h)": 1474,
+     "positive_rate": 0.068632
+    },
+    "3": {
+     "n_windows_with_target": 21534,
+     "n_positive_target": 1478,
+     "n_onset_like (benign now, attack at t+h)": 6,
+     "n_persistent (attack now and at t+h)": 1472,
+     "positive_rate": 0.068636
+    },
+    "4": {
+     "n_windows_with_target": 21533,
+     "n_positive_target": 1478,
+     "n_onset_like (benign now, attack at t+h)": 8,
+     "n_persistent (attack now and at t+h)": 1470,
+     "positive_rate": 0.068639
+    },
+    "5": {
+     "n_windows_with_target": 21532,
+     "n_positive_target": 1478,
+     "n_onset_like (benign now, attack at t+h)": 10,
+     "n_persistent (attack now and at t+h)": 1468,
+     "positive_rate": 0.068642
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Friday-23-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 1048575,
+   "file_order_backward_steps_by_start": 378363,
+   "file_order_backward_steps_by_end": 415258,
+   "file_order_backward_steps_by_start_gt60s": 310278,
+   "file_order_backward_steps_by_end_gt60s": 279512,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 33325,
+   "min_ts": "2018-02-23 01:00:00",
+   "max_ts": "2018-02-23 12:59:59",
+   "n_duration_gt_window": 402055,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 378,
+   "n_non_benign": 566,
+   "n_attempted": 0,
+   "bins_in_span": 21600,
+   "bins_nonempty": 16669,
+   "share_bins_empty": 0.228287,
+   "longest_empty_run_bins": 4930,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 47.0,
+   "flows_per_nonempty_bin_p95": 165.0,
+   "flows_per_bin_max": 612,
+   "bins_with_attack_excl_attempted": 347,
+   "bins_with_attack_incl_attempted": 347,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21599,
+     "n_positive_target": 347,
+     "n_onset_like (benign now, attack at t+h)": 278,
+     "n_persistent (attack now and at t+h)": 69,
+     "positive_rate": 0.016066
+    },
+    "2": {
+     "n_windows_with_target": 21598,
+     "n_positive_target": 347,
+     "n_onset_like (benign now, attack at t+h)": 308,
+     "n_persistent (attack now and at t+h)": 39,
+     "positive_rate": 0.016066
+    },
+    "3": {
+     "n_windows_with_target": 21597,
+     "n_positive_target": 347,
+     "n_onset_like (benign now, attack at t+h)": 293,
+     "n_persistent (attack now and at t+h)": 54,
+     "positive_rate": 0.016067
+    },
+    "4": {
+     "n_windows_with_target": 21596,
+     "n_positive_target": 347,
+     "n_onset_like (benign now, attack at t+h)": 326,
+     "n_persistent (attack now and at t+h)": 21,
+     "positive_rate": 0.016068
+    },
+    "5": {
+     "n_windows_with_target": 21595,
+     "n_positive_target": 347,
+     "n_onset_like (benign now, attack at t+h)": 328,
+     "n_persistent (attack now and at t+h)": 19,
+     "positive_rate": 0.016069
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Thuesday-20-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 7948748,
+   "file_order_backward_steps_by_start": 2977911,
+   "file_order_backward_steps_by_end": 3474658,
+   "file_order_backward_steps_by_start_gt60s": 2610945,
+   "file_order_backward_steps_by_end_gt60s": 2385364,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 38478,
+   "min_ts": "2018-02-20 01:00:00",
+   "max_ts": "2018-02-20 12:59:59",
+   "n_duration_gt_window": 2415887,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 273353,
+   "n_non_benign": 576191,
+   "n_attempted": 0,
+   "bins_in_span": 21600,
+   "bins_nonempty": 20289,
+   "share_bins_empty": 0.060694,
+   "longest_empty_run_bins": 11,
+   "n_empty_runs_ge_60s": 0,
+   "n_empty_runs_ge_300s": 0,
+   "flows_per_nonempty_bin_p50": 405.0,
+   "flows_per_nonempty_bin_p95": 813.0,
+   "flows_per_bin_max": 1562,
+   "bins_with_attack_excl_attempted": 2137,
+   "bins_with_attack_incl_attempted": 2137,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21599,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 9,
+     "n_persistent (attack now and at t+h)": 2128,
+     "positive_rate": 0.09894
+    },
+    "2": {
+     "n_windows_with_target": 21598,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 18,
+     "n_persistent (attack now and at t+h)": 2119,
+     "positive_rate": 0.098944
+    },
+    "3": {
+     "n_windows_with_target": 21597,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 27,
+     "n_persistent (attack now and at t+h)": 2110,
+     "positive_rate": 0.098949
+    },
+    "4": {
+     "n_windows_with_target": 21596,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 36,
+     "n_persistent (attack now and at t+h)": 2101,
+     "positive_rate": 0.098954
+    },
+    "5": {
+     "n_windows_with_target": 21595,
+     "n_positive_target": 2137,
+     "n_onset_like (benign now, attack at t+h)": 45,
+     "n_persistent (attack now and at t+h)": 2092,
+     "positive_rate": 0.098958
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Thursday-01-03-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 331100,
+   "file_order_backward_steps_by_start": 37824,
+   "file_order_backward_steps_by_end": 145094,
+   "file_order_backward_steps_by_start_gt60s": 34685,
+   "file_order_backward_steps_by_end_gt60s": 46546,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 32068,
+   "min_ts": "2018-03-01 01:00:00",
+   "max_ts": "2018-03-01 12:59:59",
+   "n_duration_gt_window": 79630,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 17681,
+   "n_non_benign": 93063,
+   "n_attempted": 0,
+   "bins_in_span": 21600,
+   "bins_nonempty": 16719,
+   "share_bins_empty": 0.225972,
+   "longest_empty_run_bins": 4529,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 10.0,
+   "flows_per_nonempty_bin_p95": 67.0,
+   "flows_per_bin_max": 2125,
+   "bins_with_attack_excl_attempted": 4595,
+   "bins_with_attack_incl_attempted": 4595,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21599,
+     "n_positive_target": 4595,
+     "n_onset_like (benign now, attack at t+h)": 53,
+     "n_persistent (attack now and at t+h)": 4542,
+     "positive_rate": 0.212741
+    },
+    "2": {
+     "n_windows_with_target": 21598,
+     "n_positive_target": 4595,
+     "n_onset_like (benign now, attack at t+h)": 57,
+     "n_persistent (attack now and at t+h)": 4538,
+     "positive_rate": 0.212751
+    },
+    "3": {
+     "n_windows_with_target": 21597,
+     "n_positive_target": 4595,
+     "n_onset_like (benign now, attack at t+h)": 61,
+     "n_persistent (attack now and at t+h)": 4534,
+     "positive_rate": 0.212761
+    },
+    "4": {
+     "n_windows_with_target": 21596,
+     "n_positive_target": 4595,
+     "n_onset_like (benign now, attack at t+h)": 63,
+     "n_persistent (attack now and at t+h)": 4532,
+     "positive_rate": 0.212771
+    },
+    "5": {
+     "n_windows_with_target": 21595,
+     "n_positive_target": 4595,
+     "n_onset_like (benign now, attack at t+h)": 65,
+     "n_persistent (attack now and at t+h)": 4530,
+     "positive_rate": 0.212781
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 1048575,
+   "file_order_backward_steps_by_start": 382967,
+   "file_order_backward_steps_by_end": 446489,
+   "file_order_backward_steps_by_start_gt60s": 320335,
+   "file_order_backward_steps_by_end_gt60s": 285098,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 33862,
+   "min_ts": "2018-02-15 01:00:00",
+   "max_ts": "2018-02-15 12:59:59",
+   "n_duration_gt_window": 310680,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 42346,
+   "n_non_benign": 52498,
+   "n_attempted": 0,
+   "bins_in_span": 21600,
+   "bins_nonempty": 17044,
+   "share_bins_empty": 0.210926,
+   "longest_empty_run_bins": 4460,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 46.0,
+   "flows_per_nonempty_bin_p95": 166.0,
+   "flows_per_bin_max": 763,
+   "bins_with_attack_excl_attempted": 1620,
+   "bins_with_attack_incl_attempted": 1620,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21599,
+     "n_positive_target": 1620,
+     "n_onset_like (benign now, attack at t+h)": 52,
+     "n_persistent (attack now and at t+h)": 1568,
+     "positive_rate": 0.075003
+    },
+    "2": {
+     "n_windows_with_target": 21598,
+     "n_positive_target": 1620,
+     "n_onset_like (benign now, attack at t+h)": 60,
+     "n_persistent (attack now and at t+h)": 1560,
+     "positive_rate": 0.075007
+    },
+    "3": {
+     "n_windows_with_target": 21597,
+     "n_positive_target": 1620,
+     "n_onset_like (benign now, attack at t+h)": 60,
+     "n_persistent (attack now and at t+h)": 1560,
+     "positive_rate": 0.07501
+    },
+    "4": {
+     "n_windows_with_target": 21596,
+     "n_positive_target": 1620,
+     "n_onset_like (benign now, attack at t+h)": 61,
+     "n_persistent (attack now and at t+h)": 1559,
+     "positive_rate": 0.075014
+    },
+    "5": {
+     "n_windows_with_target": 21595,
+     "n_positive_target": 1620,
+     "n_onset_like (benign now, attack at t+h)": 74,
+     "n_persistent (attack now and at t+h)": 1546,
+     "positive_rate": 0.075017
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Thursday-22-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 1048575,
+   "file_order_backward_steps_by_start": 380319,
+   "file_order_backward_steps_by_end": 418087,
+   "file_order_backward_steps_by_start_gt60s": 313373,
+   "file_order_backward_steps_by_end_gt60s": 282596,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 32891,
+   "min_ts": "1970-01-10 03:04:26",
+   "max_ts": "2018-02-22 12:59:59",
+   "n_duration_gt_window": 391249,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 207,
+   "n_non_benign": 362,
+   "n_attempted": 0,
+   "bins_in_span": 759257867,
+   "bins_nonempty": 16453,
+   "share_bins_empty": 0.999978,
+   "longest_empty_run_bins": 759138286,
+   "n_empty_runs_ge_60s": 9,
+   "n_empty_runs_ge_300s": 9,
+   "flows_per_nonempty_bin_p50": 46.0,
+   "flows_per_nonempty_bin_p95": 171.0,
+   "flows_per_bin_max": 602,
+   "bins_with_attack_excl_attempted": 225,
+   "bins_with_attack_incl_attempted": 225,
+   "next_window_target_excl_attempted": {
+    "skipped": "span of 759257867 bins exceeds 200000; stray timestamps (see timestamp_quality.csv)"
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Wednesday-14-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 1048575,
+   "file_order_backward_steps_by_start": 289765,
+   "file_order_backward_steps_by_end": 429817,
+   "file_order_backward_steps_by_start_gt60s": 240644,
+   "file_order_backward_steps_by_end_gt60s": 220001,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 32043,
+   "min_ts": "1970-01-05 03:01:17",
+   "max_ts": "2018-02-14 12:59:59",
+   "n_duration_gt_window": 199311,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 0,
+   "n_non_benign": 380949,
+   "n_attempted": 0,
+   "bins_in_span": 759128362,
+   "bins_nonempty": 16243,
+   "share_bins_empty": 0.999979,
+   "longest_empty_run_bins": 758792273,
+   "n_empty_runs_ge_60s": 6,
+   "n_empty_runs_ge_300s": 6,
+   "flows_per_nonempty_bin_p50": 51.0,
+   "flows_per_nonempty_bin_p95": 167.0,
+   "flows_per_bin_max": 454,
+   "bins_with_attack_excl_attempted": 5635,
+   "bins_with_attack_incl_attempted": 5635,
+   "next_window_target_excl_attempted": {
+    "skipped": "span of 759128362 bins exceeds 200000; stray timestamps (see timestamp_quality.csv)"
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Wednesday-21-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 1048575,
+   "file_order_backward_steps_by_start": 4056,
+   "file_order_backward_steps_by_end": 510906,
+   "file_order_backward_steps_by_start_gt60s": 261,
+   "file_order_backward_steps_by_end_gt60s": 230,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 3256,
+   "min_ts": "2018-02-21 01:55:46",
+   "max_ts": "2018-02-21 10:43:21",
+   "n_duration_gt_window": 3720,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 1710,
+   "n_non_benign": 687742,
+   "n_attempted": 0,
+   "bins_in_span": 15828,
+   "bins_nonempty": 1949,
+   "share_bins_empty": 0.876864,
+   "longest_empty_run_bins": 10782,
+   "n_empty_runs_ge_60s": 8,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 5.0,
+   "flows_per_nonempty_bin_p95": 1600.0,
+   "flows_per_bin_max": 1610,
+   "bins_with_attack_excl_attempted": 1240,
+   "bins_with_attack_incl_attempted": 1240,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 15827,
+     "n_positive_target": 1240,
+     "n_onset_like (benign now, attack at t+h)": 39,
+     "n_persistent (attack now and at t+h)": 1201,
+     "positive_rate": 0.078347
+    },
+    "2": {
+     "n_windows_with_target": 15826,
+     "n_positive_target": 1240,
+     "n_onset_like (benign now, attack at t+h)": 75,
+     "n_persistent (attack now and at t+h)": 1165,
+     "positive_rate": 0.078352
+    },
+    "3": {
+     "n_windows_with_target": 15825,
+     "n_positive_target": 1240,
+     "n_onset_like (benign now, attack at t+h)": 110,
+     "n_persistent (attack now and at t+h)": 1130,
+     "positive_rate": 0.078357
+    },
+    "4": {
+     "n_windows_with_target": 15824,
+     "n_positive_target": 1240,
+     "n_onset_like (benign now, attack at t+h)": 146,
+     "n_persistent (attack now and at t+h)": 1094,
+     "positive_rate": 0.078362
+    },
+    "5": {
+     "n_windows_with_target": 15823,
+     "n_positive_target": 1240,
+     "n_onset_like (benign now, attack at t+h)": 181,
+     "n_persistent (attack now and at t+h)": 1059,
+     "positive_rate": 0.078367
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  },
+  "data/raw_original/CSE-CIC-IDS-2018/Wednesday-28-02-2018_TrafficForML_CICFlowMeter.csv": {
+   "n_flows": 613071,
+   "file_order_backward_steps_by_start": 237535,
+   "file_order_backward_steps_by_end": 269306,
+   "file_order_backward_steps_by_start_gt60s": 211677,
+   "file_order_backward_steps_by_end_gt60s": 193186,
+   "n_with_subsecond": 0,
+   "n_distinct_ts": 31854,
+   "min_ts": "2018-02-28 01:00:00",
+   "max_ts": "2018-02-28 12:59:59",
+   "n_duration_gt_window": 132118,
+   "n_duration_gt_flow_timeout": 0,
+   "n_attack_duration_gt_window": 15233,
+   "n_non_benign": 68871,
+   "n_attempted": 0,
+   "bins_in_span": 21600,
+   "bins_nonempty": 16681,
+   "share_bins_empty": 0.227731,
+   "longest_empty_run_bins": 4551,
+   "n_empty_runs_ge_60s": 1,
+   "n_empty_runs_ge_300s": 1,
+   "flows_per_nonempty_bin_p50": 20.0,
+   "flows_per_nonempty_bin_p95": 123.0,
+   "flows_per_bin_max": 3094,
+   "bins_with_attack_excl_attempted": 3916,
+   "bins_with_attack_incl_attempted": 3916,
+   "next_window_target_excl_attempted": {
+    "1": {
+     "n_windows_with_target": 21599,
+     "n_positive_target": 3916,
+     "n_onset_like (benign now, attack at t+h)": 75,
+     "n_persistent (attack now and at t+h)": 3841,
+     "positive_rate": 0.181305
+    },
+    "2": {
+     "n_windows_with_target": 21598,
+     "n_positive_target": 3916,
+     "n_onset_like (benign now, attack at t+h)": 72,
+     "n_persistent (attack now and at t+h)": 3844,
+     "positive_rate": 0.181313
+    },
+    "3": {
+     "n_windows_with_target": 21597,
+     "n_positive_target": 3916,
+     "n_onset_like (benign now, attack at t+h)": 77,
+     "n_persistent (attack now and at t+h)": 3839,
+     "positive_rate": 0.181321
+    },
+    "4": {
+     "n_windows_with_target": 21596,
+     "n_positive_target": 3916,
+     "n_onset_like (benign now, attack at t+h)": 80,
+     "n_persistent (attack now and at t+h)": 3836,
+     "positive_rate": 0.18133
+    },
+    "5": {
+     "n_windows_with_target": 21595,
+     "n_positive_target": 3916,
+     "n_onset_like (benign now, attack at t+h)": 82,
+     "n_persistent (attack now and at t+h)": 3834,
+     "positive_rate": 0.181338
+    }
+   },
+   "dataset_family": "CSE-CIC-IDS-2018",
+   "variant": "original"
+  }
+ }
+}

@@ -1,0 +1,332 @@
+dataset_family,variant,feature,role,n_benign,n_attack,n_attempted,n_bins_used,ovl_benign_vs_attack,ovl_benign_vs_attempted,ovl_attack_vs_attempted,binning
+CIC-IDS-2017,improved,Src Port,identifier,1582566,505431,11979,17,0.889912,0.913046,0.860305,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Dst Port,context_review,1582566,505431,11979,17,0.157187,0.130464,0.640482,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Protocol,context_review,1582566,505431,11979,4,0.368178,0.367553,0.999375,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Flow Duration,feature,1582566,505431,11979,28,0.341152,0.279408,0.198398,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Total Fwd Packet,feature,1582566,505431,11979,19,0.564619,0.503112,0.645574,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Total Bwd packets,feature,1582566,505431,11979,20,0.384111,0.444947,0.489748,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Total Length of Fwd Packet,feature,1582566,505431,11979,24,0.181395,0.061961,0.467287,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Total Length of Bwd Packet,feature,1582566,505431,11979,30,0.095817,0.103683,0.468383,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Packet Length Max,feature,1582566,505431,11979,15,0.2447,0.061961,0.470334,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Packet Length Min,feature,1582566,505431,11979,11,0.367045,0.366668,0.996265,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Packet Length Mean,feature,1582566,505431,11979,14,0.396399,0.061961,0.475548,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Packet Length Std,feature,1582566,505431,11979,14,0.70845,0.667912,0.477637,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Packet Length Max,feature,1582566,505431,11979,16,0.099719,0.126553,0.468222,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Packet Length Min,feature,1582566,505431,11979,12,0.373421,0.373518,0.99975,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Packet Length Mean,feature,1582566,505431,11979,14,0.108363,0.12747,0.478556,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Packet Length Std,feature,1582566,505431,11979,14,0.49727,0.706192,0.510422,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Flow Bytes/s,feature,1582566,505431,11979,30,0.357618,0.112214,0.523673,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Flow Packets/s,feature,1582566,505431,11979,23,0.533829,0.323749,0.24316,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Flow IAT Mean,feature,1582566,505431,11979,28,0.593272,0.206589,0.16929,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Flow IAT Std,feature,1582566,505431,11979,28,0.545109,0.361851,0.551732,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Flow IAT Max,feature,1582566,505431,11979,28,0.375726,0.181337,0.174281,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Flow IAT Min,feature,1582566,505431,11979,28,0.569076,0.128652,0.164039,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd IAT Total,feature,1582566,505431,11979,28,0.552195,0.403325,0.531289,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd IAT Mean,feature,1582566,505431,11979,28,0.573912,0.313415,0.496522,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd IAT Std,feature,1582566,505431,11979,28,0.729902,0.52041,0.561839,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd IAT Max,feature,1582566,505431,11979,28,0.569963,0.319095,0.499018,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd IAT Min,feature,1582566,505431,11979,28,0.622759,0.245472,0.392696,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd IAT Total,feature,1582566,505431,11979,28,0.389444,0.360566,0.47042,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd IAT Mean,feature,1582566,505431,11979,28,0.408482,0.369946,0.469922,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd IAT Std,feature,1582566,505431,11979,28,0.610141,0.689517,0.499475,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd IAT Max,feature,1582566,505431,11979,28,0.395588,0.346083,0.473695,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd IAT Min,feature,1582566,505431,11979,28,0.570056,0.304488,0.490578,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd PSH Flags,feature,1582566,505431,11979,14,0.575422,0.696117,0.475832,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd PSH Flags,feature,1582566,505431,11979,15,0.558838,0.74687,0.538333,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd URG Flags,feature,1582566,505431,11979,5,0.999816,1.0,0.999816,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd URG Flags,feature,1582566,505431,11979,2,0.999999,0.999999,1.0,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd RST Flags,feature,1582566,505431,11979,9,0.559607,0.973196,0.553789,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd RST Flags,feature,1582566,505431,11979,5,0.628146,0.696374,0.928031,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Header Length,feature,1582566,505431,11979,19,0.475698,0.457175,0.731024,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Header Length,feature,1582566,505431,11979,22,0.580632,0.425842,0.541557,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Packets/s,feature,1582566,505431,11979,22,0.57035,0.285985,0.194997,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Packets/s,feature,1582566,505431,11979,22,0.58743,0.269004,0.28539,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Packet Length Min,feature,1582566,505431,11979,9,0.367925,0.367515,0.999531,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Packet Length Max,feature,1582566,505431,11979,16,0.095052,0.112893,0.462959,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Packet Length Mean,feature,1582566,505431,11979,13,0.112734,0.113723,0.488313,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Packet Length Std,feature,1582566,505431,11979,14,0.117563,0.147239,0.486717,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Packet Length Variance,feature,1582566,505431,11979,26,0.117047,0.145824,0.485648,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,FIN Flag Count,feature,1582566,505431,11979,7,0.665277,0.906206,0.694802,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,SYN Flag Count,feature,1582566,505431,11979,7,0.328655,0.402165,0.687287,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,RST Flag Count,feature,1582566,505431,11979,9,0.177272,0.654094,0.481821,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,PSH Flag Count,feature,1582566,505431,11979,15,0.547073,0.696491,0.475843,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,ACK Flag Count,feature,1582566,505431,11979,20,0.184046,0.448723,0.456281,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,URG Flag Count,feature,1582566,505431,11979,5,0.999817,0.999999,0.999816,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,CWR Flag Count,feature,1582566,505431,11979,6,0.999584,0.999542,0.999923,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,ECE Flag Count,feature,1582566,505431,11979,5,0.999613,0.999591,0.999923,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Down/Up Ratio,feature,1582566,505431,11979,6,0.936709,0.615871,0.645555,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Average Packet Size,feature,1582566,505431,11979,13,0.112734,0.113723,0.488313,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Segment Size Avg,feature,1582566,505431,11979,14,0.396398,0.061961,0.475548,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Segment Size Avg,feature,1582566,505431,11979,14,0.108363,0.12747,0.478556,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Bytes/Bulk Avg,feature,1582566,505431,11979,19,0.953667,0.949314,0.98835,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Packet/Bulk Avg,feature,1582566,505431,11979,10,0.960951,0.949314,0.98835,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Bulk Rate Avg,feature,1582566,505431,11979,28,0.952202,0.949314,0.98835,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Bytes/Bulk Avg,feature,1582566,505431,11979,24,0.752845,0.899218,0.739227,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Packet/Bulk Avg,feature,1582566,505431,11979,15,0.796061,0.899218,0.739227,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Bulk Rate Avg,feature,1582566,505431,11979,27,0.755074,0.899186,0.739227,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Subflow Fwd Packets,feature,1582566,505431,11979,2,0.950193,0.616271,0.666078,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Subflow Fwd Bytes,feature,1582566,505431,11979,12,0.398779,0.065357,0.475749,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Subflow Bwd Packets,feature,1582566,505431,11979,2,0.999982,0.9996,0.999583,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Subflow Bwd Bytes,feature,1582566,505431,11979,13,0.115249,0.128388,0.494817,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,FWD Init Win Bytes,feature,1582566,505431,11979,15,0.303242,0.344219,0.705503,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Bwd Init Win Bytes,feature,1582566,505431,11979,17,0.510254,0.708993,0.719411,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Act Data Pkts,feature,1582566,505431,11979,15,0.725856,0.235956,0.477678,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Fwd Seg Size Min,feature,1582566,505431,11979,4,0.369307,0.29807,0.508212,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Active Mean,feature,1582566,505431,11979,28,0.847086,0.585901,0.588809,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Active Std,feature,1582566,505431,11979,28,0.878191,0.871137,0.988519,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Active Max,feature,1582566,505431,11979,28,0.866108,0.60291,0.587846,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Active Min,feature,1582566,505431,11979,28,0.826093,0.585169,0.591695,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Idle Mean,feature,1582566,505431,11979,6,0.889935,0.630008,0.631917,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Idle Std,feature,1582566,505431,11979,28,0.87943,0.744224,0.742696,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Idle Max,feature,1582566,505431,11979,6,0.88716,0.623893,0.627824,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Idle Min,feature,1582566,505431,11979,6,0.895047,0.685893,0.659186,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,ICMP Code,feature,1582566,505431,11979,5,0.99974,0.999668,0.999848,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,ICMP Type,feature,1582566,505431,11979,4,0.9997,0.999668,0.999848,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,Total TCP Flow Time,feature,1582566,505431,11979,36,0.228706,0.199967,0.171875,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,id,identifier,1582566,505431,11979,20,0.869437,0.542439,0.481936,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,improved,hour_of_timestamp,derived_from_timestamp,1582566,505431,11979,2,0.850283,0.721624,0.571907,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Src Port,identifier,59353486,3535422,306237,17,0.93439,0.935144,0.99924,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Dst Port,context_review,59353486,3535422,306237,17,0.102622,0.025212,0.050551,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Protocol,context_review,59353486,3535422,306237,4,0.577475,0.577262,0.999027,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Flow Duration,feature,59353486,3535422,306237,28,0.38187,0.024946,0.033378,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Total Fwd Packet,feature,59353486,3535422,306237,20,0.210466,0.380392,0.038856,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Total Bwd packets,feature,59353486,3535422,306237,19,0.281025,0.393666,0.028152,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Total Length of Fwd Packet,feature,59353486,3535422,306237,26,0.253293,0.077791,0.038158,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Total Length of Bwd Packet,feature,59353486,3535422,306237,29,0.124888,0.107987,0.041254,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Packet Length Max,feature,59353486,3535422,306237,17,0.193881,0.077791,0.038231,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Packet Length Min,feature,59353486,3535422,306237,14,0.58016,0.579016,0.998097,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Packet Length Mean,feature,59353486,3535422,306237,16,0.600429,0.077791,0.038231,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Packet Length Std,feature,59353486,3535422,306237,16,0.397164,0.496355,0.039109,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Packet Length Max,feature,59353486,3535422,306237,17,0.092451,0.10797,0.041228,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Packet Length Min,feature,59353486,3535422,306237,12,0.572929,0.572807,0.999878,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Packet Length Mean,feature,59353486,3535422,306237,17,0.401776,0.107987,0.033062,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Packet Length Std,feature,59353486,3535422,306237,16,0.30909,0.531604,0.033231,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Flow Bytes/s,feature,59353486,3535422,306237,34,0.449328,0.075753,0.038366,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Flow Packets/s,feature,59353486,3535422,306237,24,0.47755,0.024959,0.034897,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Flow IAT Mean,feature,59353486,3535422,306237,28,0.542144,0.024982,0.034894,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Flow IAT Std,feature,59353486,3535422,306237,28,0.328961,0.385587,0.043897,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Flow IAT Max,feature,59353486,3535422,306237,28,0.439705,0.024952,0.034081,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Flow IAT Min,feature,59353486,3535422,306237,28,0.229806,0.336453,0.47598,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd IAT Total,feature,59353486,3535422,306237,28,0.306745,0.381319,0.044476,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd IAT Mean,feature,59353486,3535422,306237,28,0.30795,0.381319,0.045593,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd IAT Std,feature,59353486,3535422,306237,28,0.236998,0.46469,0.045062,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd IAT Max,feature,59353486,3535422,306237,28,0.305842,0.381319,0.044779,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd IAT Min,feature,59353486,3535422,306237,28,0.332746,0.384571,0.038,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd IAT Total,feature,59353486,3535422,306237,28,0.230994,0.40458,0.034275,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd IAT Mean,feature,59353486,3535422,306237,28,0.222245,0.40458,0.035879,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd IAT Std,feature,59353486,3535422,306237,28,0.177321,0.495403,0.036252,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd IAT Max,feature,59353486,3535422,306237,28,0.216646,0.40458,0.035314,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd IAT Min,feature,59353486,3535422,306237,28,0.195175,0.478475,0.040709,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd PSH Flags,feature,59353486,3535422,306237,15,0.162151,0.501175,0.038966,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd PSH Flags,feature,59353486,3535422,306237,16,0.177441,0.524994,0.041753,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd URG Flags,feature,59353486,3535422,306237,6,0.999769,1.0,0.999769,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd URG Flags,feature,59353486,3535422,306237,1,1.0,1.0,1.0,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd RST Flags,feature,59353486,3535422,306237,6,0.870697,0.797292,0.926533,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd RST Flags,feature,59353486,3535422,306237,7,0.869248,0.173179,0.049046,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Header Length,feature,59353486,3535422,306237,27,0.451566,0.042409,0.023094,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Header Length,feature,59353486,3535422,306237,26,0.450271,0.117004,0.03824,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Packets/s,feature,59353486,3535422,306237,24,0.469438,0.02494,0.034893,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Packets/s,feature,59353486,3535422,306237,23,0.479264,0.024913,0.028338,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Packet Length Min,feature,59353486,3535422,306237,12,0.580324,0.579351,0.999027,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Packet Length Max,feature,59353486,3535422,306237,17,0.099998,0.075753,0.03835,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Packet Length Mean,feature,59353486,3535422,306237,16,0.637576,0.075753,0.038352,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Packet Length Std,feature,59353486,3535422,306237,16,0.387588,0.083339,0.039215,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Packet Length Variance,feature,59353486,3535422,306237,31,0.282398,0.083339,0.037582,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,FIN Flag Count,feature,59353486,3535422,306237,6,0.303032,0.71331,0.029006,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,SYN Flag Count,feature,59353486,3535422,306237,13,0.51497,0.033674,0.044731,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,RST Flag Count,feature,59353486,3535422,306237,7,0.751222,0.35543,0.122437,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,PSH Flag Count,feature,59353486,3535422,306237,16,0.166698,0.499671,0.0391,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,ACK Flag Count,feature,59353486,3535422,306237,19,0.259135,0.036541,0.028191,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,URG Flag Count,feature,59353486,3535422,306237,6,0.999769,1.0,0.999769,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,CWR Flag Count,feature,59353486,3535422,306237,7,0.842763,0.716265,0.570695,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,ECE Flag Count,feature,59353486,3535422,306237,5,0.725166,0.716286,0.570695,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Down/Up Ratio,feature,59353486,3535422,306237,6,0.909598,0.912292,0.993435,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Average Packet Size,feature,59353486,3535422,306237,16,0.637576,0.075753,0.038352,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Segment Size Avg,feature,59353486,3535422,306237,16,0.600429,0.077791,0.038231,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Segment Size Avg,feature,59353486,3535422,306237,17,0.401776,0.107987,0.033062,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Bytes/Bulk Avg,feature,59353486,3535422,306237,23,0.995277,0.993583,0.995076,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Packet/Bulk Avg,feature,59353486,3535422,306237,18,0.997803,0.993583,0.995076,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Bulk Rate Avg,feature,59353486,3535422,306237,32,0.994332,0.993493,0.995068,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Bytes/Bulk Avg,feature,59353486,3535422,306237,24,0.934333,0.934371,0.999961,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Packet/Bulk Avg,feature,59353486,3535422,306237,16,0.934333,0.934371,0.999962,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Bulk Rate Avg,feature,59353486,3535422,306237,30,0.934333,0.934371,0.999957,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Subflow Fwd Packets,feature,59353486,3535422,306237,2,0.988546,0.995104,0.993441,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Subflow Fwd Bytes,feature,59353486,3535422,306237,16,0.592269,0.080902,0.038293,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Subflow Bwd Packets,feature,59353486,3535422,306237,2,0.999077,0.999077,1.0,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Subflow Bwd Bytes,feature,59353486,3535422,306237,16,0.399787,0.109067,0.041775,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,FWD Init Win Bytes,feature,59353486,3535422,306237,17,0.141347,0.006078,0.547082,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Bwd Init Win Bytes,feature,59353486,3535422,306237,17,0.149858,0.593306,0.042632,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Act Data Pkts,feature,59353486,3535422,306237,20,0.257626,0.426214,0.038646,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Fwd Seg Size Min,feature,59353486,3535422,306237,4,0.467102,0.01467,0.546855,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Active Mean,feature,59353486,3535422,306237,28,0.79772,0.767092,0.918801,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Active Std,feature,59353486,3535422,306237,28,0.882567,0.878196,0.995609,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Active Max,feature,59353486,3535422,306237,28,0.806097,0.767092,0.918795,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Active Min,feature,59353486,3535422,306237,28,0.784028,0.767092,0.918811,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Idle Mean,feature,59353486,3535422,306237,6,0.834404,0.766396,0.918814,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Idle Std,feature,59353486,3535422,306237,28,0.880389,0.875212,0.994704,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Idle Max,feature,59353486,3535422,306237,6,0.820901,0.766396,0.918814,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Idle Min,feature,59353486,3535422,306237,6,0.821179,0.766396,0.918814,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,ICMP Code,feature,59353486,3535422,306237,6,0.998282,0.998287,0.99918,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,ICMP Type,feature,59353486,3535422,306237,5,0.998282,0.998422,0.99918,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,Total TCP Flow Time,feature,59353486,3535422,306237,38,0.18847,0.02412,0.032894,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,id,identifier,59353486,3535422,306237,23,0.331821,0.296257,0.964436,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,improved,hour_of_timestamp,derived_from_timestamp,59353486,3535422,306237,6,0.695855,0.49493,0.190953,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Src Port,identifier,2273097,557646,0,17,0.748097,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Dst Port,context_review,2273097,557646,0,17,0.21117,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Protocol,context_review,2273097,557646,0,3,0.559564,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Flow Duration,feature,2273097,557646,0,32,0.506827,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Total Fwd Packet,feature,2273097,557646,0,18,0.695208,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Total Bwd packets,feature,2273097,557646,0,20,0.553345,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Total Length of Fwd Packet,feature,2273097,557646,0,24,0.326876,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Total Length of Bwd Packet,feature,2273097,557646,0,31,0.340059,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Packet Length Max,feature,2273097,557646,0,16,0.435369,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Packet Length Min,feature,2273097,557646,0,13,0.522218,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Packet Length Mean,feature,2273097,557646,0,14,0.589287,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Packet Length Std,feature,2273097,557646,0,14,0.727716,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Packet Length Max,feature,2273097,557646,0,16,0.370244,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Packet Length Min,feature,2273097,557646,0,13,0.543535,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Packet Length Mean,feature,2273097,557646,0,14,0.381524,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Packet Length Std,feature,2273097,557646,0,15,0.574482,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Flow Bytes/s,feature,2273097,557646,0,39,0.510402,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Flow Packets/s,feature,2273097,557646,0,27,0.576995,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Flow IAT Mean,feature,2273097,557646,0,32,0.613554,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Flow IAT Std,feature,2273097,557646,0,28,0.596162,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Flow IAT Max,feature,2273097,557646,0,32,0.48518,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Flow IAT Min,feature,2273097,557646,0,32,0.706005,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd IAT Total,feature,2273097,557646,0,28,0.579781,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd IAT Mean,feature,2273097,557646,0,28,0.545934,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd IAT Std,feature,2273097,557646,0,28,0.621652,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd IAT Max,feature,2273097,557646,0,28,0.52889,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd IAT Min,feature,2273097,557646,0,30,0.735132,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd IAT Total,feature,2273097,557646,0,28,0.628895,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd IAT Mean,feature,2273097,557646,0,28,0.600066,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd IAT Std,feature,2273097,557646,0,28,0.686719,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd IAT Max,feature,2273097,557646,0,28,0.570288,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd IAT Min,feature,2273097,557646,0,28,0.717995,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd PSH Flags,feature,2273097,557646,0,2,0.957157,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd PSH Flags,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd URG Flags,feature,2273097,557646,0,2,0.999861,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd URG Flags,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Header Length,feature,2273097,557646,0,30,0.736974,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Header Length,feature,2273097,557646,0,24,0.515868,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Packets/s,feature,2273097,557646,0,23,0.605414,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Packets/s,feature,2273097,557646,0,22,0.612901,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Packet Length Min,feature,2273097,557646,0,12,0.516085,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Packet Length Max,feature,2273097,557646,0,16,0.31032,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Packet Length Mean,feature,2273097,557646,0,13,0.34395,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Packet Length Std,feature,2273097,557646,0,14,0.315751,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Packet Length Variance,feature,2273097,557646,0,26,0.315285,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,FIN Flag Count,feature,2273097,557646,0,2,0.912384,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,SYN Flag Count,feature,2273097,557646,0,2,0.957157,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,RST Flag Count,feature,2273097,557646,0,2,0.999698,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,PSH Flag Count,feature,2273097,557646,0,2,0.796635,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,ACK Flag Count,feature,2273097,557646,0,2,0.853287,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,URG Flag Count,feature,2273097,557646,0,2,0.892696,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,CWR Flag Count,feature,2273097,557646,0,2,0.999861,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,ECE Flag Count,feature,2273097,557646,0,2,0.999697,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Down/Up Ratio,feature,2273097,557646,0,9,0.867207,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Average Packet Size,feature,2273097,557646,0,13,0.343222,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Segment Size Avg,feature,2273097,557646,0,14,0.589288,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Segment Size Avg,feature,2273097,557646,0,14,0.381524,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Header Length__dup1,feature,2273097,557646,0,30,0.736974,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Bytes/Bulk Avg,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Packet/Bulk Avg,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Bulk Rate Avg,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Bytes/Bulk Avg,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Packet/Bulk Avg,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Bulk Rate Avg,feature,2273097,557646,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Subflow Fwd Packets,feature,2273097,557646,0,18,0.695208,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Subflow Fwd Bytes,feature,2273097,557646,0,24,0.326876,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Subflow Bwd Packets,feature,2273097,557646,0,20,0.553345,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Subflow Bwd Bytes,feature,2273097,557646,0,31,0.340059,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,FWD Init Win Bytes,feature,2273097,557646,0,18,0.393309,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Bwd Init Win Bytes,feature,2273097,557646,0,18,0.339313,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Act Data Pkts,feature,2273097,557646,0,19,0.682732,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Fwd Seg Size Min,feature,2273097,557646,0,10,0.984701,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Active Mean,feature,2273097,557646,0,28,0.670571,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Active Std,feature,2273097,557646,0,28,0.912088,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Active Max,feature,2273097,557646,0,28,0.679383,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Active Min,feature,2273097,557646,0,28,0.672932,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Idle Mean,feature,2273097,557646,0,6,0.72482,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Idle Std,feature,2273097,557646,0,28,0.915335,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Idle Max,feature,2273097,557646,0,6,0.708152,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CIC-IDS-2017,original,Idle Min,feature,2273097,557646,0,6,0.729304,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Dst Port,context_review,13484708,2748235,0,17,0.190248,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Protocol,context_review,13484708,2748235,0,3,0.696059,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Flow Duration,feature,13484708,2748235,0,34,0.528235,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Total Fwd Packet,feature,13484708,2748235,0,19,0.580811,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Total Bwd packets,feature,13484708,2748235,0,18,0.630763,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Total Length of Fwd Packet,feature,13484708,2748235,0,27,0.415592,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Total Length of Bwd Packet,feature,13484708,2748235,0,29,0.447812,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Packet Length Max,feature,13484708,2748235,0,17,0.415877,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Packet Length Min,feature,13484708,2748235,0,12,0.710292,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Packet Length Mean,feature,13484708,2748235,0,16,0.393803,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Packet Length Std,feature,13484708,2748235,0,16,0.727596,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Packet Length Max,feature,13484708,2748235,0,16,0.405624,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Packet Length Min,feature,13484708,2748235,0,12,0.71042,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Packet Length Mean,feature,13484708,2748235,0,16,0.606833,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Packet Length Std,feature,13484708,2748235,0,15,0.79196,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Flow Bytes/s,feature,13484708,2748235,0,33,0.4856,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Flow Packets/s,feature,13484708,2748235,0,25,0.599805,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Flow IAT Mean,feature,13484708,2748235,0,36,0.575386,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Flow IAT Std,feature,13484708,2748235,0,30,0.610652,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Flow IAT Max,feature,13484708,2748235,0,33,0.52054,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Flow IAT Min,feature,13484708,2748235,0,32,0.546952,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd IAT Total,feature,13484708,2748235,0,34,0.478774,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd IAT Mean,feature,13484708,2748235,0,36,0.489131,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd IAT Std,feature,13484708,2748235,0,30,0.647514,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd IAT Max,feature,13484708,2748235,0,33,0.486591,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd IAT Min,feature,13484708,2748235,0,32,0.56712,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd IAT Total,feature,13484708,2748235,0,28,0.708051,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd IAT Mean,feature,13484708,2748235,0,28,0.750762,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd IAT Std,feature,13484708,2748235,0,28,0.759292,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd IAT Max,feature,13484708,2748235,0,28,0.695937,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd IAT Min,feature,13484708,2748235,0,28,0.686526,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd PSH Flags,feature,13484708,2748235,0,2,0.953328,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd PSH Flags,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd URG Flags,feature,13484708,2748235,0,2,0.999661,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd URG Flags,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Header Length,feature,13484708,2748235,0,20,0.39945,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Header Length,feature,13484708,2748235,0,20,0.533658,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Packets/s,feature,13484708,2748235,0,24,0.597236,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Packets/s,feature,13484708,2748235,0,22,0.474222,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Packet Length Min,feature,13484708,2748235,0,11,0.711611,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Packet Length Max,feature,13484708,2748235,0,17,0.392814,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Packet Length Mean,feature,13484708,2748235,0,16,0.544871,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Packet Length Std,feature,13484708,2748235,0,16,0.55131,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Packet Length Variance,feature,13484708,2748235,0,29,0.494051,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,FIN Flag Count,feature,13484708,2748235,0,2,0.995264,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,SYN Flag Count,feature,13484708,2748235,0,2,0.953328,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,RST Flag Count,feature,13484708,2748235,0,2,0.950073,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,PSH Flag Count,feature,13484708,2748235,0,2,0.970128,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,ACK Flag Count,feature,13484708,2748235,0,2,0.723232,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,URG Flag Count,feature,13484708,2748235,0,2,0.998618,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,CWR Flag Count,feature,13484708,2748235,0,2,0.999661,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,ECE Flag Count,feature,13484708,2748235,0,2,0.950074,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Down/Up Ratio,feature,13484708,2748235,0,10,0.95781,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Average Packet Size,feature,13484708,2748235,0,16,0.54435,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Segment Size Avg,feature,13484708,2748235,0,16,0.393803,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Segment Size Avg,feature,13484708,2748235,0,16,0.606833,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Bytes/Bulk Avg,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Packet/Bulk Avg,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Bulk Rate Avg,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Bytes/Bulk Avg,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Packet/Bulk Avg,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Bulk Rate Avg,feature,13484708,2748235,0,1,1.0,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Subflow Fwd Packets,feature,13484708,2748235,0,19,0.580811,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Subflow Fwd Bytes,feature,13484708,2748235,0,27,0.415592,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Subflow Bwd Packets,feature,13484708,2748235,0,18,0.630763,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Subflow Bwd Bytes,feature,13484708,2748235,0,29,0.447812,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,FWD Init Win Bytes,feature,13484708,2748235,0,18,0.393915,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Bwd Init Win Bytes,feature,13484708,2748235,0,17,0.708798,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Act Data Pkts,feature,13484708,2748235,0,20,0.736581,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Fwd Seg Size Min,feature,13484708,2748235,0,4,0.661205,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Active Mean,feature,13484708,2748235,0,28,0.894319,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Active Std,feature,13484708,2748235,0,28,0.924764,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Active Max,feature,13484708,2748235,0,28,0.894306,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Active Min,feature,13484708,2748235,0,28,0.894702,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Idle Mean,feature,13484708,2748235,0,8,0.923134,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Idle Std,feature,13484708,2748235,0,30,0.914222,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Idle Max,feature,13484708,2748235,0,8,0.923983,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Idle Min,feature,13484708,2748235,0,12,0.922713,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins
+CSE-CIC-IDS-2018,original,Src Port,identifier,13484708,2748235,0,17,0.662924,,,sign(x)*ceil(log2(|x|+1)); separate null / nonfinite bins

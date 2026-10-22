@@ -1,0 +1,137 @@
+protocol,dataset_family,eval_partition,family,n_attack,family_in_train,family_in_val,n_seen_in_train,share_seen_in_train,n_seen_in_train_or_val,share_seen_in_train_or_val
+P0_random_rows,CIC-IDS-2017,val,Botnet,105,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,DDoS,14407,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,DoS GoldenEye,1054,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,DoS Hulk,23441,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,DoS Slowhttptest,258,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,DoS Slowloris,551,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,FTP-Patator,579,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,Heartbleed,1,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,Infiltration,3,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,Infiltration - Portscan,10718,True,True,5940,0.554208,,
+P0_random_rows,CIC-IDS-2017,val,Portscan,23706,True,True,13687,0.577364,,
+P0_random_rows,CIC-IDS-2017,val,SSH-Patator,468,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,Web Attack - Brute Force,8,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,Web Attack - SQL Injection,5,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,val,Web Attack - XSS,3,True,True,0,0.0,,
+P0_random_rows,CIC-IDS-2017,test,Botnet,116,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,DDoS,14317,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,DoS GoldenEye,1124,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,DoS Hulk,24014,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,DoS Slowhttptest,249,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,DoS Slowloris,608,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,FTP-Patator,596,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,Heartbleed,4,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,Infiltration,6,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,Infiltration - Portscan,10888,True,True,5988,0.549963,6245,0.573567
+P0_random_rows,CIC-IDS-2017,test,Portscan,23823,True,True,13683,0.574361,14801,0.62129
+P0_random_rows,CIC-IDS-2017,test,SSH-Patator,439,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,Web Attack - Brute Force,15,True,True,0,0.0,0,0.0
+P0_random_rows,CIC-IDS-2017,test,Web Attack - XSS,1,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,val,Botnet Ares,21460,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,DDoS-HOIC,162594,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,DDoS-LOIC-HTTP,43478,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,DDoS-LOIC-UDP,400,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,DoS GoldenEye,3376,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,DoS Hulk,271303,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,DoS Slowloris,1256,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,Infiltration - Communication Victim Attacker,31,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,Infiltration - Dropbox Download,12,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,Infiltration - NMAP Portscan,13404,True,True,6356,0.474187,,
+P0_random_rows,CSE-CIC-IDS-2018,val,SSH-BruteForce,14079,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,Web Attack - Brute Force,20,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,Web Attack - SQL,3,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,val,Web Attack - XSS,15,True,True,0,0.0,,
+P0_random_rows,CSE-CIC-IDS-2018,test,Botnet Ares,21484,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,DDoS-HOIC,161911,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,DDoS-LOIC-HTTP,43419,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,DDoS-LOIC-UDP,383,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,DoS GoldenEye,3331,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,DoS Hulk,270283,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,DoS Slowloris,1286,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,Infiltration - Communication Victim Attacker,34,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,Infiltration - Dropbox Download,13,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,Infiltration - NMAP Portscan,13476,True,True,6349,0.471134,6595,0.489389
+P0_random_rows,CSE-CIC-IDS-2018,test,SSH-BruteForce,14361,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,Web Attack - Brute Force,30,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,Web Attack - SQL,10,True,True,0,0.0,0,0.0
+P0_random_rows,CSE-CIC-IDS-2018,test,Web Attack - XSS,17,True,True,0,0.0,0,0.0
+P1_within_day_chronological,CIC-IDS-2017,val,Heartbleed,8,False,True,0,0.0,,
+P1_within_day_chronological,CIC-IDS-2017,val,Infiltration,28,False,True,0,0.0,,
+P1_within_day_chronological,CIC-IDS-2017,val,Infiltration - Portscan,37680,False,True,0,0.0,,
+P1_within_day_chronological,CIC-IDS-2017,val,Portscan,159066,False,True,0,0.0,,
+P1_within_day_chronological,CIC-IDS-2017,val,SSH-Patator,2960,False,True,0,0.0,,
+P1_within_day_chronological,CIC-IDS-2017,test,DDoS,95144,False,False,0,0.0,0,0.0
+P1_within_day_chronological,CIC-IDS-2017,test,Heartbleed,1,False,True,0,0.0,0,0.0
+P1_within_day_chronological,CIC-IDS-2017,test,Infiltration,6,False,True,0,0.0,0,0.0
+P1_within_day_chronological,CIC-IDS-2017,test,Infiltration - Portscan,26424,False,True,0,0.0,12365,0.467946
+P1_within_day_chronological,CIC-IDS-2017,test,SSH-Patator,1,False,True,0,0.0,0,0.0
+P1_within_day_chronological,CSE-CIC-IDS-2018,val,Infiltration - Communication Victim Attacker,13,True,True,0,0.0,,
+P1_within_day_chronological,CSE-CIC-IDS-2018,val,Infiltration - NMAP Portscan,5080,True,True,2407,0.473819,,
+P1_within_day_chronological,CSE-CIC-IDS-2018,val,Web Attack - SQL,30,True,True,0,0.0,,
+P1b_within_day_flow_quantile,CIC-IDS-2017,val,DDoS,7078,False,True,0,0.0,,
+P1b_within_day_flow_quantile,CIC-IDS-2017,val,Infiltration,11,True,True,0,0.0,,
+P1b_within_day_flow_quantile,CIC-IDS-2017,val,Infiltration - Portscan,46761,True,True,9534,0.203888,,
+P1b_within_day_flow_quantile,CIC-IDS-2017,val,Portscan,20071,True,True,11363,0.56614,,
+P1b_within_day_flow_quantile,CIC-IDS-2017,val,SSH-Patator,2960,False,True,0,0.0,,
+P1b_within_day_flow_quantile,CIC-IDS-2017,test,DDoS,67058,False,True,0,0.0,0,0.0
+P1b_within_day_flow_quantile,CIC-IDS-2017,test,Heartbleed,11,False,False,0,0.0,0,0.0
+P1b_within_day_flow_quantile,CIC-IDS-2017,test,Infiltration,3,True,True,0,0.0,0,0.0
+P1b_within_day_flow_quantile,CIC-IDS-2017,test,Infiltration - Portscan,9727,True,True,1623,0.166855,4044,0.41575
+P1b_within_day_flow_quantile,CIC-IDS-2017,test,SSH-Patator,1,False,True,0,0.0,0,0.0
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,Botnet Ares,37886,True,True,0,0.0,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,DDoS-HOIC,740463,True,True,0,0.0,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,DoS Hulk,402455,True,True,0,0.0,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,Infiltration - Communication Victim Attacker,63,True,True,0,0.0,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,Infiltration - NMAP Portscan,34857,True,True,15846,0.4546,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,SSH-BruteForce,87824,False,True,0,0.0,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,Web Attack - SQL,23,False,True,0,0.0,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,val,Web Attack - XSS,67,True,True,0,0.0,,
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,test,Botnet Ares,11059,True,True,0,0.0,0,0.0
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,test,Infiltration - Communication Victim Attacker,1,True,True,0,0.0,0,0.0
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,test,Infiltration - NMAP Portscan,2260,True,True,1082,0.478761,1188,0.525664
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,test,SSH-BruteForce,1848,False,True,0,0.0,0,0.0
+P1b_within_day_flow_quantile,CSE-CIC-IDS-2018,test,Web Attack - SQL,16,False,True,0,0.0,0,0.0
+P2_day_chronological,CIC-IDS-2017,val,Infiltration,36,False,True,0,0.0,,
+P2_day_chronological,CIC-IDS-2017,val,Infiltration - Portscan,71767,False,True,0,0.0,,
+P2_day_chronological,CIC-IDS-2017,val,Web Attack - Brute Force,73,False,True,0,0.0,,
+P2_day_chronological,CIC-IDS-2017,val,Web Attack - SQL Injection,13,False,True,0,0.0,,
+P2_day_chronological,CIC-IDS-2017,val,Web Attack - XSS,18,False,True,0,0.0,,
+P2_day_chronological,CIC-IDS-2017,test,Botnet,736,False,False,0,0.0,0,0.0
+P2_day_chronological,CIC-IDS-2017,test,DDoS,95144,False,False,0,0.0,0,0.0
+P2_day_chronological,CIC-IDS-2017,test,Portscan,159066,False,False,0,0.0,7370,0.046333
+P2_day_chronological,CSE-CIC-IDS-2018,val,Web Attack - Brute Force,131,False,True,0,0.0,,
+P2_day_chronological,CSE-CIC-IDS-2018,val,Web Attack - SQL,39,False,True,0,0.0,,
+P2_day_chronological,CSE-CIC-IDS-2018,val,Web Attack - XSS,113,False,True,0,0.0,,
+P2_day_chronological,CSE-CIC-IDS-2018,test,Botnet Ares,142921,False,False,0,0.0,0,0.0
+P2_day_chronological,CSE-CIC-IDS-2018,test,Infiltration - Communication Victim Attacker,204,False,False,0,0.0,0,0.0
+P2_day_chronological,CSE-CIC-IDS-2018,test,Infiltration - Dropbox Download,85,False,False,0,0.0,0,0.0
+P2_day_chronological,CSE-CIC-IDS-2018,test,Infiltration - NMAP Portscan,89374,False,False,29,0.000324,29,0.000324
+P3_forward_chain_2018_test_21Feb,CSE-CIC-IDS-2018,val,DDoS-LOIC-HTTP,289328,False,True,0,0.0,,
+P3_forward_chain_2018_test_21Feb,CSE-CIC-IDS-2018,val,DDoS-LOIC-UDP,797,False,True,0,0.0,,
+P3_forward_chain_2018_test_21Feb,CSE-CIC-IDS-2018,test,DDoS-HOIC,1082293,False,False,0,0.0,0,0.0
+P3_forward_chain_2018_test_21Feb,CSE-CIC-IDS-2018,test,DDoS-LOIC-UDP,1730,False,True,0,0.0,0,0.0
+P3_forward_chain_2018_test_23Feb,CSE-CIC-IDS-2018,val,Web Attack - Brute Force,69,False,True,0,0.0,,
+P3_forward_chain_2018_test_23Feb,CSE-CIC-IDS-2018,val,Web Attack - SQL,16,False,True,0,0.0,,
+P3_forward_chain_2018_test_23Feb,CSE-CIC-IDS-2018,val,Web Attack - XSS,40,False,True,0,0.0,,
+P3_forward_chain_2018_test_23Feb,CSE-CIC-IDS-2018,test,Web Attack - Brute Force,62,False,True,0,0.0,0,0.0
+P3_forward_chain_2018_test_23Feb,CSE-CIC-IDS-2018,test,Web Attack - SQL,23,False,True,0,0.0,0,0.0
+P3_forward_chain_2018_test_23Feb,CSE-CIC-IDS-2018,test,Web Attack - XSS,73,False,True,0,0.0,0,0.0
+P3_forward_chain_2018_test_01Mar,CSE-CIC-IDS-2018,val,Infiltration - Communication Victim Attacker,43,False,True,0,0.0,,
+P3_forward_chain_2018_test_01Mar,CSE-CIC-IDS-2018,val,Infiltration - Dropbox Download,46,False,True,0,0.0,,
+P3_forward_chain_2018_test_01Mar,CSE-CIC-IDS-2018,val,Infiltration - NMAP Portscan,49740,False,True,15,0.000302,,
+P3_forward_chain_2018_test_01Mar,CSE-CIC-IDS-2018,test,Infiltration - Communication Victim Attacker,161,False,True,0,0.0,0,0.0
+P3_forward_chain_2018_test_01Mar,CSE-CIC-IDS-2018,test,Infiltration - Dropbox Download,39,False,True,0,0.0,0,0.0
+P3_forward_chain_2018_test_01Mar,CSE-CIC-IDS-2018,test,Infiltration - NMAP Portscan,39634,False,True,14,0.000353,18287,0.461397
+P3_forward_chain_2018_test_02Mar,CSE-CIC-IDS-2018,val,Infiltration - Communication Victim Attacker,161,True,True,0,0.0,,
+P3_forward_chain_2018_test_02Mar,CSE-CIC-IDS-2018,val,Infiltration - Dropbox Download,39,True,True,0,0.0,,
+P3_forward_chain_2018_test_02Mar,CSE-CIC-IDS-2018,val,Infiltration - NMAP Portscan,39634,True,True,18287,0.461397,,
+P3_forward_chain_2018_test_02Mar,CSE-CIC-IDS-2018,test,Botnet Ares,142921,False,False,0,0.0,0,0.0
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,val,Infiltration,36,False,True,0,0.0,,
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,val,Infiltration - Portscan,71767,False,True,0,0.0,,
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,val,Web Attack - Brute Force,73,False,True,0,0.0,,
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,val,Web Attack - SQL Injection,13,False,True,0,0.0,,
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,val,Web Attack - XSS,18,False,True,0,0.0,,
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,test,Botnet,736,False,False,0,0.0,0,0.0
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,test,DDoS,95144,False,False,0,0.0,0,0.0
+P3_forward_chain_2017_test_Fri,CIC-IDS-2017,test,Portscan,159066,False,False,0,0.0,7370,0.046333

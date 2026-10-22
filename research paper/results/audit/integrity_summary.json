@@ -1,0 +1,103 @@
+{
+ "generated_at_utc": "2026-10-19T00:23:58+00:00",
+ "tool": "src/audit/report.py",
+ "n_findings": 200,
+ "findings_by_category": {
+  "FORMAT": 3,
+  "COMPLETENESS": 7,
+  "MISSING": 1,
+  "NONFINITE": 8,
+  "SENTINEL": 8,
+  "CONSTANT": 17,
+  "INVALID_VALUE": 18,
+  "EXPORT_OVERFLOW": 4,
+  "SEMANTICS_CHANGE": 4,
+  "PLAUSIBILITY": 4,
+  "DUPLICATE_COLUMN": 11,
+  "DUPLICATES": 8,
+  "LABEL_CONFLICT": 4,
+  "TIMESTAMP": 54,
+  "ORDER": 15,
+  "IMBALANCE": 34
+ },
+ "findings_by_severity": {
+  "critical": 0,
+  "high": 43,
+  "medium": 107,
+  "low": 50
+ },
+ "datasets": {
+  "CIC-IDS-2017|improved": {
+   "n_files": 5,
+   "n_rows": 2099976,
+   "read_modes": [
+    "strict"
+   ],
+   "lines_not_read": 0,
+   "duplicates": {
+    "n_all_empty_rows": "0",
+    "n_embedded_header_rows": "0",
+    "n_data_rows": "2099976",
+    "n_exact_duplicate_rows_excl_empty": "0",
+    "n_feature_duplicate_rows": "263004",
+    "n_rows_in_label_conflict_groups": "14140",
+    "n_rows_in_binary_conflict_groups": "22",
+    "n_rows_in_cross_file_duplicate_groups": "0"
+   }
+  },
+  "CSE-CIC-IDS-2018|improved": {
+   "n_files": 10,
+   "n_rows": 63195145,
+   "read_modes": [
+    "strict"
+   ],
+   "lines_not_read": 0,
+   "duplicates": {
+    "n_all_empty_rows": "0",
+    "n_embedded_header_rows": "0",
+    "n_data_rows": "63195145",
+    "n_exact_duplicate_rows_excl_empty": "0",
+    "n_feature_duplicate_rows": "17994469",
+    "n_rows_in_label_conflict_groups": "263772",
+    "n_rows_in_binary_conflict_groups": "263772",
+    "n_rows_in_cross_file_duplicate_groups": "0"
+   }
+  },
+  "CIC-IDS-2017|original": {
+   "n_files": 8,
+   "n_rows": 3119345,
+   "read_modes": [
+    "strict"
+   ],
+   "lines_not_read": 0,
+   "duplicates": {
+    "n_all_empty_rows": "288602",
+    "n_embedded_header_rows": "0",
+    "n_data_rows": "2830743",
+    "n_exact_duplicate_rows_excl_empty": "203",
+    "n_feature_duplicate_rows": "308848",
+    "n_rows_in_label_conflict_groups": "7018",
+    "n_rows_in_binary_conflict_groups": "7018",
+    "n_rows_in_cross_file_duplicate_groups": "0"
+   }
+  },
+  "CSE-CIC-IDS-2018|original": {
+   "n_files": 10,
+   "n_rows": 16233002,
+   "read_modes": [
+    "strict"
+   ],
+   "lines_not_read": 0,
+   "duplicates": {
+    "n_all_empty_rows": "0",
+    "n_embedded_header_rows": "59",
+    "n_data_rows": "16232943",
+    "n_exact_duplicate_rows_excl_empty": "433195",
+    "n_feature_duplicate_rows": "4265470",
+    "n_rows_in_label_conflict_groups": "423290",
+    "n_rows_in_binary_conflict_groups": "170766",
+    "n_rows_in_cross_file_duplicate_groups": "0"
+   }
+  }
+ }
+}

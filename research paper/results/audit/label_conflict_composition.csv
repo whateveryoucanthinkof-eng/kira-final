@@ -1,0 +1,5 @@
+dataset_family,label_set,n_groups,n_rows,max_files_per_group,rows_per_label,n_min_error_rows,feature_key
+CIC-IDS-2017,Infiltration - Portscan | Portscan,4368,14118,2,"{""Infiltration - Portscan"": 6762, ""Portscan"": 7356}",4939,feature + context_review columns (as duplicates_by_file.csv)
+CIC-IDS-2017,BENIGN | Portscan,7,22,2,"{""BENIGN"": 8, ""Portscan"": 14}",7,feature + context_review columns (as duplicates_by_file.csv)
+CSE-CIC-IDS-2018,BENIGN | FTP-BruteForce - Attempted,9,263736,2,"{""BENIGN"": 60, ""FTP-BruteForce - Attempted"": 263676}",60,feature + context_review columns (as duplicates_by_file.csv)
+CSE-CIC-IDS-2018,BENIGN | Infiltration - NMAP Portscan,4,36,4,"{""BENIGN"": 7, ""Infiltration - NMAP Portscan"": 29}",5,feature + context_review columns (as duplicates_by_file.csv)

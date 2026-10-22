@@ -1,0 +1,5 @@
+dataset_family,original_file,improved_file,original_label,improved_label,n_uniquely_matched_flows,scope
+CIC-IDS-2017,Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,friday.csv,BENIGN,BENIGN,103009,unique matches only (91.36% of original rows)
+CIC-IDS-2017,Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,friday.csv,BENIGN,Botnet - Attempted,5,unique matches only (91.36% of original rows)
+CIC-IDS-2017,Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,friday.csv,PortScan,Portscan,158702,unique matches only (91.36% of original rows)
+CIC-IDS-2017,Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,friday.csv,PortScan,BENIGN,13,unique matches only (91.36% of original rows)

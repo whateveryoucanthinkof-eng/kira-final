@@ -1,0 +1,119 @@
+dataset_family,file,label,attempted_category,n_flows_in_data,rule_orders,status
+CIC-IDS-2017,friday.csv,BENIGN,-1,288544,,benign_default (label_rest_as_benign)
+CIC-IDS-2017,friday.csv,Botnet,-1,736,47,rule_and_data
+CIC-IDS-2017,friday.csv,Botnet - Attempted,0,0,48,rule_matched_no_flows
+CIC-IDS-2017,friday.csv,Botnet - Attempted,1,4067,49,rule_and_data
+CIC-IDS-2017,friday.csv,DDoS,-1,95144,50,rule_and_data
+CIC-IDS-2017,friday.csv,DDoS - Attempted,0,0,51,rule_matched_no_flows
+CIC-IDS-2017,friday.csv,Portscan,-1,159066,45;46,rule_and_data
+CIC-IDS-2017,monday.csv,BENIGN,-1,371624,,benign_default (label_rest_as_benign)
+CIC-IDS-2017,thursday.csv,BENIGN,-1,288172,,benign_default (label_rest_as_benign)
+CIC-IDS-2017,thursday.csv,Infiltration,-1,36,37;40,rule_and_data
+CIC-IDS-2017,thursday.csv,Infiltration - Attempted,0,42,38;41,rule_and_data
+CIC-IDS-2017,thursday.csv,Infiltration - Attempted,2,3,39,rule_and_data
+CIC-IDS-2017,thursday.csv,Infiltration - Portscan,-1,71767,42;43;44,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - Brute Force,-1,73,28,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - Brute Force - Attempted,0,1214,29,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - Brute Force - Attempted,2,7,27,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - Brute Force - Attempted,4,71,30,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - SQL Injection,-1,13,35,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - SQL Injection - Attempted,0,1,36,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - SQL Injection - Attempted,2,4,34,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - XSS,-1,18,31,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - XSS - Attempted,0,651,32,rule_and_data
+CIC-IDS-2017,thursday.csv,Web Attack - XSS - Attempted,2,4,33,rule_and_data
+CIC-IDS-2017,tuesday.csv,BENIGN,-1,315106,,benign_default (label_rest_as_benign)
+CIC-IDS-2017,tuesday.csv,FTP-Patator,-1,3972,1,rule_and_data
+CIC-IDS-2017,tuesday.csv,FTP-Patator - Attempted,0,10,2,rule_and_data
+CIC-IDS-2017,tuesday.csv,FTP-Patator - Attempted,2,2,3,rule_and_data
+CIC-IDS-2017,tuesday.csv,SSH-Patator,-1,2961,4,rule_and_data
+CIC-IDS-2017,tuesday.csv,SSH-Patator - Attempted,0,0,5,rule_matched_no_flows
+CIC-IDS-2017,tuesday.csv,SSH-Patator - Attempted,3,27,6,rule_and_data
+CIC-IDS-2017,wednesday.csv,BENIGN,-1,319120,,benign_default (label_rest_as_benign)
+CIC-IDS-2017,wednesday.csv,DoS GoldenEye,-1,7567,23,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS GoldenEye - Attempted,0,80,24,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Hulk,-1,158468,18;20,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Hulk - Attempted,0,579,21,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Hulk - Attempted,3,0,22,rule_matched_no_flows
+CIC-IDS-2017,wednesday.csv,DoS Hulk - Attempted,4,2,19,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowhttptest,-1,1740,13,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowhttptest - Attempted,0,563,15,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowhttptest - Attempted,2,0,14,rule_matched_no_flows
+CIC-IDS-2017,wednesday.csv,DoS Slowhttptest - Attempted,4,1,17,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowhttptest - Attempted,6,2804,16,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowloris,-1,3859,8,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowloris - Attempted,0,1705,10,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowloris - Attempted,2,3,9,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowloris - Attempted,4,1,12,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowloris - Attempted,5,138,7,rule_and_data
+CIC-IDS-2017,wednesday.csv,DoS Slowloris - Attempted,6,0,11,rule_matched_no_flows
+CIC-IDS-2017,wednesday.csv,Heartbleed,-1,11,25,rule_and_data
+CIC-IDS-2017,wednesday.csv,Heartbleed - Attempted,0,0,26,rule_matched_no_flows
+CSE-CIC-IDS-2018,Friday-02-03-2018.csv,BENIGN,-1,6168188,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Friday-02-03-2018.csv,Botnet Ares,-1,142921,68,rule_and_data
+CSE-CIC-IDS-2018,Friday-02-03-2018.csv,Botnet Ares - Attempted,0,258,70,rule_and_data
+CSE-CIC-IDS-2018,Friday-02-03-2018.csv,Botnet Ares - Attempted,2,4,69,rule_and_data
+CSE-CIC-IDS-2018,Friday-16-02-2018.csv,BENIGN,-1,5481500,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Friday-16-02-2018.csv,DoS Hulk,-1,1803160,12,rule_and_data
+CSE-CIC-IDS-2018,Friday-16-02-2018.csv,DoS Hulk - Attempted,0,86,13,rule_and_data
+CSE-CIC-IDS-2018,Friday-16-02-2018.csv,FTP-BruteForce - Attempted,1,105520,11,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,BENIGN,-1,5976251,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - Brute Force,-1,62,41,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - Brute Force - Attempted,0,1,43,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - Brute Force - Attempted,5,60,42,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - SQL,-1,23,35,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - SQL - Attempted,0,5,37,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - SQL - Attempted,2,5,36,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - XSS,-1,73,38,rule_and_data
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - XSS - Attempted,0,0,40,rule_matched_no_flows
+CSE-CIC-IDS-2018,Friday-23-02-2018.csv,Web Attack - XSS - Attempted,2,1,39,rule_and_data
+CSE-CIC-IDS-2018,Thursday-01-03-2018.csv,BENIGN,-1,6511554,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Thursday-01-03-2018.csv,Infiltration - Communication Victim Attacker,-1,161,61;62;63,rule_and_data
+CSE-CIC-IDS-2018,Thursday-01-03-2018.csv,Infiltration - Communication Victim Attacker - Attempted,0,0,64;65;66,rule_matched_no_flows
+CSE-CIC-IDS-2018,Thursday-01-03-2018.csv,Infiltration - Dropbox Download,-1,39,55;56,rule_and_data
+CSE-CIC-IDS-2018,Thursday-01-03-2018.csv,Infiltration - Dropbox Download - Attempted,0,0,57;58,rule_matched_no_flows
+CSE-CIC-IDS-2018,Thursday-01-03-2018.csv,Infiltration - Dropbox Download - Attempted,4,13,59;60,rule_and_data
+CSE-CIC-IDS-2018,Thursday-01-03-2018.csv,Infiltration - NMAP Portscan,-1,39634,67,rule_and_data
+CSE-CIC-IDS-2018,Thursday-15-02-2018.csv,BENIGN,-1,5372471,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Thursday-15-02-2018.csv,DoS GoldenEye,-1,22560,5,rule_and_data
+CSE-CIC-IDS-2018,Thursday-15-02-2018.csv,DoS GoldenEye - Attempted,0,0,8,rule_matched_no_flows
+CSE-CIC-IDS-2018,Thursday-15-02-2018.csv,DoS GoldenEye - Attempted,4,4248,6,rule_and_data
+CSE-CIC-IDS-2018,Thursday-15-02-2018.csv,DoS GoldenEye - Attempted,6,53,7,rule_and_data
+CSE-CIC-IDS-2018,Thursday-15-02-2018.csv,DoS Slowloris,-1,8490,9,rule_and_data
+CSE-CIC-IDS-2018,Thursday-15-02-2018.csv,DoS Slowloris - Attempted,0,2280,10,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,BENIGN,-1,6070945,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - Brute Force,-1,69,31,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - Brute Force - Attempted,0,2,34,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - Brute Force - Attempted,2,8,33,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - Brute Force - Attempted,5,66,32,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - SQL,-1,16,24,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - SQL - Attempted,0,1,26,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - SQL - Attempted,2,3,25,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - XSS,-1,40,27,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - XSS - Attempted,0,1,30,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - XSS - Attempted,2,1,28,rule_and_data
+CSE-CIC-IDS-2018,Thursday-22-02-2018.csv,Web Attack - XSS - Attempted,3,1,29,rule_and_data
+CSE-CIC-IDS-2018,Tuesday-20-02-2018.csv,BENIGN,-1,5764497,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Tuesday-20-02-2018.csv,DDoS-LOIC-HTTP,-1,289328,14,rule_and_data
+CSE-CIC-IDS-2018,Tuesday-20-02-2018.csv,DDoS-LOIC-HTTP - Attempted,0,0,15,rule_matched_no_flows
+CSE-CIC-IDS-2018,Tuesday-20-02-2018.csv,DDoS-LOIC-UDP,-1,797,16,rule_and_data
+CSE-CIC-IDS-2018,Tuesday-20-02-2018.csv,DDoS-LOIC-UDP - Attempted,0,0,17,rule_matched_no_flows
+CSE-CIC-IDS-2018,Tuesday-20-02-2018.csv,DDoS-LOIC-UDP - Attempted,6,80,18,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-14-02-2018.csv,BENIGN,-1,5610799,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Wednesday-14-02-2018.csv,FTP-BruteForce - Attempted,1,193324,1,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-14-02-2018.csv,FTP-BruteForce - Attempted,4,30,2,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-14-02-2018.csv,SSH-BruteForce,-1,94197,3,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-14-02-2018.csv,SSH-BruteForce - Attempted,0,0,4,rule_matched_no_flows
+CSE-CIC-IDS-2018,Wednesday-21-02-2018.csv,BENIGN,-1,5878399,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Wednesday-21-02-2018.csv,DDoS-HOIC,-1,1082293,22,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-21-02-2018.csv,DDoS-HOIC - Attempted,0,0,23,rule_matched_no_flows
+CSE-CIC-IDS-2018,Wednesday-21-02-2018.csv,DDoS-LOIC-UDP,-1,1730,19,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-21-02-2018.csv,DDoS-LOIC-UDP - Attempted,0,0,20,rule_matched_no_flows
+CSE-CIC-IDS-2018,Wednesday-21-02-2018.csv,DDoS-LOIC-UDP - Attempted,6,171,21,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-28-02-2018.csv,BENIGN,-1,6518882,,benign_default (label_rest_as_benign)
+CSE-CIC-IDS-2018,Wednesday-28-02-2018.csv,Infiltration - Communication Victim Attacker,-1,43,50;51,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-28-02-2018.csv,Infiltration - Communication Victim Attacker - Attempted,0,0,52;53,rule_matched_no_flows
+CSE-CIC-IDS-2018,Wednesday-28-02-2018.csv,Infiltration - Dropbox Download,-1,46,44;45,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-28-02-2018.csv,Infiltration - Dropbox Download - Attempted,0,0,46;47,rule_matched_no_flows
+CSE-CIC-IDS-2018,Wednesday-28-02-2018.csv,Infiltration - Dropbox Download - Attempted,4,15,48;49,rule_and_data
+CSE-CIC-IDS-2018,Wednesday-28-02-2018.csv,Infiltration - NMAP Portscan,-1,49740,54,rule_and_data

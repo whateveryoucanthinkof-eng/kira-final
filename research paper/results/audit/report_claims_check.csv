@@ -1,0 +1,33 @@
+claim,report,expected_text,found_in_report
+2017 improved rows,reports/dataset_audit_report.md,"2,099,976",True
+2018 improved rows,reports/dataset_audit_report.md,"63,195,145",True
+2017 original rows,reports/dataset_audit_report.md,"3,119,345",True
+2018 original rows,reports/dataset_audit_report.md,"16,233,002",True
+2017 original data rows,reports/dataset_audit_report.md,"2,830,743",True
+2017 original empty rows,reports/dataset_audit_report.md,"288,602",True
+2018 original data rows,reports/dataset_audit_report.md,"16,232,943",True
+attack + Attempted flows inside windows,reports/dataset_audit_report.md,"4,359,069",True
+feature-identical share 2017 improved,reports/dataset_audit_report.md,12.52%,True
+feature-identical share 2018 improved,reports/dataset_audit_report.md,28.47%,True
+feature-identical share 2017 original,reports/dataset_audit_report.md,10.91%,True
+feature-identical share 2018 original,reports/dataset_audit_report.md,26.28%,True
+conflict rows 2018 improved,reports/dataset_audit_report.md,"263,772",True
+conflict rows 2018 original,reports/dataset_audit_report.md,"423,290",True
+conflict floor 2017,reports/dataset_audit_report.md,"4,946 rows",True
+conflict floor 2018,reports/dataset_audit_report.md,65 rows,True
+P0 test rows seen in train 2017 / 2018,reports/dataset_audit_report.md,15.6% (2017) and 30.0% (2018),True
+episodes at 300 s,reports/dataset_audit_report.md,**24 (2017) and 38 (2018) attack episodes**,True
+persistence share 2017 range,reports/temporal_feasibility.md,67–73% in 2017,True
+persistence share 2018 range,reports/temporal_feasibility.md,91–93% in 2018,True
+"long-flow share range, all improved files",reports/dataset_audit_report.md,22–38% of flows last longer than a 2 s window,True
+number of findings,reports/dataset_audit_report.md,**200 findings**,True
+capped 2018 original files,reports/dataset_audit_report.md,7 of 10 2018 original files,True
+stray rows Friday-23-02,reports/dataset_audit_report.md,"2,609 flows dated 21–22 Feb",True
+Dst Port OVL 2018 / 2017 improved,reports/evaluation_protocol.md,OVL is 0.103 (2018) and 0.157 (2017),True
+P1b test attacks 2017,reports/evaluation_protocol.md,"76,800",True
+P1b test attacks 2018,reports/evaluation_protocol.md,"15,184",True
+P1b embargoed attack flows 2018,reports/evaluation_protocol.md,"716,549",True
+Thuesday unique match,reports/original_vs_improved.md,0.783,True
+PortScan unique match,reports/original_vs_improved.md,**0.914**,True
+unique citing works,reports/literature_review.md,**421 unique citing works**,True
+citing CNS2022 / Engelen 2021,reports/literature_review.md,**197** | **289**,True

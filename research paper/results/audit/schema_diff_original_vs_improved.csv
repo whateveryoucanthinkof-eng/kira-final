@@ -1,0 +1,184 @@
+dataset_family,status,original_name,original_files_present,improved_name,improved_files_present,match_basis,original_inferred_types,improved_inferred_types,type_changed,role
+CIC-IDS-2017,unchanged,Flow ID,8/8,Flow ID,5/5,identical name,string,string,False,identifier
+CIC-IDS-2017,renamed, Source IP,8/8,Src IP,5/5,token-normalised name match (abbreviation/word order),string,string,False,identifier
+CIC-IDS-2017,renamed, Source Port,8/8,Src Port,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,identifier
+CIC-IDS-2017,renamed, Destination IP,8/8,Dst IP,5/5,token-normalised name match (abbreviation/word order),string,string,False,identifier
+CIC-IDS-2017,renamed, Destination Port,8/8,Dst Port,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,context_review
+CIC-IDS-2017,renamed, Protocol,8/8,Protocol,5/5,same name after stripping whitespace,integer,integer,False,context_review
+CIC-IDS-2017,renamed, Timestamp,8/8,Timestamp,5/5,same name after stripping whitespace,string,string,False,timestamp
+CIC-IDS-2017,renamed, Flow Duration,8/8,Flow Duration,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Total Fwd Packets,8/8,Total Fwd Packet,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, Total Backward Packets,8/8,Total Bwd packets,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed,Total Length of Fwd Packets,8/8,Total Length of Fwd Packet,5/5,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Total Length of Bwd Packets,8/8,Total Length of Bwd Packet,5/5,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Fwd Packet Length Max,8/8,Fwd Packet Length Max,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Fwd Packet Length Min,8/8,Fwd Packet Length Min,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Fwd Packet Length Mean,8/8,Fwd Packet Length Mean,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Fwd Packet Length Std,8/8,Fwd Packet Length Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,unchanged,Bwd Packet Length Max,8/8,Bwd Packet Length Max,5/5,identical name,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Bwd Packet Length Min,8/8,Bwd Packet Length Min,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Bwd Packet Length Mean,8/8,Bwd Packet Length Mean,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Bwd Packet Length Std,8/8,Bwd Packet Length Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,unchanged,Flow Bytes/s,8/8,Flow Bytes/s,5/5,identical name,float,float,False,feature
+CIC-IDS-2017,renamed, Flow Packets/s,8/8,Flow Packets/s,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Flow IAT Mean,8/8,Flow IAT Mean,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Flow IAT Std,8/8,Flow IAT Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Flow IAT Max,8/8,Flow IAT Max,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Flow IAT Min,8/8,Flow IAT Min,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,unchanged,Fwd IAT Total,8/8,Fwd IAT Total,5/5,identical name,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Fwd IAT Mean,8/8,Fwd IAT Mean,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Fwd IAT Std,8/8,Fwd IAT Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Fwd IAT Max,8/8,Fwd IAT Max,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Fwd IAT Min,8/8,Fwd IAT Min,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,unchanged,Bwd IAT Total,8/8,Bwd IAT Total,5/5,identical name,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Bwd IAT Mean,8/8,Bwd IAT Mean,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Bwd IAT Std,8/8,Bwd IAT Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Bwd IAT Max,8/8,Bwd IAT Max,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Bwd IAT Min,8/8,Bwd IAT Min,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,unchanged,Fwd PSH Flags,8/8,Fwd PSH Flags,5/5,identical name,integer,integer,False,feature
+CIC-IDS-2017,renamed, Bwd PSH Flags,8/8,Bwd PSH Flags,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Fwd URG Flags,8/8,Fwd URG Flags,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Bwd URG Flags,8/8,Bwd URG Flags,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Fwd Header Length,8/8,Fwd Header Length,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Bwd Header Length,8/8,Bwd Header Length,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,unchanged,Fwd Packets/s,8/8,Fwd Packets/s,5/5,identical name,float,float,False,feature
+CIC-IDS-2017,renamed, Bwd Packets/s,8/8,Bwd Packets/s,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Min Packet Length,8/8,Packet Length Min,5/5,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Max Packet Length,8/8,Packet Length Max,5/5,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Packet Length Mean,8/8,Packet Length Mean,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Packet Length Std,8/8,Packet Length Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Packet Length Variance,8/8,Packet Length Variance,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,unchanged,FIN Flag Count,8/8,FIN Flag Count,5/5,identical name,integer,integer,False,feature
+CIC-IDS-2017,renamed, SYN Flag Count,8/8,SYN Flag Count,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, RST Flag Count,8/8,RST Flag Count,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, PSH Flag Count,8/8,PSH Flag Count,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, ACK Flag Count,8/8,ACK Flag Count,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, URG Flag Count,8/8,URG Flag Count,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, CWE Flag Count,8/8,CWR Flag Count,5/5,HYPOTHESIS: 'CWE' is a header typo for the CWR TCP flag in original releases,integer,integer,False,feature
+CIC-IDS-2017,renamed, ECE Flag Count,8/8,ECE Flag Count,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Down/Up Ratio,8/8,Down/Up Ratio,5/5,same name after stripping whitespace,float;integer,float,True,feature
+CIC-IDS-2017,renamed, Average Packet Size,8/8,Average Packet Size,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Avg Fwd Segment Size,8/8,Fwd Segment Size Avg,5/5,token-normalised name match (abbreviation/word order),float,float,False,feature
+CIC-IDS-2017,renamed, Avg Bwd Segment Size,8/8,Bwd Segment Size Avg,5/5,token-normalised name match (abbreviation/word order),float,float,False,feature
+CIC-IDS-2017,removed, Fwd Header Length,8/8,,,duplicate column name within original file,integer,,,feature
+CIC-IDS-2017,renamed,Fwd Avg Bytes/Bulk,8/8,Fwd Bytes/Bulk Avg,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, Fwd Avg Packets/Bulk,8/8,Fwd Packet/Bulk Avg,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, Fwd Avg Bulk Rate,8/8,Fwd Bulk Rate Avg,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, Bwd Avg Bytes/Bulk,8/8,Bwd Bytes/Bulk Avg,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, Bwd Avg Packets/Bulk,8/8,Bwd Packet/Bulk Avg,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed,Bwd Avg Bulk Rate,8/8,Bwd Bulk Rate Avg,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,unchanged,Subflow Fwd Packets,8/8,Subflow Fwd Packets,5/5,identical name,integer,integer,False,feature
+CIC-IDS-2017,renamed, Subflow Fwd Bytes,8/8,Subflow Fwd Bytes,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Subflow Bwd Packets,8/8,Subflow Bwd Packets,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed, Subflow Bwd Bytes,8/8,Subflow Bwd Bytes,5/5,same name after stripping whitespace,integer,integer,False,feature
+CIC-IDS-2017,renamed,Init_Win_bytes_forward,8/8,FWD Init Win Bytes,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, Init_Win_bytes_backward,8/8,Bwd Init Win Bytes,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, act_data_pkt_fwd,8/8,Fwd Act Data Pkts,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,renamed, min_seg_size_forward,8/8,Fwd Seg Size Min,5/5,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CIC-IDS-2017,unchanged,Active Mean,8/8,Active Mean,5/5,identical name,float,float,False,feature
+CIC-IDS-2017,renamed, Active Std,8/8,Active Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Active Max,8/8,Active Max,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Active Min,8/8,Active Min,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,unchanged,Idle Mean,8/8,Idle Mean,5/5,identical name,float,float,False,feature
+CIC-IDS-2017,renamed, Idle Std,8/8,Idle Std,5/5,same name after stripping whitespace,float,float,False,feature
+CIC-IDS-2017,renamed, Idle Max,8/8,Idle Max,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Idle Min,8/8,Idle Min,5/5,same name after stripping whitespace,float;integer,integer,True,feature
+CIC-IDS-2017,renamed, Label,8/8,Label,5/5,same name after stripping whitespace,string,string,False,target
+CIC-IDS-2017,added,,,id,5/5,no original counterpart,,integer,,identifier
+CIC-IDS-2017,added,,,Fwd RST Flags,5/5,no original counterpart,,integer,,feature
+CIC-IDS-2017,added,,,Bwd RST Flags,5/5,no original counterpart,,integer,,feature
+CIC-IDS-2017,added,,,ICMP Code,5/5,no original counterpart,,integer,,feature
+CIC-IDS-2017,added,,,ICMP Type,5/5,no original counterpart,,integer,,feature
+CIC-IDS-2017,added,,,Total TCP Flow Time,5/5,no original counterpart,,integer,,feature
+CIC-IDS-2017,added,,,Attempted Category,5/5,no original counterpart,,integer,,target
+CSE-CIC-IDS-2018,unchanged,Dst Port,10/10,Dst Port,10/10,identical name,integer,integer,False,context_review
+CSE-CIC-IDS-2018,unchanged,Flow ID,1/10,Flow ID,10/10,identical name,string,string,False,identifier
+CSE-CIC-IDS-2018,unchanged,Protocol,10/10,Protocol,10/10,identical name,integer,integer,False,context_review
+CSE-CIC-IDS-2018,unchanged,Src IP,1/10,Src IP,10/10,identical name,string,string,False,identifier
+CSE-CIC-IDS-2018,unchanged,Timestamp,10/10,Timestamp,10/10,identical name,string,string,False,timestamp
+CSE-CIC-IDS-2018,unchanged,Src Port,1/10,Src Port,10/10,identical name,integer,integer,False,identifier
+CSE-CIC-IDS-2018,unchanged,Flow Duration,10/10,Flow Duration,10/10,identical name,integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Dst IP,1/10,Dst IP,10/10,identical name,string,string,False,identifier
+CSE-CIC-IDS-2018,renamed,Tot Fwd Pkts,10/10,Total Fwd Packet,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Tot Bwd Pkts,10/10,Total Bwd packets,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,TotLen Fwd Pkts,10/10,Total Length of Fwd Packet,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,TotLen Bwd Pkts,10/10,Total Length of Bwd Packet,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Fwd Pkt Len Max,10/10,Fwd Packet Length Max,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Fwd Pkt Len Min,10/10,Fwd Packet Length Min,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Fwd Pkt Len Mean,10/10,Fwd Packet Length Mean,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Fwd Pkt Len Std,10/10,Fwd Packet Length Std,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Pkt Len Max,10/10,Bwd Packet Length Max,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Bwd Pkt Len Min,10/10,Bwd Packet Length Min,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Bwd Pkt Len Mean,10/10,Bwd Packet Length Mean,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Pkt Len Std,10/10,Bwd Packet Length Std,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Flow Byts/s,10/10,Flow Bytes/s,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Flow Pkts/s,10/10,Flow Packets/s,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Flow IAT Mean,10/10,Flow IAT Mean,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Flow IAT Std,10/10,Flow IAT Std,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Flow IAT Max,10/10,Flow IAT Max,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Flow IAT Min,10/10,Flow IAT Min,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Fwd IAT Tot,10/10,Fwd IAT Total,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Fwd IAT Mean,10/10,Fwd IAT Mean,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Fwd IAT Std,10/10,Fwd IAT Std,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Fwd IAT Max,10/10,Fwd IAT Max,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Fwd IAT Min,10/10,Fwd IAT Min,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Bwd IAT Tot,10/10,Bwd IAT Total,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Bwd IAT Mean,10/10,Bwd IAT Mean,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Bwd IAT Std,10/10,Bwd IAT Std,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Bwd IAT Max,10/10,Bwd IAT Max,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Bwd IAT Min,10/10,Bwd IAT Min,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Fwd PSH Flags,10/10,Fwd PSH Flags,10/10,identical name,integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Bwd PSH Flags,10/10,Bwd PSH Flags,10/10,identical name,integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Fwd URG Flags,10/10,Fwd URG Flags,10/10,identical name,integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Bwd URG Flags,10/10,Bwd URG Flags,10/10,identical name,integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Fwd Header Len,10/10,Fwd Header Length,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Header Len,10/10,Bwd Header Length,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Fwd Pkts/s,10/10,Fwd Packets/s,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Pkts/s,10/10,Bwd Packets/s,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Pkt Len Min,10/10,Packet Length Min,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Pkt Len Max,10/10,Packet Length Max,10/10,token-normalised name match (abbreviation/word order),float;integer,integer,True,feature
+CSE-CIC-IDS-2018,renamed,Pkt Len Mean,10/10,Packet Length Mean,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Pkt Len Std,10/10,Packet Length Std,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Pkt Len Var,10/10,Packet Length Variance,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,FIN Flag Cnt,10/10,FIN Flag Count,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,SYN Flag Cnt,10/10,SYN Flag Count,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,RST Flag Cnt,10/10,RST Flag Count,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,PSH Flag Cnt,10/10,PSH Flag Count,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,ACK Flag Cnt,10/10,ACK Flag Count,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,URG Flag Cnt,10/10,URG Flag Count,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,CWE Flag Count,10/10,CWR Flag Count,10/10,HYPOTHESIS: 'CWE' is a header typo for the CWR TCP flag in original releases,integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,ECE Flag Cnt,10/10,ECE Flag Count,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Down/Up Ratio,10/10,Down/Up Ratio,10/10,identical name,float;integer,float,True,feature
+CSE-CIC-IDS-2018,renamed,Pkt Size Avg,10/10,Average Packet Size,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Fwd Seg Size Avg,10/10,Fwd Segment Size Avg,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Seg Size Avg,10/10,Bwd Segment Size Avg,10/10,token-normalised name match (abbreviation/word order),float,float,False,feature
+CSE-CIC-IDS-2018,renamed,Fwd Byts/b Avg,10/10,Fwd Bytes/Bulk Avg,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Fwd Pkts/b Avg,10/10,Fwd Packet/Bulk Avg,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Fwd Blk Rate Avg,10/10,Fwd Bulk Rate Avg,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Byts/b Avg,10/10,Bwd Bytes/Bulk Avg,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Pkts/b Avg,10/10,Bwd Packet/Bulk Avg,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Bwd Blk Rate Avg,10/10,Bwd Bulk Rate Avg,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Subflow Fwd Pkts,10/10,Subflow Fwd Packets,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Subflow Fwd Byts,10/10,Subflow Fwd Bytes,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Subflow Bwd Pkts,10/10,Subflow Bwd Packets,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Subflow Bwd Byts,10/10,Subflow Bwd Bytes,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Init Fwd Win Byts,10/10,FWD Init Win Bytes,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,renamed,Init Bwd Win Byts,10/10,Bwd Init Win Bytes,10/10,token-normalised name match (abbreviation/word order),integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Fwd Act Data Pkts,10/10,Fwd Act Data Pkts,10/10,identical name,integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Fwd Seg Size Min,10/10,Fwd Seg Size Min,10/10,identical name,integer,integer,False,feature
+CSE-CIC-IDS-2018,unchanged,Active Mean,10/10,Active Mean,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Active Std,10/10,Active Std,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Active Max,10/10,Active Max,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Active Min,10/10,Active Min,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Idle Mean,10/10,Idle Mean,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Idle Std,10/10,Idle Std,10/10,identical name,float,float,False,feature
+CSE-CIC-IDS-2018,unchanged,Idle Max,10/10,Idle Max,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Idle Min,10/10,Idle Min,10/10,identical name,float;integer,integer,True,feature
+CSE-CIC-IDS-2018,unchanged,Label,10/10,Label,10/10,identical name,string,string,False,target
+CSE-CIC-IDS-2018,added,,,id,10/10,no original counterpart,,integer,,identifier
+CSE-CIC-IDS-2018,added,,,Fwd RST Flags,10/10,no original counterpart,,float;integer,,feature
+CSE-CIC-IDS-2018,added,,,Bwd RST Flags,10/10,no original counterpart,,float;integer,,feature
+CSE-CIC-IDS-2018,added,,,ICMP Code,10/10,no original counterpart,,integer,,feature
+CSE-CIC-IDS-2018,added,,,ICMP Type,10/10,no original counterpart,,integer,,feature
+CSE-CIC-IDS-2018,added,,,Total TCP Flow Time,10/10,no original counterpart,,integer,,feature
+CSE-CIC-IDS-2018,added,,,Attempted Category,10/10,no original counterpart,,integer,,target

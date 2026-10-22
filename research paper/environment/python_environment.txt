@@ -1,0 +1,43 @@
+Python environment record — captured 2026-10-19 (Phase 0)
+==========================================================
+No packages were installed, upgraded, or removed.
+
+Interpreter : CPython 3.14.3 (tags/v3.14.3:323c59a, Feb 3 2026) [MSC v.1944 64 bit (AMD64)]
+Executable  : system Python (C:\Python314\python.exe); no virtualenv/conda env active
+pip         : 26.2.1
+Platform    : Windows-11-10.0.26200-SP0 (Windows 11 Home)
+Shells      : PowerShell 5.1 (primary), Git Bash (POSIX)
+
+Relevant packages (import check, `python -I -c "import <m>; print(<m>.__version__)"`)
+-------------------------------------------------------------------------------------
+pandas        3.0.6
+numpy         2.5.3
+pyarrow       25.0.1
+duckdb        1.5.6        (useful for out-of-core CSV scans in Phase 2/3)
+scikit-learn  1.9.1
+scipy         1.18.1
+statsmodels   0.15.0
+matplotlib    3.11.2
+seaborn       0.13.2
+pyyaml        6.0.3
+pytest        9.1.1
+tqdm          4.70.1
+torch         2.11.0+cu128 (not needed during the audit)
+jupyterlab    4.6.4
+notebook      7.6.3
+nbformat      5.11.1
+nbconvert     7.17.1
+nbclient      0.11.0
+ipykernel     7.3.0
+pymupdf/fitz  1.28.2
+pypdf         5.1.0
+
+NOT installed (not currently needed): polars, fastparquet, xgboost, lightgbm, PyPDF2, pdfplumber
+
+Full package list: environment/pip_freeze.txt (`python -I -m pip freeze`, 137 lines)
+
+Notes
+-----
+- Python 3.14 + pandas 3.x is a very recent stack. pandas 3 defaults to copy-on-write and the
+  pyarrow-backed string dtype; audit code must not assume pandas 2.x behaviour.
+- Scripts are run with `python -I` (isolated mode) because the inputs are downloaded files.

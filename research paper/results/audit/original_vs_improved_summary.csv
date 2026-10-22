@@ -1,0 +1,41 @@
+dataset_family,metric,original,improved,evidence,note
+CIC-IDS-2017,files,8,5,schema_by_file.json,
+CIC-IDS-2017,rows (all),3119345,2099976,schema_by_file.json,
+CIC-IDS-2017,flows (excluding empty / header rows),2830743,2099976,label_distribution_by_dataset.csv,
+CIC-IDS-2017,benign share of flows,0.803004,0.753611,label_distribution_by_dataset.csv,
+CIC-IDS-2017,'Attempted' flows,0,11979,label_distribution_by_dataset.csv,class introduced by CNS2022
+CIC-IDS-2017,"distinct (label, category) pairs",16,39,label_distribution_by_dataset.csv,
+CIC-IDS-2017,columns,85,91,schema_by_file.json,
+CIC-IDS-2017,timestamp format(s),%d/%m/%Y %H:%M | %d/%m/%Y %H:%M:%S,%Y-%m-%d %H:%M:%S.%f,schema_by_file.json,"original: local time, no timezone; improved: UTC (DOCUMENTED)"
+CIC-IDS-2017,non-finite rate values (Flow Bytes/s),2867,5,numeric_feature_summary.csv,
+CIC-IDS-2017,negative values in non-negative columns (cells),3510,781,numeric_feature_summary.csv,improved negatives are int16 header-length overflow (see findings EXPORT_OVERFLOW)
+CIC-IDS-2017,constant columns,Bwd PSH Flags; Bwd URG Flags; Fwd Bytes/Bulk Avg; Fwd Packet/Bulk Avg; Fwd Bulk Rate Avg; Bwd Bytes/Bulk Avg; Bwd Packet/Bulk Avg; Bwd Bulk Rate Avg,none,numeric_feature_summary.csv,
+CIC-IDS-2017,data rows (excl. empty and embedded header rows),2830743,2099976,duplicates_by_file.csv,
+CIC-IDS-2017,exact duplicate rows (data rows; copies beyond the first),203,0,duplicates_by_file.csv,
+CIC-IDS-2017,feature-identical rows (data rows; copies beyond the first),308848,263004,duplicates_by_file.csv,
+CIC-IDS-2017,rows in label-conflict groups,7018,14140,duplicates_by_file.csv,
+CIC-IDS-2017,rows in benign/non-benign conflict groups,7018,22,duplicates_by_file.csv,
+CIC-IDS-2017,feature-identical share of data rows,0.109105,0.125241,duplicates_by_file.csv,
+CIC-IDS-2017,timestamp min .. max (as parsed),2017-07-03 01:00:01 .. 2017-07-07 12:59:00,2017-07-03 11:55:58.598308 .. 2017-07-07 20:02:40.977798,timestamp_quality.csv,"original clock is local, 12-hour without AM/PM (both datasets); 2018 original also has a few 1970 epoch-like values; not directly comparable"
+CIC-IDS-2017,row-level match: day pairs defensible,,1/8,row_matching_feasibility.csv,"criteria: unique >= 0.9, ambiguous <= 0.02"
+CIC-IDS-2017,timezone offset of original clock (5-tuple days),-3,UTC (DOCUMENTED),row_matching_feasibility.csv,
+CSE-CIC-IDS-2018,files,10,10,schema_by_file.json,
+CSE-CIC-IDS-2018,rows (all),16233002,63195145,schema_by_file.json,
+CSE-CIC-IDS-2018,flows (excluding empty / header rows),16232943,63195145,label_distribution_by_dataset.csv,
+CSE-CIC-IDS-2018,benign share of flows,0.8307,0.93921,label_distribution_by_dataset.csv,
+CSE-CIC-IDS-2018,'Attempted' flows,0,306237,label_distribution_by_dataset.csv,class introduced by CNS2022
+CSE-CIC-IDS-2018,"distinct (label, category) pairs",16,33,label_distribution_by_dataset.csv,
+CSE-CIC-IDS-2018,columns,80; 84,91,schema_by_file.json,
+CSE-CIC-IDS-2018,timestamp format(s),%d/%m/%Y %H:%M:%S,%Y-%m-%d %H:%M:%S.%f,schema_by_file.json,"original: local time, no timezone; improved: UTC (DOCUMENTED)"
+CSE-CIC-IDS-2018,non-finite rate values (Flow Bytes/s),95760,57,numeric_feature_summary.csv,
+CSE-CIC-IDS-2018,negative values in non-negative columns (cells),106,27548,numeric_feature_summary.csv,improved negatives are int16 header-length overflow (see findings EXPORT_OVERFLOW)
+CSE-CIC-IDS-2018,constant columns,Bwd PSH Flags; Bwd URG Flags; Fwd Bytes/Bulk Avg; Fwd Packet/Bulk Avg; Fwd Bulk Rate Avg; Bwd Bytes/Bulk Avg; Bwd Packet/Bulk Avg; Bwd Bulk Rate Avg,Bwd URG Flags,numeric_feature_summary.csv,
+CSE-CIC-IDS-2018,data rows (excl. empty and embedded header rows),16232943,63195145,duplicates_by_file.csv,
+CSE-CIC-IDS-2018,exact duplicate rows (data rows; copies beyond the first),433195,0,duplicates_by_file.csv,
+CSE-CIC-IDS-2018,feature-identical rows (data rows; copies beyond the first),4265470,17994469,duplicates_by_file.csv,
+CSE-CIC-IDS-2018,rows in label-conflict groups,423290,263772,duplicates_by_file.csv,
+CSE-CIC-IDS-2018,rows in benign/non-benign conflict groups,170766,263772,duplicates_by_file.csv,
+CSE-CIC-IDS-2018,feature-identical share of data rows,0.262766,0.284744,duplicates_by_file.csv,
+CSE-CIC-IDS-2018,timestamp min .. max (as parsed),1970-01-05 03:01:17 .. 2018-03-02 12:59:59,2018-02-14 12:28:07.743746 .. 2018-03-03 00:39:53.894472,timestamp_quality.csv,"original clock is local, 12-hour without AM/PM (both datasets); 2018 original also has a few 1970 epoch-like values; not directly comparable"
+CSE-CIC-IDS-2018,row-level match: day pairs defensible,,0/10,row_matching_feasibility.csv,"criteria: unique >= 0.9, ambiguous <= 0.02"
+CSE-CIC-IDS-2018,timezone offset of original clock (5-tuple days),-4,UTC (DOCUMENTED),row_matching_feasibility.csv,
